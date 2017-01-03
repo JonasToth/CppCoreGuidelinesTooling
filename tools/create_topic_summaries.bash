@@ -11,6 +11,7 @@ do
         echo "Creating link summary for $line"
         cd "$line"
         ../../tools/extract_linksummary.bash ../CppCoreGuidelines.md "$line" > links.md
+        echo "" >> links.md
         cd ..
 
     else

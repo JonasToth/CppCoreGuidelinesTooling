@@ -23,6 +23,7 @@ else
     while read rule_nbr
     do
         echo "$rule_headings" | sed -ne "/$2\.${rule_nbr}:/p" > ${rule_nbr}
+        echo "" >> ${rule_nbr}
     done <<< "$rule_numbers"
     cd ..
 fi
