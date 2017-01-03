@@ -15,11 +15,5 @@ do
     if [ ! -d "$line" ]; then
         echo "Creating directory for topic $line"
         mkdir "$line"
-
-        # create the link summary for all rules in that topic
-        echo "Creating link summary"
-        cd "$line"
-        ../../tools/extract_linksummary.bash ../../tools/CppCoreGuidelines.md "$line" > links.md
-        cd ..
     fi
 done < "${1:-/dev/stdin}"
