@@ -12,4 +12,4 @@ if [ $# -ne 1 ]; then
     exit -1
 fi
 
-egrep -h -e '\# <a name="(.+)"></a>(\w+): (\w+)' $1 | sed -ne '1,22p'
+egrep -hn -e '\# <a name="(.+)"></a>(\w+): (\w+)' $1 | sed -ne '1,22p'
