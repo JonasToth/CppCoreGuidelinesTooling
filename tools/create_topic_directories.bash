@@ -8,6 +8,8 @@
 #
 # it will check for each line (topic) if a directorie exists and create it if not existing
 
+# use with input file or pipe
+
 while read line
 do
     if [ ! -d "$line" ]; then
