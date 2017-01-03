@@ -11,5 +11,5 @@ if [ $# -ne 3 ]; then
     exit -1
 fi
 
-
-sed -ne "$2,$3p" $1 | sed -ne "/^##### Enforcement/,/^#\+ .*\$/p"
+# https://stackoverflow.com/questions/1187354/excluding-first-and-last-lines-from-sed-start-end
+sed -ne "$2,$3p" $1 | sed -ne "/^##### Enforcement/,/^#\+ .*\$/p" | head --lines=-1
