@@ -22,7 +22,6 @@ else
     # write the heading in a file name rule_nbr
     while read rule_nbr
     do
-        echo "$rule_nbr"
         echo "$rule_headings" | sed -ne "/$2\.${rule_nbr}:/p" > ${rule_nbr}
     done <<< "$rule_numbers"
     cd ..
