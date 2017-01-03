@@ -10,3 +10,6 @@ if [ $# -ne 3 ]; then
     echo "Provide correct number of lines. Not end with a $"
     exit -1
 fi
+
+
+sed -ne "$2,$3p" $1 | sed -ne "/^##### Enforcement/,/^#\+ .*\$/p"
