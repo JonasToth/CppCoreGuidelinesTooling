@@ -15,4 +15,4 @@ fi
 
 # get the correct script name no matter from where the script got called
 summary_script=$(echo "$0" | sed -e "s/rule_numbers/linksummary/g")
-eval "$summary_script $1 $2" | sed -ne "s/\* \[$2\.\([[:digit:]][[:digit:]]*\):.*/\1/pg"
+eval "$summary_script $1 $2" | sed -ne "s/\* \[$2\.\(\w\w*\):.*/\1/pg"
