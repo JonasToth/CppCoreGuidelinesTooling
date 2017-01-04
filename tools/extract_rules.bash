@@ -15,8 +15,8 @@ FILE=$1
 shift
 
 for SHORTCUT in $@; do
-    echo "extracting for $SHORTCUT"
+    #echo "extracting for $SHORTCUT"
     # matching following kind of line
     # * [SF.8: Use `#include` guards for all `.h` files](#Rs-guards)
-    egrep -e "### <a name=\"(.+)\"></a>$SHORTCUT.([[:digit:]]+): (.*)" $FILE
+    egrep -n -e "### <a name=\"(.+)\"></a>$SHORTCUT.([[:digit:]]+): (.*)" $FILE
 done
