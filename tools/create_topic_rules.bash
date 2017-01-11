@@ -30,11 +30,13 @@ else
         do
             # find the relevant rule for this number and topic
             rule_line=$(echo "$rule_headings" | sed -ne "/$topic\.${rule_nbr}:/p") 
-            #echo "$rule_line"
 
             # extract the linenbr to search the enforcement afterwards
             rule_occurence_line=$(echo "$rule_line" | sed -e "s/\(:#.*\)//g")
-            #echo $rule_occurence_line
+            rule_line=$(echo "$rule_line" | sed -e "s/$rule_occurence_line://g")
+
+            echo "$rule_line"
+            echo $rule_occurence_line
 
             # output the heading, removing the linenbr from the rule_line
             echo "$rule_line" > ${rule_nbr}
