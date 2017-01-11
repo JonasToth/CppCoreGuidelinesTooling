@@ -11,8 +11,6 @@ if [ $# -ne 2 ]; then
     exit -1
 fi
 
-echo "Determine startline of enforcement"
-
 
 # loop over the text until there is a r'#+ Enforcement' line
 line_nbr=$((0))
@@ -27,29 +25,11 @@ while read line; do
 done < $1
 
 start_line=$((start_line + 2))
-echo "$start_line"
-
-#l="### line starts with #"
-#n="line starts not with #"
-
-#if [[ $l =~ "^##"  ]]; then
-    #echo "Yea"
-#else
-    #echo "Nej"
-#fi
-
-#if [[ "$n" =~ "^#"  ]]; then
-    #echo "Yea"
-#else
-    #echo "Nej"
-#fi
-
-#exit -1
 
 # output each line following from here until we reach a headline
 sed -ne $start_line,\$p $1 | 
 while read line; do
-    if [[ "$line" =~ "###" ]]; then
+    if [[ "$line" =~ "#" ]]; then
         break
     fi
     echo "$line"

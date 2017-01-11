@@ -20,4 +20,4 @@ fi
 topics=$(sed -nre "s/\* \[(\w+)\.(.*)\].*/\1/pg" $1 | sort | uniq)
 
 # remove known false results and trim whitespace (R has)
-echo "$topics" | sed -e '/Geosoft/d' -e '/isocpp/d' -e '/Possibility/d' | sed -e 's/^[[:space:]]*//'
+echo "$topics" | sed -e '/Geosoft/d' -e '/isocpp/d' -e '/Possibility/d' -e '/A/d' | sed -e 's/^[[:space:]]*//'
