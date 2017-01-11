@@ -11,21 +11,47 @@ if [ $# -ne 2 ]; then
     exit -1
 fi
 
-# https://stackoverflow.com/questions/1187354/excluding-first-and-last-lines-from-sed-start-end
-# relative to startline ($2)
 echo "Determine startline of enforcement"
-enforcement_start_line=$(sed -ne "$2,\$p" $1 | egrep -hn -e '#### Enforcement')
-absolut_start_line=$(($2+$enforcement_start_line))
-echo "$enforcement_start_line"
-echo "$absolut_start_line"
 
-exit -1
-echo "determine endline of enforcement"
-# determine the end, meaning the next headline
-relative_end_line=$(sed -ne "$absolut_start_line,\$p" $1 | egrep -hn -e '^#+ .*$')
-absolute_end_line=$(($absolut_start_line+$relative_end_line))
-echo "$absolute_end_line"
 
-#sed -ne "$absolut_start_line,${absolut_end_line}" $1 | egrep -hn -e '^#+ .*$'
+# loop over the text until there is a r'#+ Enforcement' line
+line_nbr=$((0))
+while read line; do
+    if [[ $line_nbr -gt $2 ]]; then
+        if [[ "$line" =~ "# Enforcement" ]]; then
+            start_line=${line_nbr}
+            break
+        fi
+    fi
+    line_nbr=$((line_nbr + 1))
+done < $1
 
-#| sed -ne "/^##### Enforcement/,\${/^#\+ .*\$/{p}}" #| head --lines=-1
+start_line=$((start_line + 2))
+echo "$start_line"
+
+#l="### line starts with #"
+#n="line starts not with #"
+
+#if [[ $l =~ "^##"  ]]; then
+    #echo "Yea"
+#else
+    #echo "Nej"
+#fi
+
+#if [[ "$n" =~ "^#"  ]]; then
+    #echo "Yea"
+#else
+    #echo "Nej"
+#fi
+
+#exit -1
+
+# output each line following from here until we reach a headline
+sed -ne $start_line,\$p $1 | 
+while read line; do
+    if [[ "$line" =~ "###" ]]; then
+        break
+    fi
+    echo "$line"
+done 
+
