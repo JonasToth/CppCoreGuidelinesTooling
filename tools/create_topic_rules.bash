@@ -10,6 +10,7 @@ fi
 # get the correct script name no matter from where the script got called
 number_script=$(echo "$0" | sed -e "s/create_topic_rules/extract_rule_numbers/g")
 heading_script=$(echo "$0" | sed -e "s/create_topic_rules/extract_rules/g")
+enforcement_script=$(echo "$0" | sed -e "s/create_topic_rules/extract_enforcements/g")
 
 if [ ! -d $2 ]; then
     echo "Topic directory does not exist!" 2>&1

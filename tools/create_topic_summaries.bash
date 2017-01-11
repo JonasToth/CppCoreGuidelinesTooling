@@ -3,7 +3,8 @@
 # call from guideline directory
 # create a summary link file referencing all rules in a topic
 
-
+topic_script=$(echo $0 | sed -e 's/create_topic_summaries/extract_topics/g')
+eval "$topic_script CppCoreGuidelines.md" | 
 while read line
 do
     if [ -d "$line" ]; then
@@ -17,4 +18,4 @@ do
     else
         echo "Topic does not exist!" 2>&1
     fi
-done < "${1:-/dev/stdin}"
+done 
