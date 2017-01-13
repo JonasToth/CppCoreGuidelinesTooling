@@ -1316,6 +1316,7 @@ Usage: ../../tools/extract_enforcements.bash GuidelineFile startline
 
 Provide correct number of lines. Not end with a $
 #### clang-tidy
+
 # Con
 * [Con.1: By default, make objects immutable](#Rconst-immutable)
 * [Con.2: By default, make member functions `const`](#Rconst-fct)
@@ -1354,6 +1355,7 @@ Provide correct number of lines. Not end with a $
 * Flag `const` definitions with constant expression initializers.
 
 #### clang-tidy
+
 # CP
 * [CP.1: Assume that your code will run as part of a multi-threaded program](#Rconc-multi)
 * [CP.2: Avoid data races](#Rconc-races)
@@ -1675,6 +1677,7 @@ Usage: ../../tools/extract_enforcements.bash GuidelineFile startline
 
 Provide correct number of lines. Not end with a $
 #### clang-tidy
+
 # CPL
 * [CPL.1: Prefer C++ to C](#Rcpl-C)
 * [CPL.2: If you must use C, use the common subset of C and C++, and compile the C code as C++](#Rcpl-subset)
@@ -1700,6 +1703,7 @@ Use a C++ compiler.
 None needed
 
 #### clang-tidy
+
 # E
 * [E.1: Develop an error-handling strategy early in a design](#Re-design)
 * [E.2: Throw an exception to signal that a function can't perform its assigned task](#Re-throw)
@@ -1847,6 +1851,7 @@ Catch `throw` and `catch` of a built-in type. Maybe warn about `throw` and `catc
 Catch `throw` and `catch` of a built-in type. Maybe warn about `throw` and `catch` using an standard-library `exception` type. Obviously, exceptions derived from the `std::exception` hierarchy is fine.
 
 #### clang-tidy
+
 # Enum
 * [Enum.1: Prefer enumerations over macros](#Renum-macro)
 * [Enum.2: Use enumerations to represent sets of related named constants](#Renum-set)
@@ -1913,6 +1918,7 @@ Flag unnamed enumerations.
 
 
 #### clang-tidy
+
 # ES
 * [ES.28: Use lambdas for complex initialization, especially of `const` variables](#Res-lambda-init)
 * [ES.1: Prefer the standard library to other libraries and to "handcrafted code"](#Res-lib)
@@ -2372,6 +2378,7 @@ Flag variables that are potentially updated (have a non-const use) in both the l
 Flag all uses of ALL CAPS. For older code, accept ALL CAPS for macro names and flag all non-ALL-CAPS macro names.
 
 #### clang-tidy
+
 # F
 * [F.1: "Package" meaningful operations as carefully named functions](#Rf-package)
 * [F.2: A function should perform a single logical operation](#Rf-logical)
@@ -2637,6 +2644,7 @@ that is
 Not possible.
 
 #### clang-tidy
+
 # GSL
 * [GSL.view: Views](#SS-views)
 * [GSL.assert: Assertions](#SS-assertions)
@@ -2667,6 +2675,7 @@ Usage: ../../tools/extract_enforcements.bash GuidelineFile startline
 
 Provide correct number of lines. Not end with a $
 #### clang-tidy
+
 # I
 * [I.1: Make interfaces explicit](#Ri-explicit)
 * [I.2: Avoid global variables](#Ri-global)
@@ -2812,6 +2821,7 @@ checkers) exist for many toolchains.
 (Not yet enforceable) A language facility is under specification. When the language facility is available, warn if any non-variadic template parameter is not constrained by a concept (in its declaration or mentioned in a `requires` clause).
 
 #### clang-tidy
+
 # In
 * [In.target: Target readership](#SS-readers)
 * [In.aims: Aims](#SS-aims)
@@ -2856,6 +2866,7 @@ Usage: ../../tools/extract_enforcements.bash GuidelineFile startline
 
 Provide correct number of lines. Not end with a $
 #### clang-tidy
+
 # NL
 * [NL.1: Don't say in comments what can be clearly stated in code](#Rl-comments)
 * [NL.2: State intent in comments](#Rl-comments-intent)
@@ -2986,6 +2997,7 @@ Would be possible except for the use of libraries with varying conventions.
 * Flag `ALL_CAPS` non-macro names
 
 #### clang-tidy
+
 # NR
 * [NR.1: Don't: All declarations should be at the top of a function](#Rnr-top)
 * [NR.2: Don't: Have only a single `return`-statement in a function](#Rnr-single-return)
@@ -3037,6 +3049,7 @@ Issue a diagnostic for any use of `reinterpret_cast`. To fix: Consider using a `
 Issue a diagnostic for any use of `reinterpret_cast`. To fix: Consider using a `variant` instead.
 
 #### clang-tidy
+
 # P
 * [P.1: Express ideas directly in code](#Rp-direct)
 * [P.2: Write in ISO Standard C++](#Rp-Cplusplus)
@@ -3144,6 +3157,7 @@ Where feasible, replace owners with standard-library resource handles (as in the
 Many more specific rules aim at the overall goals of simplicity and elimination of gratuitous waste.
 
 #### clang-tidy
+
 # Per
 * [Per.1: Don't optimize without reason](#Rper-reason)
 * [Per.2: Don't optimize prematurely](#Rper-Knuth)
@@ -3378,6 +3392,7 @@ Tricky.
 Maybe looking for `void*` function arguments will find examples of interfaces that hinder later optimization.
 
 #### clang-tidy
+
 # Pro
 * [Pro.type: Type safety](#SS-type)
 * [Pro.bounds: Bounds safety](#SS-bounds)
@@ -3401,6 +3416,7 @@ Usage: ../../tools/extract_enforcements.bash GuidelineFile startline
 
 Provide correct number of lines. Not end with a $
 #### clang-tidy
+
 # R
   * [R.1: Manage resources automatically using resource handles and RAII (Resource Acquisition Is Initialization)](#Rr-raii)
   * [R.2: In interfaces, use raw pointers to denote individual objects (only)](#Rr-use-ptr)
@@ -3600,6 +3616,7 @@ Suggest using a `T*` or `T&` instead.
 (??? NM: Obviously we can warn about non-`const` statics ... do we want to?)
 
 #### clang-tidy
+
 # RF
 * [RF.rules: Coding rules](#SS-rules)
 * [RF.books: Books with coding guidelines](#SS-books)
@@ -3631,6 +3648,7 @@ Usage: ../../tools/extract_enforcements.bash GuidelineFile startline
 
 Provide correct number of lines. Not end with a $
 #### clang-tidy
+
 # RS
 * [RS.video: Videos about "modern C++"](#SS-vid)
 
@@ -3640,6 +3658,7 @@ Usage: ../../tools/extract_enforcements.bash GuidelineFile startline
 
 Provide correct number of lines. Not end with a $
 #### clang-tidy
+
 # SF
 * [SF.1: Use a `.cpp` suffix for code files and `.h` for interface files if your project doesn't already follow another convention](#Rs-file-suffix)
 * [SF.2: A `.h` file may not contain object definitions or non-inline function definitions](#Rs-inline)
@@ -3725,6 +3744,7 @@ Easy.
 Flag all cycles.
 
 #### clang-tidy
+
 # SL
 * [SL.con: Containers](#SS-con)
 * [SL.str: String](#SS-string)
@@ -3788,6 +3808,7 @@ Usage: ../../tools/extract_enforcements.bash GuidelineFile startline
 
 Provide correct number of lines. Not end with a $
 #### clang-tidy
+
 # T
 * [T.1: Use templates to raise the level of abstraction of code](#Rt-raise)
 * [T.2: Use templates to express algorithms that apply to many argument types](#Rt-algo)
@@ -4220,6 +4241,7 @@ The compiler handles that.
 ???
 
 #### clang-tidy
+
 # Type
 * [Type.1: Don't use `reinterpret_cast`](#Pro-type-reinterpretcast)
 * [Type.2: Don't use `static_cast` downcasts. Use `dynamic_cast` instead](#Pro-type-downcast)
@@ -4268,3 +4290,4 @@ Issue a diagnostic for any use of a C-style `(T)expression` cast that would invo
 * Issue a diagnostic when constructing an object of a trivially constructible type without `()` or `{}` to initialize its members. To fix: Add `()` or `{}`.
 
 #### clang-tidy
+
