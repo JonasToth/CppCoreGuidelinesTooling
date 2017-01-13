@@ -11,7 +11,8 @@ eval "$topic_script CppCoreGuidelines.md" |
 while read topic
 do
     echo "# $topic" >> $outfile
-    "$topic/links.md" >> $outfile
+    cat "$topic/links.md" >> $outfile
+
     cd "$topic"
 
     eval "ls -1 | sed -e '/links.md/d'" |
