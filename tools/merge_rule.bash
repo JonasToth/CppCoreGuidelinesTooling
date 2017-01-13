@@ -7,6 +7,7 @@
 outfile="../complete.md"
 topic_script=$(echo $0 | sed -e 's/merge_rule/extract_topics/g')
 
+echo > $outfile
 
 eval "$topic_script CppCoreGuidelines.md" |
 while read topic
