@@ -5,7 +5,7 @@ This repository will contain an overview of the tooling support to enforce and c
 It is not meant to be complete [like the guidelines themself ;)] but give myself and others an overview what is possible to check statically. 
 Furthermore it could help developers of the tools to see whats still to do.
 
-**[Tool Overview](complete.md)**
+**[Tool Overview](tool_overview.md)**
 
 # Tools
 
