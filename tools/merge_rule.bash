@@ -28,12 +28,17 @@ do
     eval "ls -1 | sed -e '/links.md/d'" |
     while read rule
     do
-        cat "$rule" >> "../$outfile"
+        if [[ $(wc -l ../../clang-tidy/$topic/$rule | awk '{ print $1 }') -eq 0 ]]
+        then
+            continue
+        else
+            cat "$rule" >> "../$outfile"
 
-        echo "#### clang-tidy" >> "../$outfile"
-        cat "../../clang-tidy/$topic/$rule" >> "../$outfile"
+            echo "#### clang-tidy" >> "../$outfile"
+            cat "../../clang-tidy/$topic/$rule" >> "../$outfile"
 
-        echo >> "../$outfile"
+            echo >> "../$outfile"
+        fi
     done
 
     cd ..
