@@ -4,7 +4,7 @@
 # e.g. write how clang implements the enforcement in another file, merging these two
 # files
 
-outfile="../complete.md"
+outfile="../tool_overview.md"
 topic_script=$(echo $0 | sed -e 's/merge_rule/extract_topics/g')
 
 echo > $outfile
