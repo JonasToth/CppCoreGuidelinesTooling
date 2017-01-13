@@ -13,12 +13,12 @@ do
     cd "$topic"
 
     # for each rule file, that has more then 2 lines, touch a file in the tool
-    $(ls -1 | sed -e '/links.md/d') |
+    eval "ls -1 | sed -e '/links.md/d'" |
     while read rule
     do
         # check for line number
         if [[ $(wc -l "$rule" | sed -ne 's/\(.*\) .*/\1/pg') -gt 2 ]]; then
-            touch "../../clang_tidy/$topic/$rule"
+            touch "../../clang-tidy/$topic/$rule"
 
             echo "clang-tidy $rule"
         fi

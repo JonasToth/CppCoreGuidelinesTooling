@@ -14,8 +14,7 @@ topic_script=$(echo $0 | sed -e 's/create_topic_directories/extract_topics/g')
 eval "$topic_script CppCoreGuidelines.md" | 
 while read line
 do
-    if [ ! -d "$line" ]; then
-        echo "Creating directory for topic $line"
-        mkdir "$line"
-    fi
+    echo "Creating directory for topic $line"
+    mkdir -p "$line"
+    mkdir -p "../clang-tidy/$line"
 done 
