@@ -4252,6 +4252,8 @@ Issue a diagnostic for any use of `const_cast`. To fix: Either don't use the var
 Issue a diagnostic for any use of a C-style `(T)expression` cast that would invoke a `static_cast` downcast, `const_cast`, or `reinterpret_cast`. To fix: Use a `dynamic_cast`, `const`-correct declaration, or `variant`, respectively.
 
 #### clang-tidy
+* only warning
+[cppcoreguidelines-pro-type-cstyle-cast](http://clang.llvm.org/extra/clang-tidy/checks/cppcoreguidelines-pro-type-cstyle-cast.html)
 ### <a name="Pro-type-init"></a>Type.5: Don't use a variable before it has been initialized.
 
 
