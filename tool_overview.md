@@ -662,22 +662,12 @@ Probably impossible. Maybe a heuristic looking for data items used together is p
 #### clang-tidy
 
 
-Usage: ../../tools/extract_enforcements.bash GuidelineFile startline
-
-Provide correct number of lines. Not end with a $
-#### clang-tidy
-
 
 Usage: ../../tools/extract_enforcements.bash GuidelineFile startline
 
 Provide correct number of lines. Not end with a $
 #### clang-tidy
 
-
-Usage: ../../tools/extract_enforcements.bash GuidelineFile startline
-
-Provide correct number of lines. Not end with a $
-#### clang-tidy
 
 
 Usage: ../../tools/extract_enforcements.bash GuidelineFile startline
@@ -686,11 +676,6 @@ Provide correct number of lines. Not end with a $
 #### clang-tidy
 
 
-Usage: ../../tools/extract_enforcements.bash GuidelineFile startline
-
-Provide correct number of lines. Not end with a $
-#### clang-tidy
-
 
 Usage: ../../tools/extract_enforcements.bash GuidelineFile startline
 
@@ -698,22 +683,47 @@ Provide correct number of lines. Not end with a $
 #### clang-tidy
 
 
+
+Usage: ../../tools/extract_enforcements.bash GuidelineFile startline
+
+Provide correct number of lines. Not end with a $
+#### clang-tidy
+
+
+
 Usage: ../../tools/extract_enforcements.bash GuidelineFile startline
 
 Provide correct number of lines. Not end with a $
 #### clang-tidy
 
 
+
 Usage: ../../tools/extract_enforcements.bash GuidelineFile startline
 
 Provide correct number of lines. Not end with a $
 #### clang-tidy
+
+
+
+Usage: ../../tools/extract_enforcements.bash GuidelineFile startline
+
+Provide correct number of lines. Not end with a $
+#### clang-tidy
+
+
+
+Usage: ../../tools/extract_enforcements.bash GuidelineFile startline
+
+Provide correct number of lines. Not end with a $
+#### clang-tidy
+
 ### <a name="Rc-regular"></a>C.11: Make concrete types regular
 
 
 ???
 
 #### clang-tidy
+
 ### <a name="Rh-domain"></a>C.120: Use class hierarchies to represent concepts with inherent hierarchical structure (only)
 
 
@@ -721,24 +731,28 @@ Provide correct number of lines. Not end with a $
 * Flag every use of a nonpublic base class `B` where the derived class `D` does not override a virtual function or access a protected member in `B`, and `B` is not one of the following: empty, a template parameter or parameter pack of `D`, a class template specialized with `D`.
 
 #### clang-tidy
+
 ### <a name="Rh-abstract"></a>C.121: If a base class is used as an interface, make it a pure abstract class
 
 
 * Warn on any class that contains data members and also has an overridable (non-`final`) virtual function.
 
 #### clang-tidy
+
 ### <a name="Rh-separation"></a>C.122: Use abstract classes as interfaces when complete separation of interface and implementation is needed
 
 
 ???
 
 #### clang-tidy
+
 ### <a name="Rh-abstract-ctor"></a>C.126: An abstract class typically doesn't need a constructor
 
 
 Flag abstract classes with constructors.
 
 #### clang-tidy
+
 ### <a name="Rh-dtor"></a>C.127: A class with a virtual function should have a virtual or protected destructor
 
 
@@ -746,6 +760,7 @@ Flag abstract classes with constructors.
 * Flag `delete` of a class with a virtual function but no virtual destructor.
 
 #### clang-tidy
+
 ### <a name="Rh-override"></a>C.128: Virtual functions should specify exactly one of `virtual`, `override`, or `final`
 
 
@@ -754,6 +769,7 @@ Flag abstract classes with constructors.
 * Flag function declarations that use more than one of `virtual`, `override`, and `final`.
 
 #### clang-tidy
+
 ### <a name="Rh-kind"></a>C.129: When designing a class hierarchy, distinguish between implementation inheritance and interface inheritance
 
 
@@ -763,6 +779,7 @@ Flag abstract classes with constructors.
 
 
 #### clang-tidy
+
 ### <a name="Rh-copy"></a>C.130: Redefine or prohibit copying for a base class; prefer a virtual `clone` function instead
 
 
@@ -770,12 +787,14 @@ Flag abstract classes with constructors.
 * Flag an assignment of base class objects (objects of a class from which another has been derived).
 
 #### clang-tidy
+
 ### <a name="Rh-get"></a>C.131: Avoid trivial getters and setters
 
 
 Flag multiple `get` and `set` member functions that simply access a member without additional semantics.
 
 #### clang-tidy
+
 ### <a name="Rh-virtual"></a>C.132: Don't make a function `virtual` without reason
 
 
@@ -783,36 +802,42 @@ Flag multiple `get` and `set` member functions that simply access a member witho
 * Flag a class where all member functions are virtual and have implementations.
 
 #### clang-tidy
+
 ### <a name="Rh-protected"></a>C.133: Avoid `protected` data
 
 
 Flag classes with `protected` data.
 
 #### clang-tidy
+
 ### <a name="Rh-public"></a>C.134: Ensure all non-`const` data members have the same access level
 
 
 Flag any class that has non-`const` data members with different access levels.
 
 #### clang-tidy
+
 ### <a name="Rh-mi-interface"></a>C.135: Use multiple inheritance to represent multiple distinct interfaces
 
 
 ???
 
 #### clang-tidy
+
 ### <a name="Rh-mi-implementation"></a>C.136: Use multiple inheritance to represent the union of implementation attributes
 
 
 ??? Herb: How about opposite enforcement: Flag any type that inherits from more than one non-empty base class?
 
 #### clang-tidy
+
 ### <a name="Rh-vbase"></a>C.137: Use `virtual` bases to avoid overly general base classes
 
 
 ???
 
 #### clang-tidy
+
 ### <a name="Rh-using"></a>C.138: Create an overload set for a derived class and its bases with `using`
 
 
@@ -820,6 +845,7 @@ Flag uses of `final`.
 
 
 #### clang-tidy
+
 ### <a name="Rh-final"></a>C.139: Use `final` sparingly
 
 
@@ -829,34 +855,40 @@ Flag uses of `final`.
 #### clang-tidy
 
 
+
 Usage: ../../tools/extract_enforcements.bash GuidelineFile startline
 
 Provide correct number of lines. Not end with a $
 #### clang-tidy
+
 ### <a name="Rh-poly"></a>C.145: Access polymorphic objects through pointers and references
 
 
 Flag all slicing.
 
 #### clang-tidy
+
 ### <a name="Rh-dynamic_cast"></a>C.146: Use `dynamic_cast` where class hierarchy navigation is unavoidable
 
 
 Flag all uses of `static_cast` for downcasts, including C-style casts that perform a `static_cast`.
 
 #### clang-tidy
+
 ### <a name="Rh-ptr-cast"></a>C.147: Use `dynamic_cast` to a reference type when failure to find the required class is considered an error
 
 
 ???
 
 #### clang-tidy
+
 ### <a name="Rh-ref-cast"></a>C.148: Use `dynamic_cast` to a pointer type when failure to find the required class is considered a valid alternative
 
 
 ???
 
 #### clang-tidy
+
 ### <a name="Rh-smart"></a>C.149: Use `unique_ptr` or `shared_ptr` to avoid forgetting to `delete` objects created using `new`
 
 
@@ -864,6 +896,7 @@ Flag all uses of `static_cast` for downcasts, including C-style casts that perfo
 * Flag `delete` of local variable
 
 #### clang-tidy
+
 ### <a name="Rh-make_unique"></a>C.150: Use `make_unique()` to construct objects owned by `unique_ptr`s
 
 
@@ -871,6 +904,7 @@ Flag all uses of `static_cast` for downcasts, including C-style casts that perfo
 * Flag variables declared to be `unique_ptr<Foo>`
 
 #### clang-tidy
+
 ### <a name="Rh-make_shared"></a>C.151: Use `make_shared()` to construct objects owned by `shared_ptr`s
 
 
@@ -878,6 +912,7 @@ Flag all uses of `static_cast` for downcasts, including C-style casts that perfo
 * Flag variables declared to be `shared_ptr<Foo>`
 
 #### clang-tidy
+
 ### <a name="Rh-array"></a>C.152: Never assign a pointer to an array of derived class objects to a pointer to its base
 
 
@@ -885,36 +920,42 @@ Flag all uses of `static_cast` for downcasts, including C-style casts that perfo
 * Pass an array as a `span` rather than as a pointer, and don't let the array name suffer a derived-to-base conversion before getting into the `span`
 
 #### clang-tidy
+
 ### <a name="Ro-conventional"></a>C.160: Define operators primarily to mimic conventional usage
 
 
 Possibly impossible.
 
 #### clang-tidy
+
 ### <a name="Ro-symmetric"></a>C.161: Use nonmember functions for symmetric operators
 
 
 Flag member operator functions.
 
 #### clang-tidy
+
 ### <a name="Ro-equivalent"></a>C.162: Overload operations that are roughly equivalent
 
 
 ???
 
 #### clang-tidy
+
 ### <a name="Ro-equivalent-2"></a>C.163: Overload only for operations that are roughly equivalent
 
 
 ???
 
 #### clang-tidy
+
 ### <a name="Ro-conversion"></a>C.164: Avoid conversion operators
 
 
 Flag all conversion operators.
 
 #### clang-tidy
+
 ### <a name="Ro-custom"></a>C.165: Use `using` for customization points
 
 
@@ -922,48 +963,56 @@ Unlikely, except for known customization points, such as `swap`.
 The problem is that the unqualified and qualified lookups both have uses.
 
 #### clang-tidy
+
 ### <a name="Ro-address-of"></a>C.166: Overload unary `&` only as part of a system of smart pointers and references
 
 
 Tricky. Warn if `&` is user-defined without also defining `->` for the result type.
 
 #### clang-tidy
+
 ### <a name="Ro-overload"></a>C.167: Use an operator for an operation with its conventional meaning
 
 
 Tricky. Requires semantic insight.
 
 #### clang-tidy
+
 ### <a name="Ro-namespace"></a>C.168: Define overloaded operators in the namespace of their operands
 
 
 * Flag operator definitions that are not it the namespace of their operands
 
 #### clang-tidy
+
 ### <a name="Ro-lambda"></a>C.170: If you feel like overloading a lambda, use a generic lambda
 
 
 The compiler catches the attempt to overload a lambda.
 
 #### clang-tidy
+
 ### <a name="Ru-union"></a>C.180: Use `union`s to save memory
 
 
 ???
 
 #### clang-tidy
+
 ### <a name="Ru-naked"></a>C.181: Avoid "naked" `union`s
 
 
 ???
 
 #### clang-tidy
+
 ### <a name="Ru-anonymous"></a>C.182: Use anonymous `union`s to implement tagged unions
 
 
 ???
 
 #### clang-tidy
+
 ### <a name="Ru-pun"></a>C.183: Don't use a `union` for type punning
 
 
@@ -972,12 +1021,14 @@ The compiler catches the attempt to overload a lambda.
 
 
 #### clang-tidy
+
 ### <a name="Rc-struct"></a>C.2: Use `class` if the class has an invariant; use `struct` if the data members can vary independently
 
 
 Look for `struct`s with all data private and `class`es with public members.
 
 #### clang-tidy
+
 ### <a name="Rc-zero"></a>C.20: If you can avoid defining default operations, do
 
 
@@ -985,12 +1036,14 @@ Look for `struct`s with all data private and `class`es with public members.
 For example, a class with a (pointer, size) pair of member and a destructor that `delete`s the pointer could probably be converted to a `vector`.
 
 #### clang-tidy
+
 ### <a name="Rc-five"></a>C.21: If you define or `=delete` any default operation, define or `=delete` them all
 
 
 (Simple) A class should have a declaration (even a `=delete` one) for either all or none of the special functions.
 
 #### clang-tidy
+
 ### <a name="Rc-matched"></a>C.22: Make default operations consistent
 
 
@@ -1000,18 +1053,21 @@ For example, a class with a (pointer, size) pair of member and a destructor that
 * (Complex) If a destructor is modifying a member variable, that member variable should be written in any copy/move constructors or assignment operators.
 
 #### clang-tidy
+
 ### <a name="Rc-interface"></a>C.3: Represent the distinction between an interface and an implementation using a class
 
 
 ???
 
 #### clang-tidy
+
 ### <a name="Rc-dtor"></a>C.30: Define a destructor if a class needs an explicit action at object destruction
 
 
 Look for likely "implicit resources", such as pointers and references. Look for classes with destructors even though all their data members have destructors.
 
 #### clang-tidy
+
 ### <a name="Rc-dtor-release"></a>C.31: All resources acquired by a class must be released by the class's destructor
 
 
@@ -1021,12 +1077,14 @@ Look for likely "implicit resources", such as pointers and references. Look for 
 (e.g., look into the constructors).
 
 #### clang-tidy
+
 ### <a name="Rc-dtor-ptr"></a>C.32: If a class has a raw pointer (`T*`) or reference (`T&`), consider whether it might be owning
 
 
 Look at the initialization of raw member pointers and member references and see if an allocation is used.
 
 #### clang-tidy
+
 ### <a name="Rc-dtor-ptr2"></a>C.33: If a class has an owning pointer member, define a destructor
 
 
@@ -1034,6 +1092,7 @@ Look at the initialization of raw member pointers and member references and see 
 * A class with an `owner<T>` should define its default operations.
 
 #### clang-tidy
+
 ### <a name="Rc-dtor-ref"></a>C.34: If a class has an owning reference member, define a destructor
 
 
@@ -1041,24 +1100,28 @@ Look at the initialization of raw member pointers and member references and see 
 * A class with an `owner<T>` reference should define its default operations.
 
 #### clang-tidy
+
 ### <a name="Rc-dtor-virtual"></a>C.35: A base class destructor should be either public and virtual, or protected and nonvirtual
 
 
 * A class with any virtual functions should have a destructor that is either public and virtual or else protected and nonvirtual.
 
 #### clang-tidy
+
 ### <a name="Rc-dtor-fail"></a>C.36: A destructor may not fail
 
 
 (Simple) A destructor should be declared `noexcept`.
 
 #### clang-tidy
+
 ### <a name="Rc-dtor-noexcept"></a>C.37: Make destructors `noexcept`
 
 
 (Simple) A destructor should be declared `noexcept`.
 
 #### clang-tidy
+
 ### <a name="Rc-member"></a>C.4: Make a function a member only if it needs direct access to the representation of a class
 
 
@@ -1066,12 +1129,14 @@ Look for member function that do not touch data members directly.
 The snag is that many member functions that do not need to touch data members directly do.
 
 #### clang-tidy
+
 ### <a name="Rc-ctor"></a>C.40: Define a constructor if a class has an invariant
 
 
 * Flag classes with user-defined copy operations but no constructor (a user-defined copy is a good indicator that the class has an invariant)
 
 #### clang-tidy
+
 ### <a name="Rc-complete"></a>C.41: A constructor should create a fully initialized object
 
 
@@ -1079,40 +1144,47 @@ The snag is that many member functions that do not need to touch data members di
 * (Unknown) If a constructor has an `Ensures` contract, try to see if it holds as a postcondition.
 
 #### clang-tidy
+
 ### <a name="Rc-throw"></a>C.42: If a constructor cannot construct a valid object, throw an exception
 
 
 #### clang-tidy
+
 ### <a name="Rc-default0"></a>C.43: Ensure that a class has a default constructor
 
 
 * Flag classes without a default constructor
 
 #### clang-tidy
+
 ### <a name="Rc-default00"></a>C.44: Prefer default constructors to be simple and non-throwing
 
 
 * Flag throwing default constructors
 
 #### clang-tidy
+
 ### <a name="Rc-default"></a>C.45: Don't define a default constructor that only initializes data members; use in-class member initializers instead
 
 
 (Simple) A default constructor should do more than just initialize member variables with constants.
 
 #### clang-tidy
+
 ### <a name="Rc-explicit"></a>C.46: By default, declare single-argument constructors explicit
 
 
 (Simple) Single-argument constructors should be declared `explicit`. Good single argument non-`explicit` constructors are rare in most code based. Warn for all that are not on a "positive list".
 
 #### clang-tidy
+
 ### <a name="Rc-order"></a>C.47: Define and initialize member variables in the order of member declaration
 
 
 (Simple) A member initializer list should mention the members in the same order they are declared.
 
 #### clang-tidy
+
 ### <a name="Rc-in-class-initializer"></a>C.48: Prefer in-class initializers to member initializers in constructors for constant initializers
 
 
@@ -1120,36 +1192,42 @@ The snag is that many member functions that do not need to touch data members di
 * (Simple) Default arguments to constructors suggest an in-class initializer may be more appropriate.
 
 #### clang-tidy
+
 ### <a name="Rc-initialize"></a>C.49: Prefer initialization to assignment in constructors
 
 
 (Moderate) Look for similar constructor bodies.
 
 #### clang-tidy
+
 ### <a name="Rc-helper"></a>C.5: Place helper functions in the same namespace as the class they support
 
 
 * Flag global functions taking argument types from a single namespace.
 
 #### clang-tidy
+
 ### <a name="Rc-factory"></a>C.50: Use a factory function if you need "virtual behavior" during initialization
 
 
 (Moderate) Look for similar constructor bodies.
 
 #### clang-tidy
+
 ### <a name="Rc-delegating"></a>C.51: Use delegating constructors to represent common actions for all constructors of a class
 
 
 (Moderate) Look for similar constructor bodies.
 
 #### clang-tidy
+
 ### <a name="Rc-inheriting"></a>C.52: Use inheriting constructors to import constructors into a derived class that does not need further explicit initialization
 
 
 Make sure that every member of the derived class is initialized.
 
 #### clang-tidy
+
 ### <a name="Rc-copy-assignment"></a>C.60: Make copy assignment non-`virtual`, take the parameter by `const&`, and return by non-`const&`
 
 
@@ -1159,28 +1237,33 @@ Make sure that every member of the derived class is initialized.
 Look at the destructor to determine if the type has pointer semantics or value semantics.
 
 #### clang-tidy
+
 ### <a name="Rc-copy-semantic"></a>C.61: A copy operation should copy
 
 
 (Not enforceable)
 
 #### clang-tidy
+
 ### <a name="Rc-copy-self"></a>C.62: Make copy assignment safe for self-assignment
 
 
 (Simple) Assignment operators should not contain the pattern `if (this == &a) return *this;` ???
 
 #### clang-tidy
+
 ### <a name="Rc-move-assignment"></a>C.63: Make move assignment non-`virtual`, take the parameter by `&&`, and return by non-`const &`
 
 
 #### clang-tidy
+
 ### <a name="Rc-move-semantic"></a>C.64: A move operation should move and leave its source in a valid state
 
 
 (Not enforceable) Look for assignments to members in the move operation. If there is a default constructor, compare those assignments to the initializations in the default constructor.
 
 #### clang-tidy
+
 ### <a name="Rc-move-self"></a>C.65: Make move assignment safe for self-assignment
 
 
@@ -1188,48 +1271,56 @@ Look at the destructor to determine if the type has pointer semantics or value s
 * (Not enforceable) Look at the use of standard-library container types (incl. `string`) and consider them safe for ordinary (not life-critical) uses.
 
 #### clang-tidy
+
 ### <a name="Rc-move-noexcept"></a>C.66: Make move operations `noexcept`
 
 
 (Simple) A move operation should be marked `noexcept`.
 
 #### clang-tidy
+
 ### <a name="Rc-copy-virtual"></a>C.67: A base class should suppress copying, and provide a virtual `clone` instead if "copying" is desired
 
 
 A class with any virtual function should not have a copy constructor or copy assignment operator (compiler-generated or handwritten).
 
 #### clang-tidy
+
 ### <a name="Rc-standalone"></a>C.7: Don't define a class or enum and declare a variable of its type in the same statement
 
 
 * Flag if the `}` of a class or enumeration definition is not followed by a `;`. The `;` is missing.
 
 #### clang-tidy
+
 ### <a name="Rc-class"></a>C.8: Use `class` rather than `struct` if any member is non-public
 
 
 Flag classes declared with `struct` if there is a `private` or `public` member.
 
 #### clang-tidy
+
 ### <a name="Rc-eqdefault"></a>C.80: Use `=default` if you have to be explicit about using the default semantics
 
 
 (Moderate) The body of a special operation should not have the same accessibility and semantics as the compiler-generated version, because that would be redundant
 
 #### clang-tidy
+
 ### <a name="Rc-delete"></a>C.81: Use `=delete` when you want to disable default behavior (without wanting an alternative)
 
 
 The elimination of a default operation is (should be) based on the desired semantics of the class. Consider such classes suspect, but maintain a "positive list" of classes where a human has asserted that the semantics is correct.
 
 #### clang-tidy
+
 ### <a name="Rc-ctor-virtual"></a>C.82: Don't call virtual functions in constructors and destructors
 
 
 * Flag calls of virtual functions from constructors and destructors.
 
 #### clang-tidy
+
 ### <a name="Rc-swap"></a>C.83: For value-like types, consider providing a `noexcept` swap function
 
 
@@ -1237,18 +1328,21 @@ The elimination of a default operation is (should be) based on the desired seman
 * (Simple) When a class has a `swap` member function, it should be declared `noexcept`.
 
 #### clang-tidy
+
 ### <a name="Rc-swap-fail"></a>C.84: A `swap` function may not fail
 
 
 (Simple) When a class has a `swap` member function, it should be declared `noexcept`.
 
 #### clang-tidy
+
 ### <a name="Rc-swap-noexcept"></a>C.85: Make `swap` `noexcept`
 
 
 (Simple) When a class has a `swap` member function, it should be declared `noexcept`.
 
 #### clang-tidy
+
 ### <a name="Rc-eq"></a>C.86: Make `==` symmetric with respect to operand types and `noexcept`
 
 
@@ -1256,18 +1350,21 @@ The elimination of a default operation is (should be) based on the desired seman
 * Flag member `operator==()`s; same for other comparison operators: `!=`, `<`, `<=`, `>`, and `>=`.
 
 #### clang-tidy
+
 ### <a name="Rc-eq-base"></a>C.87: Beware of `==` on base classes
 
 
 * Flag a virtual `operator==()`; same for other comparison operators: `!=`, `<`, `<=`, `>`, and `>=`.
 
 #### clang-tidy
+
 ### <a name="Rc-hash"></a>C.89: Make a `hash` `noexcept`
 
 
 * Flag throwing `hash`es.
 
 #### clang-tidy
+
 ### <a name="Rc-private"></a>C.9: Minimize exposure of members
 
 
@@ -1276,22 +1373,12 @@ Flag protected data.
 #### clang-tidy
 
 
-Usage: ../../tools/extract_enforcements.bash GuidelineFile startline
-
-Provide correct number of lines. Not end with a $
-#### clang-tidy
-
 
 Usage: ../../tools/extract_enforcements.bash GuidelineFile startline
 
 Provide correct number of lines. Not end with a $
 #### clang-tidy
 
-
-Usage: ../../tools/extract_enforcements.bash GuidelineFile startline
-
-Provide correct number of lines. Not end with a $
-#### clang-tidy
 
 
 Usage: ../../tools/extract_enforcements.bash GuidelineFile startline
@@ -1300,16 +1387,33 @@ Provide correct number of lines. Not end with a $
 #### clang-tidy
 
 
+
+Usage: ../../tools/extract_enforcements.bash GuidelineFile startline
+
+Provide correct number of lines. Not end with a $
+#### clang-tidy
+
+
+
 Usage: ../../tools/extract_enforcements.bash GuidelineFile startline
 
 Provide correct number of lines. Not end with a $
 #### clang-tidy
 
 
+
 Usage: ../../tools/extract_enforcements.bash GuidelineFile startline
 
 Provide correct number of lines. Not end with a $
 #### clang-tidy
+
+
+
+Usage: ../../tools/extract_enforcements.bash GuidelineFile startline
+
+Provide correct number of lines. Not end with a $
+#### clang-tidy
+
 
 
 Usage: ../../tools/extract_enforcements.bash GuidelineFile startline
@@ -1330,12 +1434,14 @@ Provide correct number of lines. Not end with a $
 * Flag non-const variables that are not modified (except for parameters to avoid many false positives)
 
 #### clang-tidy
+
 ### <a name="Rconst-fct"></a>Con.2: By default, make member functions `const`
 
 
 * Flag a member function that is not marked `const`, but that does not perform a non-`const` operation on any member variable.
 
 #### clang-tidy
+
 ### <a name="Rconst-ref"></a>Con.3: By default, pass pointers and references to `const`s
 
 
@@ -1343,12 +1449,14 @@ Provide correct number of lines. Not end with a $
 * Flag a function that (using a cast) modifies an object passed by pointer or reference to `const`
 
 #### clang-tidy
+
 ### <a name="Rconst-const"></a>Con.4: Use `const` to define objects with values that do not change after construction
 
 
 * Flag unmodified non-`const` variables.
 
 #### clang-tidy
+
 ### <a name="Rconst-constexpr"></a>Con.5: Use `constexpr` for values that can be computed at compile time
 
 
@@ -1411,6 +1519,7 @@ Help the tools:
 * more immutable data (literals, `constexpr`, and `const`)
 
 #### clang-tidy
+
 ### <a name="Rconc-lockfree"></a>CP.100: Don't use lock-free programming unless you absolutely have to
 
 
@@ -1418,6 +1527,7 @@ Have strong rules for re-testing in place that covers any change in hardware, op
 
 
 #### clang-tidy
+
 ### <a name="Rconc-distrust"></a>CP.101: Distrust your hardware/compiler combination
 
 
@@ -1425,6 +1535,7 @@ Have strong rules for re-testing in place that covers any change in hardware, op
 
 
 #### clang-tidy
+
 ### <a name="Rconc-literature"></a>CP.102: Carefully study the literature
 
 
@@ -1432,6 +1543,7 @@ Have strong rules for re-testing in place that covers any change in hardware, op
 
 
 #### clang-tidy
+
 ### <a name="Rconc-double"></a>CP.110: Do not write your own double-checked locking for initialization
 
 
@@ -1439,6 +1551,7 @@ Have strong rules for re-testing in place that covers any change in hardware, op
 
 
 #### clang-tidy
+
 ### <a name="Rconc-double-pattern"></a>CP.111: Use a conventional pattern if you really need double-checked locking
 
 
@@ -1446,6 +1559,7 @@ Have strong rules for re-testing in place that covers any change in hardware, op
 
 
 #### clang-tidy
+
 ### <a name="Rconc-races"></a>CP.2: Avoid data races
 
 
@@ -1461,6 +1575,7 @@ Help the tools:
 * more immutable data (literals, `constexpr`, and `const`)
 
 #### clang-tidy
+
 ### <a name="Rconc-raii"></a>CP.20: Use RAII, never plain `lock()`/`unlock()`
 
 
@@ -1468,6 +1583,7 @@ Flag calls of member `lock()` and `unlock()`.  ???
 
 
 #### clang-tidy
+
 ### <a name="Rconc-volatile2"></a>CP.200: Use `volatile` only to talk to non-C++ memory
 
 
@@ -1475,6 +1591,7 @@ Flag calls of member `lock()` and `unlock()`.  ???
 * ???
 
 #### clang-tidy
+
 ### <a name="Rconc-signal"></a>CP.201: ??? Signals
 
 
@@ -1482,6 +1599,7 @@ Would need to be heuristic.
 Look for exception values "leaked" out of `catch` clauses.
 
 #### clang-tidy
+
 ### <a name="Rconc-lock"></a>CP.21: Use `std::lock()` to acquire multiple `mutex`es
 
 
@@ -1490,6 +1608,7 @@ This is undecidable in general, but catching common simple examples (like the on
 
 
 #### clang-tidy
+
 ### <a name="Rconc-unknown"></a>CP.22: Never call unknown code while holding a lock (e.g., a callback)
 
 
@@ -1498,6 +1617,7 @@ This is undecidable in general, but catching common simple examples (like the on
 
 
 #### clang-tidy
+
 ### <a name="Rconc-join"></a>CP.23: Think of a joining `thread` as a scoped container
 
 
@@ -1506,6 +1626,7 @@ After that, the usual lifetime and ownership (for local objects) enforcement app
 
 
 #### clang-tidy
+
 ### <a name="Rconc-detach"></a>CP.24: Think of a detached `thread` as a global container
 
 
@@ -1515,12 +1636,14 @@ After that, the usual lifetime and ownership (for global objects) enforcement ap
 
 
 #### clang-tidy
+
 ### <a name="Rconc-raii_thread"></a>CP.25: Prefer `gsl::raii_thread` over `std::thread` unless you plan to `detach()`
 
 
 ???
 
 #### clang-tidy
+
 ### <a name="Rconc-detached_thread"></a>CP.26: Prefer `gsl::detached_thread` over `std::thread` if you plan to `detach()`
 
 
@@ -1529,6 +1652,7 @@ After that, the usual lifetime and ownership (for global objects) enforcement ap
 
 
 #### clang-tidy
+
 ### <a name="Rconc-thread"></a>CP.27: Use plain `std::thread` for `thread`s that detach based on a run-time condition (only)
 
 
@@ -1537,6 +1661,7 @@ After that, the usual lifetime and ownership (for global objects) enforcement ap
 
 
 #### clang-tidy
+
 ### <a name="Rconc-join-undetached"></a>CP.28: Remember to join scoped `thread`s that are not `detach()`ed
 
 
@@ -1545,6 +1670,7 @@ After that, the usual lifetime and ownership (for global objects) enforcement ap
 
 
 #### clang-tidy
+
 ### <a name="Rconc-data"></a>CP.3: Minimize explicit sharing of writable data
 
 
@@ -1552,6 +1678,7 @@ After that, the usual lifetime and ownership (for global objects) enforcement ap
 
 
 #### clang-tidy
+
 ### <a name="RRconc-pass"></a>CP.30: Do not pass pointers to local variables to non-`raii_thread`s
 
 
@@ -1559,6 +1686,7 @@ Flag pointers to locals passed in the constructor of a plain `thread`.
 
 
 #### clang-tidy
+
 ### <a name="Rconc-data-by-value"></a>CP.31: Pass small amounts of data between threads by value, rather than by reference or pointer
 
 
@@ -1568,16 +1696,19 @@ Flag pointers to locals passed in the constructor of a plain `thread`.
 #### clang-tidy
 
 
+
 Usage: ../../tools/extract_enforcements.bash GuidelineFile startline
 
 Provide correct number of lines. Not end with a $
 #### clang-tidy
+
 ### <a name="Rconc-task"></a>CP.4: Think in terms of tasks, rather than threads
 
 
 ???
 
 #### clang-tidy
+
 ### <a name="Rconc-switch"></a>CP.40: Minimize context switching
 
 
@@ -1585,6 +1716,7 @@ Provide correct number of lines. Not end with a $
 
 
 #### clang-tidy
+
 ### <a name="Rconc-create"></a>CP.41: Minimize thread creation and destruction
 
 
@@ -1592,6 +1724,7 @@ Provide correct number of lines. Not end with a $
 
 
 #### clang-tidy
+
 ### <a name="Rconc-wait"></a>CP.42: Don't `wait` without a condition
 
 
@@ -1599,6 +1732,7 @@ Flag all `wait`s without conditions.
 
 
 #### clang-tidy
+
 ### <a name="Rconc-time"></a>CP.43: Minimize time spent in a critical section
 
 
@@ -1607,6 +1741,7 @@ Flag "naked" `lock()` and `unlock()`.
 
 
 #### clang-tidy
+
 ### <a name="Rconc-name"></a>CP.44: Remember to name your `lock_guard`s and `unique_lock`s
 
 
@@ -1617,16 +1752,19 @@ Flag all unnamed `lock_guard`s and `unique_lock`s.
 #### clang-tidy
 
 
+
 Usage: ../../tools/extract_enforcements.bash GuidelineFile startline
 
 Provide correct number of lines. Not end with a $
 #### clang-tidy
+
 ### <a name="Rconc-future"></a>CP.60: Use a `future` to return a value from a concurrent task
 
 
 ???
 
 #### clang-tidy
+
 ### <a name="Rconc-async"></a>CP.61: Use a `async()` to spawn a concurrent task
 
 
@@ -1634,6 +1772,7 @@ Provide correct number of lines. Not end with a $
 
 
 #### clang-tidy
+
 ### <a name="Rconc-volatile"></a>CP.8: Don't try to use `volatile` for synchronization
 
 
@@ -1643,22 +1782,12 @@ Flag calls of member `lock()` and `unlock()`.  ???
 #### clang-tidy
 
 
-Usage: ../../tools/extract_enforcements.bash GuidelineFile startline
-
-Provide correct number of lines. Not end with a $
-#### clang-tidy
-
 
 Usage: ../../tools/extract_enforcements.bash GuidelineFile startline
 
 Provide correct number of lines. Not end with a $
 #### clang-tidy
 
-
-Usage: ../../tools/extract_enforcements.bash GuidelineFile startline
-
-Provide correct number of lines. Not end with a $
-#### clang-tidy
 
 
 Usage: ../../tools/extract_enforcements.bash GuidelineFile startline
@@ -1667,10 +1796,26 @@ Provide correct number of lines. Not end with a $
 #### clang-tidy
 
 
+
 Usage: ../../tools/extract_enforcements.bash GuidelineFile startline
 
 Provide correct number of lines. Not end with a $
 #### clang-tidy
+
+
+
+Usage: ../../tools/extract_enforcements.bash GuidelineFile startline
+
+Provide correct number of lines. Not end with a $
+#### clang-tidy
+
+
+
+Usage: ../../tools/extract_enforcements.bash GuidelineFile startline
+
+Provide correct number of lines. Not end with a $
+#### clang-tidy
+
 
 
 Usage: ../../tools/extract_enforcements.bash GuidelineFile startline
@@ -1689,6 +1834,7 @@ Provide correct number of lines. Not end with a $
 Use a C++ compiler.
 
 #### clang-tidy
+
 ### <a name="Rcpl-subset"></a>CPL.2: If you must use C, use the common subset of C and C++, and compile the C code as C++
 
 
@@ -1697,6 +1843,7 @@ Use a C++ compiler.
 * The C++ compiler will enforce that the code is valid C++ unless you use C extension options.
 
 #### clang-tidy
+
 ### <a name="Rcpl-interface"></a>CPL.3: If you must use C for interfaces, use C++ in the calling code using such interfaces
 
 
@@ -1733,30 +1880,35 @@ Would need to be heuristic.
 Look for exception values "leaked" out of `catch` clauses.
 
 #### clang-tidy
+
 ### <a name="Re-noexcept"></a>E.12: Use `noexcept` when exiting a function because of a `throw` is impossible or unacceptable
 
 
 Catch `throw` and `catch` of a built-in type. Maybe warn about `throw` and `catch` using an standard-library `exception` type. Obviously, exceptions derived from the `std::exception` hierarchy is fine.
 
 #### clang-tidy
+
 ### <a name="Re-never-throw"></a>E.13: Never throw while being the direct owner of an object
 
 
 Catch `throw` and `catch` of a built-in type. Maybe warn about `throw` and `catch` using an standard-library `exception` type. Obviously, exceptions derived from the `std::exception` hierarchy is fine.
 
 #### clang-tidy
+
 ### <a name="Re-exception-types"></a>E.14: Use purpose-designed user-defined types as exceptions (not built-in types)
 
 
 Catch `throw` and `catch` of a built-in type. Maybe warn about `throw` and `catch` using an standard-library `exception` type. Obviously, exceptions derived from the `std::exception` hierarchy is fine.
 
 #### clang-tidy
+
 ### <a name="Re-exception-ref"></a>E.15: Catch exceptions from a hierarchy by reference
 
 
 Flag by-value exceptions if their types are part of a hierarchy (could require whole-program analysis to be perfect).
 
 #### clang-tidy
+
 ### <a name="Re-never-fail"></a>E.16: Destructors, deallocation, and `swap` must never fail
 
 
@@ -1764,6 +1916,7 @@ Catch destructors, deallocation operations, and `swap`s that `throw`.
 Catch such operations that are not `noexcept`.
 
 #### clang-tidy
+
 ### <a name="Re-not-always"></a>E.17: Don't try to catch every exception in every function
 
 
@@ -1771,18 +1924,21 @@ Catch such operations that are not `noexcept`.
 * Flag source code files with a too high ratio of try-blocks to functions. (??? Problem: define "too high")
 
 #### clang-tidy
+
 ### <a name="Re-catch"></a>E.18: Minimize the use of explicit `try`/`catch`
 
 
 ??? hard, needs a heuristic
 
 #### clang-tidy
+
 ### <a name="Re-finally"></a>E.19: Use a `final_action` object to express cleanup if no suitable resource handle is available
 
 
 Heuristic: Detect `goto exit;`
 
 #### clang-tidy
+
 ### <a name="Re-throw"></a>E.2: Throw an exception to signal that a function can't perform its assigned task
 
 
@@ -1790,30 +1946,35 @@ Would need to be heuristic.
 Look for exception values "leaked" out of `catch` clauses.
 
 #### clang-tidy
+
 ### <a name="Re-no-throw-raii"></a>E.25: If you can't throw exceptions, simulate RAII for resource management
 
 
 Possible (only) for specific versions of this idea: e.g., test for systematic test of `valid()` after resource handle construction
 
 #### clang-tidy
+
 ### <a name="Re-no-throw-crash"></a>E.26: If you can't throw exceptions, consider failing fast
 
 
 Awkward
 
 #### clang-tidy
+
 ### <a name="Re-no-throw-codes"></a>E.27: If you can't throw exceptions, use error codes systematically
 
 
 Awkward.
 
 #### clang-tidy
+
 ### <a name="Re-no-throw"></a>E.28: Avoid error handling based on global state (e.g. `errno`)
 
 
 Awkward.
 
 #### clang-tidy
+
 ### <a name="Re-errors"></a>E.3: Use exceptions for error handling only
 
 
@@ -1821,30 +1982,35 @@ Would need to be heuristic.
 Look for exception values "leaked" out of `catch` clauses.
 
 #### clang-tidy
+
 ### <a name="Re-design-invariants"></a>E.4: Design your error-handling strategy around invariants
 
 
 ???
 
 #### clang-tidy
+
 ### <a name="Re-invariant"></a>E.5: Let a constructor establish an invariant, and throw if it cannot
 
 
 Flag classes with `private` state without a constructor (public, protected, or private).
 
 #### clang-tidy
+
 ### <a name="Re-raii"></a>E.6: Use RAII to prevent leaks
 
 
 ???
 
 #### clang-tidy
+
 ### <a name="Re-precondition"></a>E.7: State your preconditions
 
 
 Catch `throw` and `catch` of a built-in type. Maybe warn about `throw` and `catch` using an standard-library `exception` type. Obviously, exceptions derived from the `std::exception` hierarchy is fine.
 
 #### clang-tidy
+
 ### <a name="Re-postcondition"></a>E.8: State your postconditions
 
 
@@ -1869,6 +2035,7 @@ Flag macros that define integer values.
 
 
 #### clang-tidy
+
 ### <a name="Renum-set"></a>Enum.2: Use enumerations to represent sets of related named constants
 
 
@@ -1877,12 +2044,14 @@ Flag macros that define integer values.
 
 
 #### clang-tidy
+
 ### <a name="Renum-class"></a>Enum.3: Prefer class enums over "plain" enums
 
 
 (Simple) Warn on any non-class `enum` definition.
 
 #### clang-tidy
+
 ### <a name="Renum-oper"></a>Enum.4: Define operations on enumerations for safe and simple use
 
 
@@ -1890,12 +2059,14 @@ Flag repeated expressions cast back into an enumeration.
 
 
 #### clang-tidy
+
 ### <a name="Renum-caps"></a>Enum.5: Don't use `ALL_CAPS` for enumerators
 
 
 Flag ALL_CAPS enumerators.
 
 #### clang-tidy
+
 ### <a name="Renum-unnamed"></a>Enum.6: Avoid unnamed enumerations
 
 
@@ -1903,6 +2074,7 @@ Flag unnamed enumerations.
 
 
 #### clang-tidy
+
 ### <a name="Renum-underlying"></a>Enum.7: Specify the underlying type of an enumeration only when necessary
 
 
@@ -1910,6 +2082,7 @@ Flag unnamed enumerations.
 
 
 #### clang-tidy
+
 ### <a name="Renum-value"></a>Enum.8: Specify enumerator values only when necessary
 
 
@@ -1988,18 +2161,21 @@ Flag unnamed enumerations.
 Not easy. ??? Look for messy loops, nested loops, long functions, absence of function calls, lack of use of non-built-in types. Cyclomatic complexity?
 
 #### clang-tidy
+
 ### <a name="Res-name-one"></a>ES.10: Declare one name (only) per declaration
 
 
 Flag non-function arguments with multiple declarators involving declarator operators (e.g., `int* p, q;`)
 
 #### clang-tidy
+
 ### <a name="Res-mix"></a>ES.100: Don't mix signed and unsigned arithmetic
 
 
 Compilers already know and sometimes warn.
 
 #### clang-tidy
+
 ### <a name="Res-unsigned"></a>ES.101: Use unsigned types for bit manipulation
 
 
@@ -2007,6 +2183,7 @@ Compilers already know and sometimes warn.
 * ???
 
 #### clang-tidy
+
 ### <a name="Res-signed"></a>ES.102: Use signed types for arithmetic
 
 
@@ -2015,30 +2192,35 @@ Compilers already know and sometimes warn.
 * Flag unsigned literals (e.g. `-2`) used as container subscripts.
 
 #### clang-tidy
+
 ### <a name="Res-overflow"></a>ES.103: Don't overflow
 
 
 ???
 
 #### clang-tidy
+
 ### <a name="Res-underflow"></a>ES.104: Don't underflow
 
 
 ???
 
 #### clang-tidy
+
 ### <a name="Res-zero"></a>ES.105: Don't divide by zero
 
 
 * Flag division by an integral value that could be zero
 
 #### clang-tidy
+
 ### <a name="Res-auto"></a>ES.11: Use `auto` to avoid redundant repetition of type names
 
 
 Flag redundant repetition of type names in a declaration.
 
 #### clang-tidy
+
 ### <a name="Res-reuse"></a>ES.12: Do not reuse names in nested scopes
 
 
@@ -2048,12 +2230,14 @@ Flag redundant repetition of type names in a declaration.
 * Flag reuse of a base class member name in a derived class (except for function names)
 
 #### clang-tidy
+
 ### <a name="Res-abstr"></a>ES.2: Prefer suitable abstractions to direct use of language features
 
 
 Not easy. ??? Look for messy loops, nested loops, long functions, absence of function calls, lack of use of non-built-in types. Cyclomatic complexity?
 
 #### clang-tidy
+
 ### <a name="Res-always"></a>ES.20: Always initialize an object
 
 
@@ -2063,12 +2247,14 @@ Don't flag variables of user-defined types with default constructors.
 Passing an uninitialized variable as a reference to non-`const` argument can be assumed to be a write into the variable.
 
 #### clang-tidy
+
 ### <a name="Res-introduce"></a>ES.21: Don't introduce a variable (or constant) before you need to use it
 
 
 Flag declarations that are distant from their first use.
 
 #### clang-tidy
+
 ### <a name="Res-init"></a>ES.22: Don't declare a variable until you have a value to initialize it with
 
 
@@ -2076,6 +2262,7 @@ Flag declarations that are distant from their first use.
 * Flag any complicated computation after an uninitialized variable and before its use.
 
 #### clang-tidy
+
 ### <a name="Res-list"></a>ES.23: Prefer the `{}` initializer syntax
 
 
@@ -2085,12 +2272,14 @@ Tricky.
 * Look for `=` after `auto` has been seen.
 
 #### clang-tidy
+
 ### <a name="Res-unique"></a>ES.24: Use a `unique_ptr<T>` to hold pointers
 
 
 Look for raw pointers that are targets of `new`, `malloc()`, or functions that may return such pointers.
 
 #### clang-tidy
+
 ### <a name="Res-const"></a>ES.25: Declare an object `const` or `constexpr` unless you want to modify its value later on
 
 
@@ -2099,12 +2288,14 @@ not. Unfortunately, it may be impossible to detect when a non-`const` was not
 *intended* to vary (vs when it merely did not vary).
 
 #### clang-tidy
+
 ### <a name="Res-recycle"></a>ES.26: Don't use a variable for two unrelated purposes
 
 
 Flag recycled variables.
 
 #### clang-tidy
+
 ### <a name="Res-stack"></a>ES.27: Use `std::array` or `stack_array` for arrays on the stack
 
 
@@ -2112,26 +2303,31 @@ Flag recycled variables.
 * Flag arrays with non-local constant bounds
 
 #### clang-tidy
+
 ### <a name="Res-lambda-init"></a>ES.28: Use lambdas for complex initialization, especially of `const` variables
 
 
 Hard. At best a heuristic. Look for an uninitialized variable followed by a loop assigning to it.
 
 #### clang-tidy
+
 ### <a name="Res-macros"></a>ES.30: Don't use macros for program text manipulation
 
 
 #### clang-tidy
+
 ### <a name="Res-macros2"></a>ES.31: Don't use macros for constants or "functions"
 
 
 #### clang-tidy
+
 ### <a name="Res-ALL_CAPS"></a>ES.32: Use `ALL_CAPS` for all macro names
 
 
 Scream when you see a lower case macro.
 
 #### clang-tidy
+
 ### <a name="Res-MACROS"></a>ES.33: If you must use macros, give them unique names
 
 
@@ -2140,10 +2336,12 @@ Warn against short macro names.
 #### clang-tidy
 
 
+
 Usage: ../../tools/extract_enforcements.bash GuidelineFile startline
 
 Provide correct number of lines. Not end with a $
 #### clang-tidy
+
 ### <a name="Res-complicated"></a>ES.40: Avoid complicated expressions
 
 
@@ -2158,6 +2356,7 @@ Tricky. How complicated must an expression be to be considered complicated? Writ
 * ???
 
 #### clang-tidy
+
 ### <a name="Res-parens"></a>ES.41: If in doubt about operator precedence, parenthesize
 
 
@@ -2166,30 +2365,35 @@ Tricky. How complicated must an expression be to be considered complicated? Writ
 * ???
 
 #### clang-tidy
+
 ### <a name="Res-ptr"></a>ES.42: Keep use of pointers simple and straightforward
 
 
 We need a heuristic limiting the complexity of pointer arithmetic statement.
 
 #### clang-tidy
+
 ### <a name="Res-order"></a>ES.43: Avoid expressions with undefined order of evaluation
 
 
 Can be detected by a good analyzer.
 
 #### clang-tidy
+
 ### <a name="Res-order-fct"></a>ES.44: Don't depend on order of evaluation of function arguments
 
 
 Can be detected by a good analyzer.
 
 #### clang-tidy
+
 ### <a name="Res-magic"></a>ES.45: Avoid "magic constants"; use symbolic constants
 
 
 Flag literals in code. Give a pass to `0`, `1`, `nullptr`, `n`, `""`, and others on a positive list.
 
 #### clang-tidy
+
 ### <a name="Res-narrowing"></a>ES.46: Avoid lossy (narrowing, truncating) arithmetic conversions
 
 
@@ -2200,12 +2404,14 @@ A good analyzer can detect all narrowing conversions. However, flagging all narr
 * consider narrowing conversions for function arguments especially suspect
 
 #### clang-tidy
+
 ### <a name="Res-nullptr"></a>ES.47: Use `nullptr` rather than `0` or `NULL`
 
 
 Flag uses of `0` and `NULL` for pointers. The transformation may be helped by simple program transformation.
 
 #### clang-tidy
+
 ### <a name="Res-casts"></a>ES.48: Avoid casts
 
 
@@ -2214,12 +2420,14 @@ Flag uses of `0` and `NULL` for pointers. The transformation may be helped by si
 * Warn if there are many functional style casts (there is an obvious problem in quantifying 'many').
 
 #### clang-tidy
+
 ### <a name="Res-casts-named"></a>ES.49: If you must use a cast, use a named cast
 
 
 Flag C-style and functional casts.
 
 #### clang-tidy
+
 ### <a name="Res-scope"></a>ES.5: Keep scopes small
 
 
@@ -2227,18 +2435,21 @@ Flag C-style and functional casts.
 * Flag when expensive resources, such as file handles and locks are not used for N-lines (for some suitable N)
 
 #### clang-tidy
+
 ### <a name="Res-casts-const"></a>ES.50: Don't cast away `const`
 
 
 Flag `const_cast`s.
 
 #### clang-tidy
+
 ### <a name="Res-range-checking"></a>ES.55: Avoid the need for range checking
 
 
 Look for explicit range checks and heuristically suggest alternatives.
 
 #### clang-tidy
+
 ### <a name="Res-move"></a>ES.56: Write `std::move()` only when you need to explicitly move an object to another scope
 
 
@@ -2252,6 +2463,7 @@ Look for explicit range checks and heuristically suggest alternatives.
 * Flag when an object is potentially moved from and the next operation is a `const` operation; there should first be an intervening non-`const` operation, ideally assignment, to first reset the object's value.
 
 #### clang-tidy
+
 ### <a name="Res-cond"></a>ES.6: Declare names in for-statement initializers and conditions to limit scope
 
 
@@ -2259,12 +2471,14 @@ Look for explicit range checks and heuristically suggest alternatives.
 * (hard) Flag loop variables declared before the loop and used after the loop for an unrelated purpose.
 
 #### clang-tidy
+
 ### <a name="Res-new"></a>ES.60: Avoid `new` and `delete` outside resource management functions
 
 
 Flag naked `new`s and naked `delete`s.
 
 #### clang-tidy
+
 ### <a name="Res-del"></a>ES.61: Delete arrays using `delete[]` and non-arrays using `delete`
 
 
@@ -2272,48 +2486,56 @@ Flag naked `new`s and naked `delete`s.
 * if the `new` and the `delete` are in a constructor/destructor pair, mistakes can be flagged.
 
 #### clang-tidy
+
 ### <a name="Res-arr2"></a>ES.62: Don't compare pointers into different arrays
 
 
 ???
 
 #### clang-tidy
+
 ### <a name="Res-slice"></a>ES.63: Don't slice
 
 
 Warn against slicing.
 
 #### clang-tidy
+
 ### <a name="Res-name-length"></a>ES.7: Keep common and local names short, and keep uncommon and nonlocal names longer
 
 
 Check length of local and non-local names. Also take function length into account.
 
 #### clang-tidy
+
 ### <a name="Res-switch-if"></a>ES.70: Prefer a `switch`-statement to an `if`-statement when there is a choice
 
 
 Flag `if`-`then`-`else` chains that check against constants (only).
 
 #### clang-tidy
+
 ### <a name="Res-for-range"></a>ES.71: Prefer a range-`for`-statement to a `for`-statement when there is a choice
 
 
 Look at loops, if a traditional loop just looks at each element of a sequence, and there are no side-effects on what it does with the elements, rewrite the loop to a ranged-`for` loop.
 
 #### clang-tidy
+
 ### <a name="Res-for-while"></a>ES.72: Prefer a `for`-statement to a `while`-statement when there is an obvious loop variable
 
 
 ???
 
 #### clang-tidy
+
 ### <a name="Res-while-for"></a>ES.73: Prefer a `while`-statement to a `for`-statement when there is no obvious loop variable
 
 
 ???
 
 #### clang-tidy
+
 ### <a name="Res-for-init"></a>ES.74: Prefer to declare a loop variable in the initializer part of a `for`-statement
 
 
@@ -2323,36 +2545,42 @@ Warn when a variable modified inside the `for`-statement is declared outside the
 is only accessible in the loop body unblocks optimizations such as hoisting, strength reduction, loop-invariant code motion, etc.
 
 #### clang-tidy
+
 ### <a name="Res-do"></a>ES.75: Avoid `do`-statements
 
 
 ???
 
 #### clang-tidy
+
 ### <a name="Res-goto"></a>ES.76: Avoid `goto`
 
 
 * Flag `goto`. Better still flag all `goto`s that do not jump from a nested loop to the statement immediately after a nest of loops.
 
 #### clang-tidy
+
 ### <a name="Res-continue"></a>ES.77: ??? `continue`
 
 
 ???
 
 #### clang-tidy
+
 ### <a name="Res-break"></a>ES.78: Always end a non-empty `case` with a `break`
 
 
 Flag all fallthroughs from non-empty `case`s.
 
 #### clang-tidy
+
 ### <a name="Res-default"></a>ES.79: ??? `default`
 
 
 ???
 
 #### clang-tidy
+
 ### <a name="Res-name-similar"></a>ES.8: Avoid similar-looking names
 
 
@@ -2360,18 +2588,21 @@ Flag all fallthroughs from non-empty `case`s.
 * Flag a declaration of a variable, function, or enumerator that hides a class or enumeration declared in the same scope.
 
 #### clang-tidy
+
 ### <a name="Res-empty"></a>ES.85: Make empty statements visible
 
 
 Flag empty statements that are not blocks and don't contain comments.
 
 #### clang-tidy
+
 ### <a name="Res-loop-counter"></a>ES.86: Avoid modifying loop control variables inside the body of raw for-loops
 
 
 Flag variables that are potentially updated (have a non-const use) in both the loop control iteration-expression and the loop body.
 
 #### clang-tidy
+
 ### <a name="Res-not-CAPS"></a>ES.9: Avoid `ALL_CAPS` names
 
 
@@ -2421,6 +2652,7 @@ Flag all uses of ALL CAPS. For older code, accept ALL CAPS for macro names and f
 
 
 #### clang-tidy
+
 ### <a name="Rf-conventional"></a>F.15: Prefer simple and conventional ways of passing information
 
 
@@ -2430,6 +2662,7 @@ Suggest using a reference to `const` instead.
 * (Simple) ((Foundation)) Warn when a `const` parameter being passed by reference is `move`d.
 
 #### clang-tidy
+
 ### <a name="Rf-in"></a>F.16: For "in" parameters, pass cheaply-copied types by value and others by reference to `const`
 
 
@@ -2439,6 +2672,7 @@ Suggest using a reference to `const` instead.
 * (Simple) ((Foundation)) Warn when a `const` parameter being passed by reference is `move`d.
 
 #### clang-tidy
+
 ### <a name="Rf-inout"></a>F.17: For "in-out" parameters, pass by reference to non-`const`
 
 
@@ -2446,6 +2680,7 @@ Suggest using a reference to `const` instead.
 * (Simple) ((Foundation)) Warn when a non-`const` parameter being passed by reference is `move`d.
 
 #### clang-tidy
+
 ### <a name="Rf-consume"></a>F.18: For "consume" parameters, pass by `X&&` and `std::move` the parameter
 
 
@@ -2454,12 +2689,14 @@ Suggest using a reference to `const` instead.
 * Don't conditionally move from objects
 
 #### clang-tidy
+
 ### <a name="Rf-forward"></a>F.19: For "forward" parameters, pass by `TP&&` and only `std::forward` the parameter
 
 
 * Flag a function that takes a `TP&&` parameter (where `TP` is a template type parameter name) and does anything with it other than `std::forward`ing it exactly once on every static path.
 
 #### clang-tidy
+
 ### <a name="Rf-logical"></a>F.2: A function should perform a single logical operation
 
 
@@ -2468,6 +2705,7 @@ Suggest using a reference to `const` instead.
 * Consider functions with 7 or more parameters suspicious.
 
 #### clang-tidy
+
 ### <a name="Rf-out"></a>F.20: For "out" output values, prefer return values to output parameters
 
 
@@ -2475,6 +2713,7 @@ Suggest using a reference to `const` instead.
 * Flag returning a `const` value. To fix: Remove `const` to return a non-`const` value instead.
 
 #### clang-tidy
+
 ### <a name="Rf-out-multi"></a>F.21: To return multiple "out" values, prefer returning a tuple or struct
 
 
@@ -2482,12 +2721,14 @@ Suggest using a reference to `const` instead.
 An output parameter is one that the function writes to, invokes a non-`const` member function, or passes on as a non-`const`.
 
 #### clang-tidy
+
 ### <a name="Rf-ptr"></a>F.22: Use `T*` or `owner<T*>` to designate a single object
 
 
 * (Simple) ((Bounds)) Warn for any arithmetic operation on an expression of pointer type that results in a value of pointer type.
 
 #### clang-tidy
+
 ### <a name="Rf-nullptr"></a>F.23: Use a `not_null<T>` to indicate that "null" is not a valid value
 
 
@@ -2496,30 +2737,35 @@ An output parameter is one that the function writes to, invokes a non-`const` me
 * (Simple) Warn if a `not_null` pointer is tested against `nullptr` within a function.
 
 #### clang-tidy
+
 ### <a name="Rf-range"></a>F.24: Use a `span<T>` or a `span_p<T>` to designate a half-open sequence
 
 
 (Complex) Warn where accesses to pointer parameters are bounded by other parameters that are integral types and suggest they could use `span` instead.
 
 #### clang-tidy
+
 ### <a name="Rf-string"></a>F.25: Use a `zstring` or a `not_null<zstring>` to designate a C-style string
 
 
 (Simple) Warn if a function returns a locally-allocated raw pointer. Suggest using either `unique_ptr` or `shared_ptr` instead.
 
 #### clang-tidy
+
 ### <a name="Rf-unique_ptr"></a>F.26: Use a `unique_ptr<T>` to transfer ownership where a pointer is needed
 
 
 (Simple) Warn if a function returns a locally-allocated raw pointer. Suggest using either `unique_ptr` or `shared_ptr` instead.
 
 #### clang-tidy
+
 ### <a name="Rf-shared_ptr"></a>F.27: Use a `shared_ptr<T>` to share ownership
 
 
 (Not enforceable) This is a too complex pattern to reliably detect.
 
 #### clang-tidy
+
 ### <a name="Rf-single"></a>F.3: Keep functions short and simple
 
 
@@ -2529,6 +2775,7 @@ How big is a screen? Try 60 lines by 140 characters; that's roughly the maximum 
 You could use cyclomatic complexity. Try "more than 10 logical path through." Count a simple switch as one path.
 
 #### clang-tidy
+
 ### <a name="Rf-constexpr"></a>F.4: If a function may have to be evaluated at compile time, declare it `constexpr`
 
 
@@ -2536,6 +2783,7 @@ Impossible and unnecessary.
 The compiler gives an error if a non-`constexpr` function is called where a constant is required.
 
 #### clang-tidy
+
 ### <a name="Rf-return-ptr"></a>F.42: Return a `T*` to indicate a position (only)
 
 
@@ -2545,6 +2793,7 @@ Only owners should be deleted.
 Only owners should be responsible for deletion.
 
 #### clang-tidy
+
 ### <a name="Rf-dangle"></a>F.43: Never (directly or indirectly) return a pointer or a reference to a local object
 
 
@@ -2552,18 +2801,21 @@ Only owners should be responsible for deletion.
 * Static analysis can catch many common patterns of the use of pointers indicating positions (thus eliminating dangling pointers)
 
 #### clang-tidy
+
 ### <a name="Rf-return-ref"></a>F.44: Return a `T&` when copy is undesirable and "returning no object" isn't needed
 
 
 Flag functions where no `return` expression could yield `nullptr`
 
 #### clang-tidy
+
 ### <a name="Rf-return-ref-ref"></a>F.45: Don't return a `T&&`
 
 
 Flag any use of `&&` as a return type, except in `std::move` and `std::forward`.
 
 #### clang-tidy
+
 ### <a name="Rf-main"></a>F.46: `int` is the return type for `main()`
 
 
@@ -2571,6 +2823,7 @@ Flag any use of `&&` as a return type, except in `std::move` and `std::forward`.
 * If the compiler doesn't do it, let tools flag it
 
 #### clang-tidy
+
 ### <a name="Rf-assignment-op"></a>F.47: Return `T&` from assignment operators
 
 
@@ -2578,30 +2831,35 @@ This should be enforced by tooling by checking the return type (and return
 value) of any assignment operator.
 
 #### clang-tidy
+
 ### <a name="Rf-inline"></a>F.5: If a function is very small and time-critical, declare it `inline`
 
 
 Flag `inline` functions that are more than three statements and could have been declared out of line (such as class member functions).
 
 #### clang-tidy
+
 ### <a name="Rf-capture-vs-overload"></a>F.50: Use a lambda when a function won't do (to capture local variables, or to write a local function)
 
 
 * Warn on use of a named non-generic lambda (e.g., `auto x = [](int i){ /*...*/; };`) that captures nothing and appears at global scope. Write an ordinary function instead.
 
 #### clang-tidy
+
 ### <a name="Rf-default-args"></a>F.51: Where there is a choice, prefer default arguments over overloading
 
 
 ???
 
 #### clang-tidy
+
 ### <a name="Rf-reference-capture"></a>F.52: Prefer capturing by reference in lambdas that will be used locally, including passed to algorithms
 
 
 ???
 
 #### clang-tidy
+
 ### <a name="Rf-value-capture"></a>F.53: Avoid capturing by reference in lambdas that will be used nonlocally, including returned, stored on the heap, or passed to another thread
 
 
@@ -2609,12 +2867,14 @@ Flag `inline` functions that are more than three statements and could have been 
 * (Complex) Flag when capture-list contains a reference to a locally declared variable and the lambda is passed to a non-`const` and non-local context
 
 #### clang-tidy
+
 ### <a name="Rf-this-capture"></a>F.54: If you capture `this`, capture all variables explicitly (no default capture)
 
 
 * Flag any lambda capture-list that specifies a default capture and also captures `this` (whether explicitly or via default capture)
 
 #### clang-tidy
+
 ### <a name="Rf-noexcept"></a>F.6: If your function may not throw, declare it `noexcept`
 
 
@@ -2622,12 +2882,14 @@ Flag `inline` functions that are more than three statements and could have been 
 * Flag throwing `swap`, `move`, destructors, and default constructors.
 
 #### clang-tidy
+
 ### <a name="Rf-ptr-ref"></a>F.60: Prefer `T*` over `T&` when "no argument" is a valid option
 
 
 * Flag ???
 
 #### clang-tidy
+
 ### <a name="Rf-smart"></a>F.7: For general use, take `T*` or `T&` arguments rather than smart pointers
 
 
@@ -2638,6 +2900,7 @@ that is
 * and that is never modified or passed along to another function that could do so.
 
 #### clang-tidy
+
 ### <a name="Rf-pure"></a>F.8: Prefer pure functions
 
 
@@ -2659,16 +2922,19 @@ Provide correct number of lines. Not end with a $
 #### clang-tidy
 
 
-Usage: ../../tools/extract_enforcements.bash GuidelineFile startline
-
-Provide correct number of lines. Not end with a $
-#### clang-tidy
-
 
 Usage: ../../tools/extract_enforcements.bash GuidelineFile startline
 
 Provide correct number of lines. Not end with a $
 #### clang-tidy
+
+
+
+Usage: ../../tools/extract_enforcements.bash GuidelineFile startline
+
+Provide correct number of lines. Not end with a $
+#### clang-tidy
+
 
 
 Usage: ../../tools/extract_enforcements.bash GuidelineFile startline
@@ -2703,6 +2969,7 @@ Provide correct number of lines. Not end with a $
 * (Simple) A function should not write to variables declared at namespace scope.
 
 #### clang-tidy
+
 ### <a name="Ri-except"></a>I.10: Use exceptions to signal a failure to perform a required task
 
 
@@ -2710,6 +2977,7 @@ Provide correct number of lines. Not end with a $
 * Look for `errno`.
 
 #### clang-tidy
+
 ### <a name="Ri-raw"></a>I.11: Never transfer ownership by a raw pointer (`T*`)
 
 
@@ -2718,6 +2986,7 @@ Provide correct number of lines. Not end with a $
 * (Simple) Warn if the return value of `new` or a function call with return value of pointer type is assigned to a raw pointer.
 
 #### clang-tidy
+
 ### <a name="Ri-nullptr"></a>I.12: Declare a pointer that must not be null as `not_null`
 
 
@@ -2725,6 +2994,7 @@ Provide correct number of lines. Not end with a $
 * (Complex) If a function with pointer return value ensures it is not `nullptr` on all return paths, then warn the return type should be declared `not_null`.
 
 #### clang-tidy
+
 ### <a name="Ri-array"></a>I.13: Do not pass an array as a single pointer
 
 
@@ -2734,10 +3004,12 @@ Provide correct number of lines. Not end with a $
 #### clang-tidy
 
 
+
 Usage: ../../tools/extract_enforcements.bash GuidelineFile startline
 
 Provide correct number of lines. Not end with a $
 #### clang-tidy
+
 ### <a name="Ri-global-init"></a>I.22: Avoid complex initialization of global objects
 
 
@@ -2745,6 +3017,7 @@ Provide correct number of lines. Not end with a $
 * Flag initializers of globals that access `extern` objects
 
 #### clang-tidy
+
 ### <a name="Ri-nargs"></a>I.23: Keep the number of function arguments low
 
 
@@ -2752,24 +3025,28 @@ Provide correct number of lines. Not end with a $
 * (Not enforceable) This is a philosophical guideline that is infeasible to check directly.
 
 #### clang-tidy
+
 ### <a name="Ri-unrelated"></a>I.24: Avoid adjacent unrelated parameters of the same type
 
 
 (Simple) Warn if two consecutive parameters share the same type.
 
 #### clang-tidy
+
 ### <a name="Ri-abstract"></a>I.25: Prefer abstract classes as interfaces to class hierarchies
 
 
 (Simple) Warn if a pointer to a class `C` is assigned to a pointer to a base of `C` and the base class contains data members.
 
 #### clang-tidy
+
 ### <a name="Ri-abi"></a>I.26: If you want a cross-compiler ABI, use a C-style subset
 
 
 (Not enforceable) It is difficult to reliably identify where an interface forms part of an ABI.
 
 #### clang-tidy
+
 ### <a name="Ri-singleton"></a>I.3: Avoid singletons
 
 
@@ -2780,6 +3057,7 @@ Very hard in general.
 * If a class X has a public static function that contains a function-local static of the class' type X and returns a pointer or reference to it, ban that.
 
 #### clang-tidy
+
 ### <a name="Ri-typed"></a>I.4: Make interfaces precisely and strongly typed
 
 
@@ -2787,6 +3065,7 @@ Very hard in general.
 * (Hard to do well) Look for member functions with many built-in type arguments.
 
 #### clang-tidy
+
 ### <a name="Ri-pre"></a>I.5: State preconditions (if any)
 
 
@@ -2795,12 +3074,14 @@ Very hard in general.
 **See also**: The rules for passing pointers. ???
 
 #### clang-tidy
+
 ### <a name="Ri-expects"></a>I.6: Prefer `Expects()` for expressing preconditions
 
 
 (Not enforceable) Finding the variety of ways preconditions can be asserted is not feasible. Warning about those that can be easily identified (`assert()`) has questionable value in the absence of a language facility.
 
 #### clang-tidy
+
 ### <a name="Ri-post"></a>I.7: State postconditions
 
 
@@ -2809,12 +3090,14 @@ directly in the general case. Domain specific checkers (like lock-holding
 checkers) exist for many toolchains.
 
 #### clang-tidy
+
 ### <a name="Ri-ensures"></a>I.8: Prefer `Ensures()` for expressing postconditions
 
 
 (Not enforceable) Finding the variety of ways postconditions can be asserted is not feasible. Warning about those that can be easily identified (`assert()`) has questionable value in the absence of a language facility.
 
 #### clang-tidy
+
 ### <a name="Ri-concepts"></a>I.9: If an interface is a template, document its parameters using concepts
 
 
@@ -2838,11 +3121,6 @@ Provide correct number of lines. Not end with a $
 #### clang-tidy
 
 
-Usage: ../../tools/extract_enforcements.bash GuidelineFile startline
-
-Provide correct number of lines. Not end with a $
-#### clang-tidy
-
 
 Usage: ../../tools/extract_enforcements.bash GuidelineFile startline
 
@@ -2850,16 +3128,26 @@ Provide correct number of lines. Not end with a $
 #### clang-tidy
 
 
+
+Usage: ../../tools/extract_enforcements.bash GuidelineFile startline
+
+Provide correct number of lines. Not end with a $
+#### clang-tidy
+
+
+
 Usage: ../../tools/extract_enforcements.bash GuidelineFile startline
 
 Provide correct number of lines. Not end with a $
 #### clang-tidy
 
 
+
 Usage: ../../tools/extract_enforcements.bash GuidelineFile startline
 
 Provide correct number of lines. Not end with a $
 #### clang-tidy
+
 
 
 Usage: ../../tools/extract_enforcements.bash GuidelineFile startline
@@ -2893,30 +3181,35 @@ Provide correct number of lines. Not end with a $
 Build an AI program that interprets colloquial English text and see if what is said could be better expressed in C++.
 
 #### clang-tidy
+
 ### <a name="Rl-camel"></a>NL.10: Avoid CamelCase
 
 
 Impossible.
 
 #### clang-tidy
+
 ### <a name="Rl-space"></a>NL.15: Use spaces sparingly
 
 
 Flag departures from the suggested order. There will be a lot of old code that doesn't follow this rule.
 
 #### clang-tidy
+
 ### <a name="Rl-order"></a>NL.16: Use a conventional class member declaration order
 
 
 Flag departures from the suggested order. There will be a lot of old code that doesn't follow this rule.
 
 #### clang-tidy
+
 ### <a name="Rl-knr"></a>NL.17: Use K&R-derived layout
 
 
 If you want enforcement, use an IDE to reformat.
 
 #### clang-tidy
+
 ### <a name="Rl-ptr"></a>NL.18: Use C++-style declarator layout
 
 
@@ -2924,48 +3217,56 @@ Impossible in the face of history.
 
 
 #### clang-tidy
+
 ### <a name="Rl-misread"></a>NL.19: Avoid names that are easily misread
 
 
 ???
 
 #### clang-tidy
+
 ### <a name="Rl-comments-intent"></a>NL.2: State intent in comments
 
 
 not possible.
 
 #### clang-tidy
+
 ### <a name="Rl-stmt"></a>NL.20: Don't place two statements on the same line
 
 
 Easy.
 
 #### clang-tidy
+
 ### <a name="Rl-dcl"></a>NL.21: Declare one name (only) per declaration
 
 
 Flag `const` used as a suffix for a type.
 
 #### clang-tidy
+
 ### <a name="Rl-void"></a>NL.25: Don't use `void` as an argument type
 
 
 Flag `const` used as a suffix for a type.
 
 #### clang-tidy
+
 ### <a name="Rl-const"></a>NL.26: Use conventional `const` notation
 
 
 Flag `const` used as a suffix for a type.
 
 #### clang-tidy
+
 ### <a name="Rl-comments-crisp"></a>NL.3: Keep comments crisp
 
 
 not possible.
 
 #### clang-tidy
+
 ### <a name="Rl-indent"></a>NL.4: Maintain a consistent indentation style
 
 
@@ -2974,22 +3275,26 @@ Use a tool.
 #### clang-tidy
 
 
+
 Usage: ../../tools/extract_enforcements.bash GuidelineFile startline
 
 Provide correct number of lines. Not end with a $
 #### clang-tidy
+
 ### <a name="Rl-name-length"></a>NL.7: Make the length of a name roughly proportional to the length of its scope
 
 
 ???
 
 #### clang-tidy
+
 ### <a name="Rl-name"></a>NL.8: Use a consistent naming style
 
 
 Would be possible except for the use of libraries with varying conventions.
 
 #### clang-tidy
+
 ### <a name="Rl-all-caps"></a>NL.9: Use `ALL_CAPS` for macro names only
 
 
@@ -3013,36 +3318,42 @@ Would be possible except for the use of libraries with varying conventions.
 Issue a diagnostic for any use of `reinterpret_cast`. To fix: Consider using a `variant` instead.
 
 #### clang-tidy
+
 ### <a name="Rnr-single-return"></a>NR.2: Don't: Have only a single `return`-statement in a function
 
 
 Issue a diagnostic for any use of `reinterpret_cast`. To fix: Consider using a `variant` instead.
 
 #### clang-tidy
+
 ### <a name="Rnr-no-exceptions"></a>NR.3: Don't: Don't use exceptions
 
 
 Issue a diagnostic for any use of `reinterpret_cast`. To fix: Consider using a `variant` instead.
 
 #### clang-tidy
+
 ### <a name="Rnr-lots-of-files"></a>NR.4: Don't: Place each class declaration in its own source file
 
 
 Issue a diagnostic for any use of `reinterpret_cast`. To fix: Consider using a `variant` instead.
 
 #### clang-tidy
+
 ### <a name="Rnr-two-phase-init"></a>NR.5: Don't: Don't do substantive work in a constructor; instead use two-phase initialization
 
 
 Issue a diagnostic for any use of `reinterpret_cast`. To fix: Consider using a `variant` instead.
 
 #### clang-tidy
+
 ### <a name="Rnr-goto-exit"></a>NR.6: Don't: Place all cleanup actions at the end of a function and `goto exit`
 
 
 Issue a diagnostic for any use of `reinterpret_cast`. To fix: Consider using a `variant` instead.
 
 #### clang-tidy
+
 ### <a name="Rnr-protected-data"></a>NR.7: Don't: Make all data members `protected`
 
 
@@ -3073,6 +3384,7 @@ Very hard in general.
 * detect code that mimics the standard library (hard)
 
 #### clang-tidy
+
 ### <a name="Rp-mutable"></a>P.10: Prefer immutable data to mutable data
 
 
@@ -3080,6 +3392,7 @@ Very hard in general.
 
 
 #### clang-tidy
+
 ### <a name="Rp-library"></a>P.11: Encapsulate messy constructs, rather than spreading through the code
 
 
@@ -3087,12 +3400,14 @@ Very hard in general.
 
 
 #### clang-tidy
+
 ### <a name="Rp-Cplusplus"></a>P.2: Write in ISO Standard C++
 
 
 Use an up-to-date C++ compiler (currently C++11 or C++14) with a set of options that do not accept extensions.
 
 #### clang-tidy
+
 ### <a name="Rp-what"></a>P.3: Express intent
 
 
@@ -3107,6 +3422,7 @@ Look for common patterns for which there are better alternatives
 There is a huge scope for cleverness and semi-automated program transformation.
 
 #### clang-tidy
+
 ### <a name="Rp-typesafe"></a>P.4: Ideally, a program should be statically type safe
 
 
@@ -3121,6 +3437,7 @@ For example:
 * narrowing conversions -- minimize their use and use `narrow` or `narrow_cast` (from the GSL) where they are necessary
 
 #### clang-tidy
+
 ### <a name="Rp-compile-time"></a>P.5: Prefer compile-time checking to run-time checking
 
 
@@ -3128,6 +3445,7 @@ For example:
 * Look for run-time checks for range violations.
 
 #### clang-tidy
+
 ### <a name="Rp-run-time"></a>P.6: What cannot be checked at compile time should be checkable at run time
 
 
@@ -3135,6 +3453,7 @@ For example:
 * ???
 
 #### clang-tidy
+
 ### <a name="Rp-early"></a>P.7: Catch run-time errors early
 
 
@@ -3145,12 +3464,14 @@ For example:
 * ???
 
 #### clang-tidy
+
 ### <a name="Rp-leak"></a>P.8: Don't leak any resources
 
 
 * Look at pointers: Classify them into non-owners (the default) and owners.
 Where feasible, replace owners with standard-library resource handles (as in the example above).
 #### clang-tidy
+
 ### <a name="Rp-waste"></a>P.9: Don't waste time or space
 
 
@@ -3185,6 +3506,7 @@ Tricky.
 Maybe looking for `void*` function arguments will find examples of interfaces that hinder later optimization.
 
 #### clang-tidy
+
 ### <a name="Rper-type"></a>Per.10: Rely on the static type system
 
 
@@ -3200,6 +3522,7 @@ Help the tools:
 * more immutable data (literals, `constexpr`, and `const`)
 
 #### clang-tidy
+
 ### <a name="Rper-Comp"></a>Per.11: Move computation from run time to compile time
 
 
@@ -3215,6 +3538,7 @@ Help the tools:
 * more immutable data (literals, `constexpr`, and `const`)
 
 #### clang-tidy
+
 ### <a name="Rper-alias"></a>Per.12: Eliminate redundant aliases
 
 
@@ -3230,6 +3554,7 @@ Help the tools:
 * more immutable data (literals, `constexpr`, and `const`)
 
 #### clang-tidy
+
 ### <a name="Rper-indirect"></a>Per.13: Eliminate redundant indirections
 
 
@@ -3245,6 +3570,7 @@ Help the tools:
 * more immutable data (literals, `constexpr`, and `const`)
 
 #### clang-tidy
+
 ### <a name="Rper-alloc"></a>Per.14: Minimize the number of allocations and deallocations
 
 
@@ -3260,6 +3586,7 @@ Help the tools:
 * more immutable data (literals, `constexpr`, and `const`)
 
 #### clang-tidy
+
 ### <a name="Rper-alloc0"></a>Per.15: Do not allocate on a critical branch
 
 
@@ -3275,6 +3602,7 @@ Help the tools:
 * more immutable data (literals, `constexpr`, and `const`)
 
 #### clang-tidy
+
 ### <a name="Rper-compact"></a>Per.16: Use compact data structures
 
 
@@ -3290,6 +3618,7 @@ Help the tools:
 * more immutable data (literals, `constexpr`, and `const`)
 
 #### clang-tidy
+
 ### <a name="Rper-struct"></a>Per.17: Declare the most used member of a time-critical struct first
 
 
@@ -3305,6 +3634,7 @@ Help the tools:
 * more immutable data (literals, `constexpr`, and `const`)
 
 #### clang-tidy
+
 ### <a name="Rper-space"></a>Per.18: Space is time
 
 
@@ -3320,6 +3650,7 @@ Help the tools:
 * more immutable data (literals, `constexpr`, and `const`)
 
 #### clang-tidy
+
 ### <a name="Rper-access"></a>Per.19: Access memory predictably
 
 
@@ -3335,6 +3666,7 @@ Help the tools:
 * more immutable data (literals, `constexpr`, and `const`)
 
 #### clang-tidy
+
 ### <a name="Rper-Knuth"></a>Per.2: Don't optimize prematurely
 
 
@@ -3342,6 +3674,7 @@ Tricky.
 Maybe looking for `void*` function arguments will find examples of interfaces that hinder later optimization.
 
 #### clang-tidy
+
 ### <a name="Rper-critical"></a>Per.3: Don't optimize something that's not performance critical
 
 
@@ -3349,6 +3682,7 @@ Tricky.
 Maybe looking for `void*` function arguments will find examples of interfaces that hinder later optimization.
 
 #### clang-tidy
+
 ### <a name="Rper-context"></a>Per.30: Avoid context switches on the critical path
 
 
@@ -3364,6 +3698,7 @@ Help the tools:
 * more immutable data (literals, `constexpr`, and `const`)
 
 #### clang-tidy
+
 ### <a name="Rper-simple"></a>Per.4: Don't assume that complicated code is necessarily faster than simple code
 
 
@@ -3371,6 +3706,7 @@ Tricky.
 Maybe looking for `void*` function arguments will find examples of interfaces that hinder later optimization.
 
 #### clang-tidy
+
 ### <a name="Rper-low"></a>Per.5: Don't assume that low-level code is necessarily faster than high-level code
 
 
@@ -3378,6 +3714,7 @@ Tricky.
 Maybe looking for `void*` function arguments will find examples of interfaces that hinder later optimization.
 
 #### clang-tidy
+
 ### <a name="Rper-measure"></a>Per.6: Don't make claims about performance without measurements
 
 
@@ -3385,6 +3722,7 @@ Tricky.
 Maybe looking for `void*` function arguments will find examples of interfaces that hinder later optimization.
 
 #### clang-tidy
+
 ### <a name="Rper-efficiency"></a>Per.7: Design to enable optimization
 
 
@@ -3406,10 +3744,12 @@ Provide correct number of lines. Not end with a $
 #### clang-tidy
 
 
+
 Usage: ../../tools/extract_enforcements.bash GuidelineFile startline
 
 Provide correct number of lines. Not end with a $
 #### clang-tidy
+
 
 
 Usage: ../../tools/extract_enforcements.bash GuidelineFile startline
@@ -3452,42 +3792,49 @@ This rule would generate a huge number of false positives if applied to an older
 * Flag array names passed as simple pointers
 
 #### clang-tidy
+
 ### <a name="Rr-mallocfree"></a>R.10: Avoid `malloc()` and `free()`
 
 
 Flag explicit use of `malloc` and `free`.
 
 #### clang-tidy
+
 ### <a name="Rr-newdelete"></a>R.11: Avoid calling `new` and `delete` explicitly
 
 
 (Simple) Warn on any explicit use of `new` and `delete`. Suggest using `make_unique` instead.
 
 #### clang-tidy
+
 ### <a name="Rr-immediate-alloc"></a>R.12: Immediately give the result of an explicit resource allocation to a manager object
 
 
 * Flag explicit allocations used to initialize pointers (problem: how many direct resource allocations can we recognize?)
 
 #### clang-tidy
+
 ### <a name="Rr-single-alloc"></a>R.13: Perform at most one explicit resource allocation in a single expression statement
 
 
 * Flag expressions with multiple explicit resource allocations (problem: how many direct resource allocations can we recognize?)
 
 #### clang-tidy
+
 ### <a name="Rr-ap"></a>R.14: ??? array vs. pointer parameter
 
 
 Flag `[]` parameters.
 
 #### clang-tidy
+
 ### <a name="Rr-pair"></a>R.15: Always overload matched allocation/deallocation pairs
 
 
 Flag incomplete pairs.
 
 #### clang-tidy
+
 ### <a name="Rr-use-ptr"></a>R.2: In interfaces, use raw pointers to denote individual objects (only)
 
 
@@ -3496,36 +3843,42 @@ This rule would generate a huge number of false positives if applied to an older
 * Flag array names passed as simple pointers
 
 #### clang-tidy
+
 ### <a name="Rr-owner"></a>R.20: Use `unique_ptr` or `shared_ptr` to represent ownership
 
 
 (Simple) Warn if the return value of `new` or a function call with return value of pointer type is assigned to a raw pointer.
 
 #### clang-tidy
+
 ### <a name="Rr-unique"></a>R.21: Prefer `unique_ptr` over `shared_ptr` unless you need to share ownership
 
 
 (Simple) Warn if a function uses a `Shared_ptr` with an object allocated within the function, but never returns the `Shared_ptr` or passes it to a function requiring a `Shared_ptr&`. Suggest using `unique_ptr` instead.
 
 #### clang-tidy
+
 ### <a name="Rr-make_shared"></a>R.22: Use `make_shared()` to make `shared_ptr`s
 
 
 (Simple) Warn if a `shared_ptr` is constructed from the result of `new` rather than `make_shared`.
 
 #### clang-tidy
+
 ### <a name="Rr-make_unique"></a>R.23: Use `make_unique()` to make `unique_ptr`s
 
 
 (Simple) Warn if a `unique_ptr` is constructed from the result of `new` rather than `make_unique`.
 
 #### clang-tidy
+
 ### <a name="Rr-weak_ptr"></a>R.24: Use `std::weak_ptr` to break cycles of `shared_ptr`s
 
 
 ??? probably impossible. If we could statically detect cycles, we wouldn't need `weak_ptr`
 
 #### clang-tidy
+
 ### <a name="Rr-ptr"></a>R.3: A raw pointer (a `T*`) is non-owning
 
 
@@ -3536,6 +3889,7 @@ This rule would generate a huge number of false positives if applied to an older
 Suggest considering returning it by value instead.
 
 #### clang-tidy
+
 ### <a name="Rr-smartptrparam"></a>R.30: Take smart pointers as parameters only to explicitly express lifetime semantics
 
 
@@ -3545,6 +3899,7 @@ Suggest using a `T*` or `T&` instead.
 Suggest using a `T*` or `T&` instead.
 
 #### clang-tidy
+
 ### <a name="Rr-smart"></a>R.31: If you have non-`std` smart pointers, follow the basic pattern from `std`
 
 
@@ -3553,6 +3908,7 @@ Suggest using a `T*` or `T&` instead.
 * (Simple) ((Foundation)) Warn if a function takes a `Unique_ptr<T>` parameter by rvalue reference. Suggest using pass by value instead.
 
 #### clang-tidy
+
 ### <a name="Rr-uniqueptrparam"></a>R.32: Take a `unique_ptr<widget>` parameter to express that a function assumes ownership of a `widget`
 
 
@@ -3561,6 +3917,7 @@ Suggest using a `T*` or `T&` instead.
 * (Simple) ((Foundation)) Warn if a function takes a `Unique_ptr<T>` parameter by rvalue reference. Suggest using pass by value instead.
 
 #### clang-tidy
+
 ### <a name="Rr-reseat"></a>R.33: Take a `unique_ptr<widget>&` parameter to express that a function reseats the`widget`
 
 
@@ -3569,6 +3926,7 @@ Suggest using a `T*` or `T&` instead.
 * (Simple) ((Foundation)) Warn if a function takes a `Unique_ptr<T>` parameter by rvalue reference. Suggest using pass by value instead.
 
 #### clang-tidy
+
 ### <a name="Rr-sharedptrparam-owner"></a>R.34: Take a `shared_ptr<widget>` parameter to express that a function is part owner
 
 
@@ -3577,6 +3935,7 @@ Suggest using a `T*` or `T&` instead.
 * (Simple) ((Foundation)) Warn if a function takes a `Shared_ptr<T>` by rvalue reference. Suggesting taking it by value instead.
 
 #### clang-tidy
+
 ### <a name="Rr-sharedptrparam"></a>R.35: Take a `shared_ptr<widget>&` parameter to express that a function might reseat the shared pointer
 
 
@@ -3585,6 +3944,7 @@ Suggest using a `T*` or `T&` instead.
 * (Simple) ((Foundation)) Warn if a function takes a `Shared_ptr<T>` by rvalue reference. Suggesting taking it by value instead.
 
 #### clang-tidy
+
 ### <a name="Rr-sharedptrparam-const"></a>R.36: Take a `const shared_ptr<widget>&` parameter to express that it might retain a reference count to the object ???
 
 
@@ -3593,16 +3953,19 @@ Suggest using a `T*` or `T&` instead.
 * (Simple) ((Foundation)) Warn if a function takes a `Shared_ptr<T>` by rvalue reference. Suggesting taking it by value instead.
 
 #### clang-tidy
+
 ### <a name="Rr-smartptrget"></a>R.37: Do not pass a pointer or reference obtained from an aliased smart pointer
 
 
 * (Simple) Warn if a pointer or reference obtained from a smart pointer variable (`Unique_ptr` or `Shared_ptr`) that is nonlocal, or that is local but potentially aliased, is used in a function call. If the smart pointer is a `Shared_ptr` then suggest taking a local copy of the smart pointer and obtain a pointer or reference from that instead.
 
 #### clang-tidy
+
 ### <a name="Rr-ref"></a>R.4: A raw reference (a `T&`) is non-owning
 
 
 #### clang-tidy
+
 ### <a name="Rr-scoped"></a>R.5: Don't heap-allocate unnecessarily
 
 
@@ -3610,6 +3973,7 @@ Suggest using a `T*` or `T&` instead.
 * (Simple) Warn if a local `Unique_ptr` or `Shared_ptr` is not moved, copied, reassigned or `reset` before its lifetime ends.
 
 #### clang-tidy
+
 ### <a name="Rr-global"></a>R.6: Avoid non-`const` global variables
 
 
@@ -3632,16 +3996,19 @@ Provide correct number of lines. Not end with a $
 #### clang-tidy
 
 
-Usage: ../../tools/extract_enforcements.bash GuidelineFile startline
-
-Provide correct number of lines. Not end with a $
-#### clang-tidy
-
 
 Usage: ../../tools/extract_enforcements.bash GuidelineFile startline
 
 Provide correct number of lines. Not end with a $
 #### clang-tidy
+
+
+
+Usage: ../../tools/extract_enforcements.bash GuidelineFile startline
+
+Provide correct number of lines. Not end with a $
+#### clang-tidy
+
 
 
 Usage: ../../tools/extract_enforcements.bash GuidelineFile startline
@@ -3680,64 +4047,75 @@ Provide correct number of lines. Not end with a $
 * Check that `.h` and `.cpp` (and equivalents) follow the rules below.
 
 #### clang-tidy
+
 ### <a name="Rs-inline"></a>SF.2: A `.h` file may not contain object definitions or non-inline function definitions
 
 
 Check the positive list above.
 
 #### clang-tidy
+
 ### <a name="Rs-namespace"></a>SF.20: Use `namespace`s to express logical structure
 
 
 ???
 
 #### clang-tidy
+
 ### <a name="Rs-unnamed"></a>SF.21: Don't use an unnamed (anonymous) namespace in a header
 
 
 * Flag any use of an anonymous namespace in a header file.
 
 #### clang-tidy
+
 ### <a name="Rs-unnamed2"></a>SF.22: Use an unnamed (anonymous) namespace for all internal/nonexported entities
 
 
 * ???
 
 #### clang-tidy
+
 ### <a name="Rs-declaration-header"></a>SF.3: Use `.h` files for all declarations used in multiple source files
 
 
 * Flag declarations of entities in other source files not placed in a `.h`.
 
 #### clang-tidy
+
 ### <a name="Rs-include-order"></a>SF.4: Include `.h` files before other declarations in a file
 
 
 Easy.
 
 #### clang-tidy
+
 ### <a name="Rs-consistency"></a>SF.5: A `.cpp` file must include the `.h` file(s) that defines its interface
 
 
 ???
 
 #### clang-tidy
+
 ### <a name="Rs-using"></a>SF.6: Use `using`-directives for transition, for foundation libraries (such as `std`), or within a local scope
 
 
 ???
 
 #### clang-tidy
+
 ### <a name="Rs-using-directive"></a>SF.7: Don't put a `using`-directive in a header file
 
 
 ???
 
 #### clang-tidy
+
 ### <a name="Rs-guards"></a>SF.8: Use `#include` guards for all `.h` files
 
 
 #### clang-tidy
+
 ### <a name="Rs-cycles"></a>SF.9: Avoid cyclic dependencies among source files
 
 
@@ -3766,6 +4144,7 @@ Flag all cycles.
 * Flag declaration of a C array inside a function or class that also declares an STL container (to avoid excessive noisy warnings on legacy non-STL code). To fix: At least change the C array to a `std::array`.
 
 #### clang-tidy
+
 ### <a name="Rsl-sl"></a>SL.2: Prefer the standard library to other libraries
 
 
@@ -3774,22 +4153,12 @@ Flag all cycles.
 #### clang-tidy
 
 
-Usage: ../../tools/extract_enforcements.bash GuidelineFile startline
-
-Provide correct number of lines. Not end with a $
-#### clang-tidy
-
 
 Usage: ../../tools/extract_enforcements.bash GuidelineFile startline
 
 Provide correct number of lines. Not end with a $
 #### clang-tidy
 
-
-Usage: ../../tools/extract_enforcements.bash GuidelineFile startline
-
-Provide correct number of lines. Not end with a $
-#### clang-tidy
 
 
 Usage: ../../tools/extract_enforcements.bash GuidelineFile startline
@@ -3798,10 +4167,26 @@ Provide correct number of lines. Not end with a $
 #### clang-tidy
 
 
+
 Usage: ../../tools/extract_enforcements.bash GuidelineFile startline
 
 Provide correct number of lines. Not end with a $
 #### clang-tidy
+
+
+
+Usage: ../../tools/extract_enforcements.bash GuidelineFile startline
+
+Provide correct number of lines. Not end with a $
+#### clang-tidy
+
+
+
+Usage: ../../tools/extract_enforcements.bash GuidelineFile startline
+
+Provide correct number of lines. Not end with a $
+#### clang-tidy
+
 
 
 Usage: ../../tools/extract_enforcements.bash GuidelineFile startline
@@ -3889,36 +4274,42 @@ Provide correct number of lines. Not end with a $
 * Do not flag the definition of the "overly simple" concepts themselves; they may simply be building blocks for more useful concepts.
 
 #### clang-tidy
+
 ### <a name="Rt-concepts"></a>T.10: Specify concepts for all template arguments
 
 
 Flag template type arguments without concepts
 
 #### clang-tidy
+
 ### <a name="Rt-variadic"></a>T.100: Use variadic templates when you need a function that takes a variable number of arguments of a variety of types
 
 
 * Flag uses of `va_arg` in user code.
 
 #### clang-tidy
+
 ### <a name="Rt-variadic-pass"></a>T.101: ??? How to pass arguments to a variadic template ???
 
 
 ???
 
 #### clang-tidy
+
 ### <a name="Rt-variadic-process"></a>T.102: How to process arguments to a variadic template
 
 
 ???
 
 #### clang-tidy
+
 ### <a name="Rt-variadic-not"></a>T.103: Don't use variadic templates for homogeneous argument lists
 
 
 ???
 
 #### clang-tidy
+
 ### <a name="Rt-std-concepts"></a>T.11: Whenever possible use standard concepts
 
 
@@ -3928,48 +4319,56 @@ Hard.
 * Develop a concept-discovery tool (e.g., see [an early experiment](http://www.stroustrup.com/sle2010_webversion.pdf)).
 
 #### clang-tidy
+
 ### <a name="Rt-auto"></a>T.12: Prefer concept names over `auto` for local variables
 
 
 * ???
 
 #### clang-tidy
+
 ### <a name="Rt-metameta"></a>T.120: Use template metaprogramming only when you really need to
 
 
 ???
 
 #### clang-tidy
+
 ### <a name="Rt-emulate"></a>T.121: Use template metaprogramming primarily to emulate concepts
 
 
 ???
 
 #### clang-tidy
+
 ### <a name="Rt-tmp"></a>T.122: Use templates (usually template aliases) to compute types at compile time
 
 
 ???
 
 #### clang-tidy
+
 ### <a name="Rt-fct"></a>T.123: Use `constexpr` functions to compute values at compile time
 
 
 * Flag template metaprograms yielding a value. These should be replaced with `constexpr` functions.
 
 #### clang-tidy
+
 ### <a name="Rt-std-tmp"></a>T.124: Prefer to use standard-library TMP facilities
 
 
 ???
 
 #### clang-tidy
+
 ### <a name="Rt-lib"></a>T.125: If you need to go beyond the standard-library TMP facilities, use an existing library
 
 
 ???
 
 #### clang-tidy
+
 ### <a name="Rt-shorthand"></a>T.13: Prefer the shorthand notation for simple, single-type argument concepts
 
 
@@ -3977,6 +4376,7 @@ Hard.
 * Later, flag declarations that first introduces a typename and then constrains it with a simple, single-type-argument concept.
 
 #### clang-tidy
+
 ### <a name="Rt-name"></a>T.140: Name all operations with potential for reuse
 
 
@@ -3984,6 +4384,7 @@ Hard.
 * ???
 
 #### clang-tidy
+
 ### <a name="Rt-lambda"></a>T.141: Use an unnamed lambda if you need a simple function object in one place only
 
 
@@ -3992,10 +4393,12 @@ Hard.
 #### clang-tidy
 
 
+
 Usage: ../../tools/extract_enforcements.bash GuidelineFile startline
 
 Provide correct number of lines. Not end with a $
 #### clang-tidy
+
 ### <a name="Rt-nongeneric"></a>T.143: Don't write unintentionally nongeneric code
 
 
@@ -4004,6 +4407,7 @@ Provide correct number of lines. Not end with a $
 * Flag functions that take a pointer or reference to a more-derived type but only use functions declared in a base type.
 
 #### clang-tidy
+
 ### <a name="Rt-specialize-function"></a>T.144: Don't specialize function templates
 
 
@@ -4011,18 +4415,21 @@ Provide correct number of lines. Not end with a $
 
 
 #### clang-tidy
+
 ### <a name="Rt-check-class"></a>T.150: Check that a class matches a concept using `static_assert`
 
 
 Not feasible.
 
 #### clang-tidy
+
 ### <a name="Rt-algo"></a>T.2: Use templates to express algorithms that apply to many argument types
 
 
 ??? tough, probably needs a human
 
 #### clang-tidy
+
 ### <a name="Rt-low"></a>T.20: Avoid "concepts" without meaningful semantics
 
 
@@ -4031,6 +4438,7 @@ Not feasible.
 
 
 #### clang-tidy
+
 ### <a name="ations"></a>T.21: Require a complete set of operations for a concept
 
 
@@ -4039,17 +4447,20 @@ Yes, `std::string` is "odd", but it's too late to change that.
 
 
 #### clang-tidy
+
 ### <a name="Rt-axiom"></a>T.22: Specify axioms for concepts
 
 
 * Look for the word "axiom" in concept definition comments
 
 #### clang-tidy
+
 ### <a name="Rt-refine"></a>T.23: Differentiate a refined concept from its more general case by adding new use patterns.
 
 
 * Flag a concept that has exactly the same requirements as another already-seen concept (neither is more refined).
 #### clang-tidy
+
 ### <a name="Rt-tag"></a>T.24: Use tag classes or traits to differentiate concepts that differ only in semantics.
 
 
@@ -4057,18 +4468,21 @@ Yes, `std::string` is "odd", but it's too late to change that.
 * Flag the definition of identical concepts.
 
 #### clang-tidy
+
 ### <a name="Rt-not"></a>T.25: Avoid complementary constraints
 
 
 * Flag pairs of functions with `C<T>` and `!C<T>` constraints
 
 #### clang-tidy
+
 ### <a name="Rt-use"></a>T.26: Prefer to define concepts in terms of use-patterns rather than simple syntax
 
 
 ???
 
 #### clang-tidy
+
 ### <a name="Rt-cont"></a>T.3: Use templates to express containers and ranges
 
 
@@ -4077,22 +4491,26 @@ Yes, `std::string` is "odd", but it's too late to change that.
 #### clang-tidy
 
 
-Usage: ../../tools/extract_enforcements.bash GuidelineFile startline
-
-Provide correct number of lines. Not end with a $
-#### clang-tidy
-
 
 Usage: ../../tools/extract_enforcements.bash GuidelineFile startline
 
 Provide correct number of lines. Not end with a $
 #### clang-tidy
+
+
+
+Usage: ../../tools/extract_enforcements.bash GuidelineFile startline
+
+Provide correct number of lines. Not end with a $
+#### clang-tidy
+
 ### <a name="Rt-expr"></a>T.4: Use templates to express syntax tree manipulation
 
 
 See the reference to more specific rules.
 
 #### clang-tidy
+
 ### <a name="Rt-fo"></a>T.40: Use function objects to pass operations to algorithms
 
 
@@ -4101,12 +4519,14 @@ See the reference to more specific rules.
 
 
 #### clang-tidy
+
 ### <a name="Rt-essential"></a>T.41: Require only essential properties in a template's concepts
 
 
 ???
 
 #### clang-tidy
+
 ### <a name="Rt-alias"></a>T.42: Use template aliases to simplify notation and hide implementation details
 
 
@@ -4114,24 +4534,28 @@ See the reference to more specific rules.
 * ???
 
 #### clang-tidy
+
 ### <a name="Rt-using"></a>T.43: Prefer `using` over `typedef` for defining aliases
 
 
 * Flag uses of `typedef`. This will give a lot of "hits" :-(
 
 #### clang-tidy
+
 ### <a name="Rt-deduce"></a>T.44: Use function templates to deduce class template argument types (where feasible)
 
 
 Flag uses where an explicitly specialized type exactly matches the types of the arguments used.
 
 #### clang-tidy
+
 ### <a name="Rt-regular"></a>T.46: Require template arguments to be at least `Regular` or `SemiRegular`
 
 
 * Flag types that are not at least `SemiRegular`.
 
 #### clang-tidy
+
 ### <a name="Rt-visible"></a>T.47: Avoid highly visible unconstrained templates with common names
 
 
@@ -4139,12 +4563,14 @@ Flag templates defined in a namespace where concrete types are also defined (may
 
 
 #### clang-tidy
+
 ### <a name="Rt-concept-def"></a>T.48: If your compiler does not support concepts, fake them with `enable_if`
 
 
 ???
 
 #### clang-tidy
+
 ### <a name="Rt-erasure"></a>T.49: Where possible, avoid type-erasure
 
 
@@ -4152,18 +4578,21 @@ Flag templates defined in a namespace where concrete types are also defined (may
 
 
 #### clang-tidy
+
 ### <a name="Rt-generic-oo"></a>T.5: Combine generic and OO techniques to amplify their strengths, not their costs
 
 
 See the reference to more specific rules.
 
 #### clang-tidy
+
 ### <a name="Rt-depend"></a>T.60: Minimize a template's context dependencies
 
 
 ??? Tricky
 
 #### clang-tidy
+
 ### <a name="Rt-scary"></a>T.61: Do not over-parameterize members (SCARY)
 
 
@@ -4171,18 +4600,21 @@ See the reference to more specific rules.
 * Flag member functions that do not depend on every template argument
 
 #### clang-tidy
+
 ### <a name="Rt-nondependent"></a>T.62: Place non-dependent class template members in a non-templated base class
 
 
 * Flag ???
 
 #### clang-tidy
+
 ### <a name="Rt-specialization"></a>T.64: Use specialization to provide alternative implementations of class templates
 
 
 ???
 
 #### clang-tidy
+
 ### <a name="Rt-tag-dispatch"></a>T.65: Use tag dispatch to provide alternative implementations of a function
 
 
@@ -4190,12 +4622,14 @@ See the reference to more specific rules.
 
 
 #### clang-tidy
+
 ### <a name="Rt-specialization2"></a>T.67: Use specialization to provide alternative implementations for irregular types
 
 
 ???
 
 #### clang-tidy
+
 ### <a name="Rt-cast"></a>T.68: Use `{}` rather than `()` within templates to avoid ambiguities
 
 
@@ -4204,6 +4638,7 @@ See the reference to more specific rules.
 
 
 #### clang-tidy
+
 ### <a name="Rt-customization"></a>T.69: Inside a template, don't make an unqualified nonmember function call unless you intend it to be a customization point
 
 
@@ -4211,30 +4646,35 @@ See the reference to more specific rules.
 
 
 #### clang-tidy
+
 ### <a name="Rt-hier"></a>T.80: Do not naively templatize a class hierarchy
 
 
 * Flag virtual functions that depend on a template argument. ??? False positives
 
 #### clang-tidy
+
 ### <a name="Rt-array"></a>T.81: Do not mix hierarchies and arrays
 
 
 * Detect this horror!
 
 #### clang-tidy
+
 ### <a name="Rt-linear"></a>T.82: Linearize a hierarchy when virtual functions are undesirable
 
 
 ???
 
 #### clang-tidy
+
 ### <a name="Rt-virtual"></a>T.83: Do not declare a member function template virtual
 
 
 The compiler handles that.
 
 #### clang-tidy
+
 ### <a name="Rt-abi"></a>T.84: Use a non-template core implementation to provide an ABI-stable interface
 
 
@@ -4256,18 +4696,21 @@ The compiler handles that.
 Issue a diagnostic for any use of `reinterpret_cast`. To fix: Consider using a `variant` instead.
 
 #### clang-tidy
+
 ### <a name="Pro-type-downcast"></a>Type.2: Don't use `static_cast` downcasts. Use `dynamic_cast` instead.
 
 
 Issue a diagnostic for any use of `static_cast` to downcast, meaning to cast from a pointer or reference to `X` to a pointer or reference to a type that is not `X` or an accessible base of `X`. To fix: If this is a downcast or cross-cast then use a `dynamic_cast` instead, otherwise consider using a `variant` instead.
 
 #### clang-tidy
+
 ### <a name="Pro-type-constcast"></a>Type.3: Don't use `const_cast` to cast away `const` (i.e., at all).
 
 
 Issue a diagnostic for any use of `const_cast`. To fix: Either don't use the variable in a non-`const` way, or don't make it `const`.
 
 #### clang-tidy
+
 ### <a name="Pro-type-cstylecast"></a>Type.4: Don't use C-style `(T)expression` casts that would perform a `static_cast` downcast, `const_cast`, or `reinterpret_cast`.
 
 
@@ -4276,6 +4719,7 @@ Issue a diagnostic for any use of a C-style `(T)expression` cast that would invo
 #### clang-tidy
 * only warning
 [cppcoreguidelines-pro-type-cstyle-cast](http://clang.llvm.org/extra/clang-tidy/checks/cppcoreguidelines-pro-type-cstyle-cast.html)
+
 ### <a name="Pro-type-init"></a>Type.5: Don't use a variable before it has been initialized.
 
 
@@ -4283,6 +4727,7 @@ Issue a diagnostic for any use of a C-style `(T)expression` cast that would invo
 * Issue a diagnostic when constructing an object of a trivially constructible type without `()` or `{}` to initialize its members. To fix: Add `()` or `{}`.
 
 #### clang-tidy
+
 ### <a name="Pro-type-memberinit"></a>Type.6: Always initialize a member variable.
 
 
