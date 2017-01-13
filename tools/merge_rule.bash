@@ -32,8 +32,9 @@ do
 
         echo "#### clang-tidy" >> "../$outfile"
         cat "../../clang-tidy/$topic/$rule" >> "../$outfile"
+
+        echo >> "../$outfile"
     done
-    echo >> "../$outfile"
 
     cd ..
 done
