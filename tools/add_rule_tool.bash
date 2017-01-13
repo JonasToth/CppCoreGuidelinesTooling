@@ -17,7 +17,7 @@ do
     while read rule
     do
         # check for line number
-        if [[ $(wc -l "$rule" | sed -ne 's/\(.*\) .*/\1/pg') -gt 2 ]]; then
+        if [[ $(wc -l "$rule" | sed -ne 's/\(.*\) .*/\1/pg') -gt 3 ]]; then
             touch "../../clang-tidy/$topic/$rule"
 
             echo "clang-tidy $rule"

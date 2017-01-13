@@ -3,3 +3,25 @@
 # merge a rule enforcement with the tool comment
 # e.g. write how clang implements the enforcement in another file, merging these two
 # files
+
+outfile="../complete.md"
+topic_script=$(echo $0 | sed -e 's/merge_rule/extract_topics/g')
+
+eval "$topic_script CppCoreGuidelines.md" |
+while read topic
+do
+    echo "# $topic" >> $outfile
+    "$topic/links.md" >> $outfile
+    cd "$topic"
+
+    eval "ls -1 | sed -e '/links.md/d'" |
+    while read rule
+    do
+        cat "$rule" >> "../$outfile"
+
+        echo "#### clang-tidy" >> "../$outfile"
+        cat "../../clang-tidy/$topic/$rule" >> "../$outfile"
+    done
+
+    cd ..
+done
