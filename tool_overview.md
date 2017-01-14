@@ -445,18 +445,6 @@ This tool is part of the clang Toolchain, for reference see
   * [R.37: Do not pass a pointer or reference obtained from an aliased smart pointer](#Rr-smartptrget)
 
 
-# RF
-* [RF.rules: Coding rules](#SS-rules)
-* [RF.books: Books with coding guidelines](#SS-books)
-* [RF.C++: C++ Programming (C++11/C++14)](#SS-Cplusplus)
-* [RF.web: Websites](#SS-web)
-* [RF.man: Manuals](#SS-man)
-
-
-# RS
-* [RS.video: Videos about "modern C++"](#SS-vid)
-
-
 # SF
 * [SF.1: Use a `.cpp` suffix for code files and `.h` for interface files if your project doesn't already follow another convention](#Rs-file-suffix)
 * [SF.2: A `.h` file may not contain object definitions or non-inline function definitions](#Rs-inline)
@@ -1652,6 +1640,9 @@ Heuristic: Detect `goto exit;`
 Would need to be heuristic.
 Look for exception values "leaked" out of `catch` clauses.
 
+#### clang-tidy
+* some compilers warn for switch on enums, where not all cases are handled. Compile with all warnings
+
 ### <a name="Re-no-throw-raii"></a>E.25: If you can't throw exceptions, simulate RAII for resource management
 
 
@@ -1677,6 +1668,9 @@ Awkward.
 
 Would need to be heuristic.
 Look for exception values "leaked" out of `catch` clauses.
+
+#### clang-tidy
+* [misc-suspicious-enum-usage](http://clang.llvm.org/extra/clang-tidy/checks/misc-suspicious-enum-usage.html)
 
 ### <a name="Re-design-invariants"></a>E.4: Design your error-handling strategy around invariants
 
@@ -3205,6 +3199,10 @@ Flag incomplete pairs.
 This rule would generate a huge number of false positives if applied to an older code base.
 * Flag array names passed as simple pointers
 
+#### clang-tidy
+* [cppcoreguidelines-pro-bounds-pointer-arithmetic](http://clang.llvm.org/extra/clang-tidy/checks/cppcoreguidelines-pro-bounds-pointer-arithmetic.html)
+* [cppcoreguidelines-pro-bounds-array-to-pointer-decay](http://clang.llvm.org/extra/clang-tidy/checks/cppcoreguidelines-pro-bounds-array-to-pointer-decay.html)
+
 ### <a name="Rr-owner"></a>R.20: Use `unique_ptr` or `shared_ptr` to represent ownership
 
 
@@ -3308,41 +3306,6 @@ Suggest using a `T*` or `T&` instead.
 
 (??? NM: Obviously we can warn about non-`const` statics ... do we want to?)
 
-## RF
-* [RF.rules: Coding rules](#SS-rules)
-* [RF.books: Books with coding guidelines](#SS-books)
-* [RF.C++: C++ Programming (C++11/C++14)](#SS-Cplusplus)
-* [RF.web: Websites](#SS-web)
-* [RF.man: Manuals](#SS-man)
-
-
-
-Usage: ../../tools/extract_enforcements.bash GuidelineFile startline
-
-Provide correct number of lines. Not end with a $
-
-
-Usage: ../../tools/extract_enforcements.bash GuidelineFile startline
-
-Provide correct number of lines. Not end with a $
-
-
-Usage: ../../tools/extract_enforcements.bash GuidelineFile startline
-
-Provide correct number of lines. Not end with a $
-
-
-Usage: ../../tools/extract_enforcements.bash GuidelineFile startline
-
-Provide correct number of lines. Not end with a $
-## RS
-* [RS.video: Videos about "modern C++"](#SS-vid)
-
-
-
-Usage: ../../tools/extract_enforcements.bash GuidelineFile startline
-
-Provide correct number of lines. Not end with a $
 ## SF
 * [SF.1: Use a `.cpp` suffix for code files and `.h` for interface files if your project doesn't already follow another convention](#Rs-file-suffix)
 * [SF.2: A `.h` file may not contain object definitions or non-inline function definitions](#Rs-inline)
