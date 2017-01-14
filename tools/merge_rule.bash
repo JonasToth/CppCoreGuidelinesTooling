@@ -13,6 +13,7 @@ eval "$topic_script CppCoreGuidelines.md" |
 while read topic
 do
     echo >> $outfile
+    echo "# $topic" >> $outfile
     cat "$topic/links.md" >> $outfile
 done
 
@@ -20,7 +21,7 @@ done
 eval "$topic_script CppCoreGuidelines.md" |
 while read topic
 do
-    echo "# $topic" >> $outfile
+    echo "### $topic" >> $outfile
     cat "$topic/links.md" >> $outfile
 
     cd "$topic"
@@ -28,12 +29,13 @@ do
     eval "ls -1 | sed -e '/links.md/d'" |
     while read rule
     do
+        cat "$rule" >> "../$outfile"
+
+        # make a section for each tool we track
         if [[ $(wc -l ../../clang-tidy/$topic/$rule | awk '{ print $1 }') -eq 0 ]]
         then
             continue
         else
-            cat "$rule" >> "../$outfile"
-
             echo "#### clang-tidy" >> "../$outfile"
             cat "../../clang-tidy/$topic/$rule" >> "../$outfile"
 
