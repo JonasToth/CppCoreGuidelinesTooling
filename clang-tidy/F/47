@@ -1,0 +1,2 @@
+* [cppcoreguidelines-special-member-functions](http://clang.llvm.org/extra/clang-tidy/checks/cppcoreguidelines-special-member-functions.html)
+* [misc-unconventional-assign-operator](http://clang.llvm.org/extra/clang-tidy/checks/misc-unconventional-assign-operator.html)
