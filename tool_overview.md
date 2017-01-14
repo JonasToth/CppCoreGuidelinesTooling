@@ -2762,6 +2762,9 @@ Very hard in general.
 * flag uses of casts (casts neuter the type system)
 * detect code that mimics the standard library (hard)
 
+#### clang-tidy
+* [readability-non-const-parameter](http://clang.llvm.org/extra/clang-tidy/checks/readability-non-const-parameter.html) for const-ness
+
 ### <a name="Rp-mutable"></a>P.10: Prefer immutable data to mutable data
 
 
@@ -2779,6 +2782,9 @@ Very hard in general.
 
 Use an up-to-date C++ compiler (currently C++11 or C++14) with a set of options that do not accept extensions.
 
+#### clang-tidy
+* check your compiler options, usually its `--std=c++14` or `--std=c++11`
+
 ### <a name="Rp-what"></a>P.3: Express intent
 
 
@@ -2792,6 +2798,11 @@ Look for common patterns for which there are better alternatives
 
 There is a huge scope for cleverness and semi-automated program transformation.
 
+#### clang-tidy
+* [modernize-loop-convert](http://clang.llvm.org/extra/clang-tidy/checks/modernize-loop-convert.html)
+* [modernize-make-unique](http://clang.llvm.org/extra/clang-tidy/checks/modernize-make-unique.html)
+* [modernize-make-shared](http://clang.llvm.org/extra/clang-tidy/checks/modernize-make-shared.html)
+
 ### <a name="Rp-typesafe"></a>P.4: Ideally, a program should be statically type safe
 
 
@@ -2804,6 +2815,12 @@ For example:
 * array decay -- use `span` (from the GSL)
 * range errors -- use `span`
 * narrowing conversions -- minimize their use and use `narrow` or `narrow_cast` (from the GSL) where they are necessary
+
+#### clang-tidy
+* [cppcoreguidelines-pro-type-union-access](http://clang.llvm.org/extra/clang-tidy/checks/cppcoreguidelines-pro-type-union-access.html)
+* [cppcoreguidelines-pro-type-const-cast](http://clang.llvm.org/extra/clang-tidy/checks/cppcoreguidelines-pro-type-const-cast.html)
+* [cppcoreguidelines-pro-type-reinterpret-cast](http://clang.llvm.org/extra/clang-tidy/checks/cppcoreguidelines-pro-type-reinterpret-cast.html)
+* [cppcoreguidelines-pro-type-static-cast-downcast](http://clang.llvm.org/extra/clang-tidy/checks/cppcoreguidelines-pro-type-static-cast-downcast.html)
 
 ### <a name="Rp-compile-time"></a>P.5: Prefer compile-time checking to run-time checking
 
@@ -2831,6 +2848,9 @@ For example:
 
 * Look at pointers: Classify them into non-owners (the default) and owners.
 Where feasible, replace owners with standard-library resource handles (as in the example above).
+#### clang-tidy
+* [cppcoreguidelines-no-malloc](http://clang.llvm.org/extra/clang-tidy/checks/cppcoreguidelines-no-malloc.html)
+
 ### <a name="Rp-waste"></a>P.9: Don't waste time or space
 
 
