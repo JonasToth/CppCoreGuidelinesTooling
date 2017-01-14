@@ -6,6 +6,7 @@
 #
 # call from guideline directory
 
+../tools/get_guidelines.bash
 
 ../tools/create_topic_directories.bash 
 ../tools/create_topic_summaries.bash 
