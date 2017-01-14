@@ -1,0 +1,1 @@
+* some compilers warn for switch on enums, where not all cases are handled. Compile with all warnings
