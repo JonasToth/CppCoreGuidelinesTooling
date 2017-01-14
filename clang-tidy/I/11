@@ -1,0 +1,2 @@
+* [modernize-make-shared](http://clang.llvm.org/extra/clang-tidy/checks/modernize-make-shared.html)
+* [modernize-make-unique](http://clang.llvm.org/extra/clang-tidy/checks/modernize-make-unique.html)
