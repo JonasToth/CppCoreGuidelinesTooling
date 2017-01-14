@@ -21,7 +21,7 @@ done
 eval "$topic_script CppCoreGuidelines.md" |
 while read topic
 do
-    echo "### $topic" >> $outfile
+    echo "## $topic" >> $outfile
     cat "$topic/links.md" >> $outfile
 
     cd "$topic"
