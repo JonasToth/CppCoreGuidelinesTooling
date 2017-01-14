@@ -7,7 +7,7 @@
 outfile="../tool_overview.md"
 topic_script=$(echo $0 | sed -e 's/merge_rule/extract_topics/g')
 
-echo > $outfile
+cat ../clang-tidy/preface.md > $outfile
 
 eval "$topic_script CppCoreGuidelines.md" |
 while read topic
