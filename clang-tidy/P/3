@@ -1,0 +1,3 @@
+* [modernize-loop-convert](http://clang.llvm.org/extra/clang-tidy/checks/modernize-loop-convert.html)
+* [modernize-make-unique](http://clang.llvm.org/extra/clang-tidy/checks/modernize-make-unique.html)
+* [modernize-make-shared](http://clang.llvm.org/extra/clang-tidy/checks/modernize-make-shared.html)
