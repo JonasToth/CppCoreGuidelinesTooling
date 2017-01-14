@@ -570,7 +570,7 @@ This tool is part of the clang Toolchain, for reference see
 * [Type.5: Don't use a variable before it has been initialized](#Pro-type-init)
 * [Type.6: Always initialize a member variable](#Pro-type-memberinit)
 
-### C
+## C
 * [C.concrete: Concrete types](#SS-concrete)
 * [C.hier: Class hierarchies](#SS-hier)
 * [C.over: Overloading and overloaded operators](#SS-overload)
@@ -1238,7 +1238,7 @@ Provide correct number of lines. Not end with a $
 Usage: ../../tools/extract_enforcements.bash GuidelineFile startline
 
 Provide correct number of lines. Not end with a $
-### Con
+## Con
 * [Con.1: By default, make objects immutable](#Rconst-immutable)
 * [Con.2: By default, make member functions `const`](#Rconst-fct)
 * [Con.3: By default, pass pointers and references to `const`s](#Rconst-ref)
@@ -1271,7 +1271,7 @@ Provide correct number of lines. Not end with a $
 
 * Flag `const` definitions with constant expression initializers.
 
-### CP
+## CP
 * [CP.1: Assume that your code will run as part of a multi-threaded program](#Rconc-multi)
 * [CP.2: Avoid data races](#Rconc-races)
 * [CP.3: Minimize explicit sharing of writable data](#Rconc-data)
@@ -1554,7 +1554,7 @@ Provide correct number of lines. Not end with a $
 Usage: ../../tools/extract_enforcements.bash GuidelineFile startline
 
 Provide correct number of lines. Not end with a $
-### CPL
+## CPL
 * [CPL.1: Prefer C++ to C](#Rcpl-C)
 * [CPL.2: If you must use C, use the common subset of C and C++, and compile the C code as C++](#Rcpl-subset)
 * [CPL.3: If you must use C for interfaces, use C++ in the code using such interfaces](#Rcpl-interface)
@@ -1576,7 +1576,7 @@ Use a C++ compiler.
 
 None needed
 
-### E
+## E
 * [E.1: Develop an error-handling strategy early in a design](#Re-design)
 * [E.2: Throw an exception to signal that a function can't perform its assigned task](#Re-throw)
 * [E.3: Use exceptions for error handling only](#Re-errors)
@@ -1703,7 +1703,7 @@ Catch `throw` and `catch` of a built-in type. Maybe warn about `throw` and `catc
 
 Catch `throw` and `catch` of a built-in type. Maybe warn about `throw` and `catch` using an standard-library `exception` type. Obviously, exceptions derived from the `std::exception` hierarchy is fine.
 
-### Enum
+## Enum
 * [Enum.1: Prefer enumerations over macros](#Renum-macro)
 * [Enum.2: Use enumerations to represent sets of related named constants](#Renum-set)
 * [Enum.3: Prefer `enum class`es over "plain" `enum`s](#Renum-class)
@@ -1761,7 +1761,7 @@ Flag unnamed enumerations.
 * Flag explicitly specified all-consecutive enumerator values
 
 
-### ES
+## ES
 * [ES.28: Use lambdas for complex initialization, especially of `const` variables](#Res-lambda-init)
 * [ES.1: Prefer the standard library to other libraries and to "handcrafted code"](#Res-lib)
 * [ES.2: Prefer suitable abstractions to direct use of language features](#Res-abstr)
@@ -2161,7 +2161,7 @@ Flag variables that are potentially updated (have a non-const use) in both the l
 
 Flag all uses of ALL CAPS. For older code, accept ALL CAPS for macro names and flag all non-ALL-CAPS macro names.
 
-### F
+## F
 * [F.1: "Package" meaningful operations as carefully named functions](#Rf-package)
 * [F.2: A function should perform a single logical operation](#Rf-logical)
 * [F.3: Keep functions short and simple](#Rf-single)
@@ -2201,6 +2201,9 @@ Flag all uses of ALL CAPS. For older code, accept ALL CAPS for macro names and f
 
 ### <a name="Rf-package"></a>F.1: "Package" meaningful operations as carefully named functions
 
+
+#### clang-tidy
+* [readability-function-size](http://clang.llvm.org/extra/clang-tidy/checks/readability-function-size.html), small functions are a good heuristic
 
 ### <a name="Rf-conventional"></a>F.15: Prefer simple and conventional ways of passing information
 
@@ -2243,6 +2246,9 @@ Suggest using a reference to `const` instead.
 * Consider "large" functions that don't fit on one editor screen suspicious. Consider factoring such a function into smaller well-named suboperations.
 * Consider functions with 7 or more parameters suspicious.
 
+#### clang-tidy
+* [readability-function-size](http://clang.llvm.org/extra/clang-tidy/checks/readability-function-size.html), small functions are a good heuristic
+
 ### <a name="Rf-out"></a>F.20: For "out" output values, prefer return values to output parameters
 
 
@@ -2259,6 +2265,9 @@ An output parameter is one that the function writes to, invokes a non-`const` me
 
 
 * (Simple) ((Bounds)) Warn for any arithmetic operation on an expression of pointer type that results in a value of pointer type.
+
+#### clang-tidy
+* [cppcoreguidelines-pro-bounds-pointer-arithmetic](http://clang.llvm.org/extra/clang-tidy/checks/cppcoreguidelines-pro-bounds-pointer-arithmetic.html)
 
 ### <a name="Rf-nullptr"></a>F.23: Use a `not_null<T>` to indicate that "null" is not a valid value
 
@@ -2295,6 +2304,9 @@ How big is a screen? Try 60 lines by 140 characters; that's roughly the maximum 
 * Flag functions that are too complex. How complex is too complex?
 You could use cyclomatic complexity. Try "more than 10 logical path through." Count a simple switch as one path.
 
+#### clang-tidy
+* [readability-function-size](http://clang.llvm.org/extra/clang-tidy/checks/readability-function-size.html), small functions are a good heuristic
+
 ### <a name="Rf-constexpr"></a>F.4: If a function may have to be evaluated at compile time, declare it `constexpr`
 
 
@@ -2314,6 +2326,9 @@ Only owners should be responsible for deletion.
 
 * Compilers tend to catch return of reference to locals and could in many cases catch return of pointers to locals.
 * Static analysis can catch many common patterns of the use of pointers indicating positions (thus eliminating dangling pointers)
+
+#### clang-tidy
+* compile with all warnings
 
 ### <a name="Rf-return-ref"></a>F.44: Return a `T&` when copy is undesirable and "returning no object" isn't needed
 
@@ -2336,6 +2351,10 @@ Flag any use of `&&` as a return type, except in `std::move` and `std::forward`.
 
 This should be enforced by tooling by checking the return type (and return
 value) of any assignment operator.
+
+#### clang-tidy
+* [cppcoreguidelines-special-member-functions](http://clang.llvm.org/extra/clang-tidy/checks/cppcoreguidelines-special-member-functions.html)
+* [misc-unconventional-assign-operator](http://clang.llvm.org/extra/clang-tidy/checks/misc-unconventional-assign-operator.html)
 
 ### <a name="Rf-inline"></a>F.5: If a function is very small and time-critical, declare it `inline`
 
@@ -2374,6 +2393,9 @@ Flag `inline` functions that are more than three statements and could have been 
 * Flag functions that are not `noexcept`, yet cannot throw.
 * Flag throwing `swap`, `move`, destructors, and default constructors.
 
+#### clang-tidy
+* [misc-noexcept-move-constructor](http://clang.llvm.org/extra/clang-tidy/checks/misc-noexcept-move-constructor.html)
+
 ### <a name="Rf-ptr-ref"></a>F.60: Prefer `T*` over `T&` when "no argument" is a valid option
 
 
@@ -2393,7 +2415,7 @@ that is
 
 Not possible.
 
-### GSL
+## GSL
 * [GSL.view: Views](#SS-views)
 * [GSL.assert: Assertions](#SS-assertions)
 * [GSL.util: Utilities](#SS-utilities)
@@ -2419,7 +2441,7 @@ Provide correct number of lines. Not end with a $
 Usage: ../../tools/extract_enforcements.bash GuidelineFile startline
 
 Provide correct number of lines. Not end with a $
-### I
+## I
 * [I.1: Make interfaces explicit](#Ri-explicit)
 * [I.2: Avoid global variables](#Ri-global)
 * [I.3: Avoid singletons](#Ri-singleton)
@@ -2445,6 +2467,10 @@ Provide correct number of lines. Not end with a $
 * (Simple) A function should not make control-flow decisions based on the values of variables declared at namespace scope.
 * (Simple) A function should not write to variables declared at namespace scope.
 
+#### clang-tidy
+* [google-global-names-in-headers](http://clang.llvm.org/extra/clang-tidy/checks/google-global-names-in-headers.html)
+* [cppcoreguidelines-interfaces-global-init](http://clang.llvm.org/extra/clang-tidy/checks/cppcoreguidelines-interfaces-global-init.html)
+
 ### <a name="Ri-except"></a>I.10: Use exceptions to signal a failure to perform a required task
 
 
@@ -2458,6 +2484,10 @@ Provide correct number of lines. Not end with a $
 * (Simple) Warn on failure to either `reset` or explicitly `delete` an `owner` pointer on every code path.
 * (Simple) Warn if the return value of `new` or a function call with return value of pointer type is assigned to a raw pointer.
 
+#### clang-tidy
+* [modernize-make-shared](http://clang.llvm.org/extra/clang-tidy/checks/modernize-make-shared.html)
+* [modernize-make-unique](http://clang.llvm.org/extra/clang-tidy/checks/modernize-make-unique.html)
+
 ### <a name="Ri-nullptr"></a>I.12: Declare a pointer that must not be null as `not_null`
 
 
@@ -2470,11 +2500,20 @@ Provide correct number of lines. Not end with a $
 * (Simple) ((Bounds)) Warn for any expression that would rely on implicit conversion of an array type to a pointer type. Allow exception for zstring/czstring pointer types.
 * (Simple) ((Bounds)) Warn for any arithmetic operation on an expression of pointer type that results in a value of pointer type. Allow exception for zstring/czstring pointer types.
 
+#### clang-tidy
+* [cppcoreguidelines-pro-bounds-pointer-arithmetic](http://clang.llvm.org/extra/clang-tidy/checks/cppcoreguidelines-pro-bounds-pointer-arithmetic.html)
+* [cppcoreguidelines-pro-bounds-constant-array-index](http://clang.llvm.org/extra/clang-tidy/checks/cppcoreguidelines-pro-bounds-constant-array-index.html)
+* [cppcoreguidelines-pro-bounds-array-to-pointer-decay](http://clang.llvm.org/extra/clang-tidy/checks/cppcoreguidelines-pro-bounds-array-to-pointer-decay.html)
+
 
 
 Usage: ../../tools/extract_enforcements.bash GuidelineFile startline
 
 Provide correct number of lines. Not end with a $
+#### clang-tidy
+* [google-global-names-in-headers](http://clang.llvm.org/extra/clang-tidy/checks/google-global-names-in-headers.html)
+* [cppcoreguidelines-interfaces-global-init](http://clang.llvm.org/extra/clang-tidy/checks/cppcoreguidelines-interfaces-global-init.html)
+
 ### <a name="Ri-global-init"></a>I.22: Avoid complex initialization of global objects
 
 
@@ -2486,6 +2525,9 @@ Provide correct number of lines. Not end with a $
 
 * Warn when a function declares two iterators (including pointers) of the same type instead of a range or a view.
 * (Not enforceable) This is a philosophical guideline that is infeasible to check directly.
+
+#### clang-tidy
+* [readability-function-size](http://clang.llvm.org/extra/clang-tidy/checks/readability-function-size.html) will check for function size, but many arguments usually means a lot to do, so this could point to interesting places as well
 
 ### <a name="Ri-unrelated"></a>I.24: Avoid adjacent unrelated parameters of the same type
 
@@ -2546,7 +2588,7 @@ checkers) exist for many toolchains.
 
 (Not yet enforceable) A language facility is under specification. When the language facility is available, warn if any non-variadic template parameter is not constrained by a concept (in its declaration or mentioned in a `requires` clause).
 
-### In
+## In
 * [In.target: Target readership](#SS-readers)
 * [In.aims: Aims](#SS-aims)
 * [In.not: Non-aims](#SS-non)
@@ -2584,7 +2626,7 @@ Provide correct number of lines. Not end with a $
 Usage: ../../tools/extract_enforcements.bash GuidelineFile startline
 
 Provide correct number of lines. Not end with a $
-### NL
+## NL
 * [NL.1: Don't say in comments what can be clearly stated in code](#Rl-comments)
 * [NL.2: State intent in comments](#Rl-comments-intent)
 * [NL.3: Keep comments crisp](#Rl-comments-crisp)
@@ -2696,7 +2738,7 @@ Would be possible except for the use of libraries with varying conventions.
 * Flag macros with lower-case letters
 * Flag `ALL_CAPS` non-macro names
 
-### NR
+## NR
 * [NR.1: Don't: All declarations should be at the top of a function](#Rnr-top)
 * [NR.2: Don't: Have only a single `return`-statement in a function](#Rnr-single-return)
 * [NR.3: Don't: Don't use exceptions](#Rnr-no-exceptions)
@@ -2740,7 +2782,7 @@ Issue a diagnostic for any use of `reinterpret_cast`. To fix: Consider using a `
 
 Issue a diagnostic for any use of `reinterpret_cast`. To fix: Consider using a `variant` instead.
 
-### P
+## P
 * [P.1: Express ideas directly in code](#Rp-direct)
 * [P.2: Write in ISO Standard C++](#Rp-Cplusplus)
 * [P.3: Express intent](#Rp-what)
@@ -2856,7 +2898,7 @@ Where feasible, replace owners with standard-library resource handles (as in the
 
 Many more specific rules aim at the overall goals of simplicity and elimination of gratuitous waste.
 
-### Per
+## Per
 * [Per.1: Don't optimize without reason](#Rper-reason)
 * [Per.2: Don't optimize prematurely](#Rper-Knuth)
 * [Per.3: Don't optimize something that's not performance critical](#Rper-critical)
@@ -3072,7 +3114,7 @@ Maybe looking for `void*` function arguments will find examples of interfaces th
 Tricky.
 Maybe looking for `void*` function arguments will find examples of interfaces that hinder later optimization.
 
-### Pro
+## Pro
 * [Pro.type: Type safety](#SS-type)
 * [Pro.bounds: Bounds safety](#SS-bounds)
 * [Pro.lifetime: Lifetime safety](#SS-lifetime)
@@ -3092,7 +3134,7 @@ Provide correct number of lines. Not end with a $
 Usage: ../../tools/extract_enforcements.bash GuidelineFile startline
 
 Provide correct number of lines. Not end with a $
-### R
+## R
   * [R.1: Manage resources automatically using resource handles and RAII (Resource Acquisition Is Initialization)](#Rr-raii)
   * [R.2: In interfaces, use raw pointers to denote individual objects (only)](#Rr-use-ptr)
   * [R.3: A raw pointer (a `T*`) is non-owning](#Rr-ptr)
@@ -3266,7 +3308,7 @@ Suggest using a `T*` or `T&` instead.
 
 (??? NM: Obviously we can warn about non-`const` statics ... do we want to?)
 
-### RF
+## RF
 * [RF.rules: Coding rules](#SS-rules)
 * [RF.books: Books with coding guidelines](#SS-books)
 * [RF.C++: C++ Programming (C++11/C++14)](#SS-Cplusplus)
@@ -3293,7 +3335,7 @@ Provide correct number of lines. Not end with a $
 Usage: ../../tools/extract_enforcements.bash GuidelineFile startline
 
 Provide correct number of lines. Not end with a $
-### RS
+## RS
 * [RS.video: Videos about "modern C++"](#SS-vid)
 
 
@@ -3301,7 +3343,7 @@ Provide correct number of lines. Not end with a $
 Usage: ../../tools/extract_enforcements.bash GuidelineFile startline
 
 Provide correct number of lines. Not end with a $
-### SF
+## SF
 * [SF.1: Use a `.cpp` suffix for code files and `.h` for interface files if your project doesn't already follow another convention](#Rs-file-suffix)
 * [SF.2: A `.h` file may not contain object definitions or non-inline function definitions](#Rs-inline)
 * [SF.3: Use `.h` files for all declarations used in multiple source files](#Rs-declaration-header)
@@ -3374,7 +3416,7 @@ Easy.
 
 Flag all cycles.
 
-### SL
+## SL
 * [SL.con: Containers](#SS-con)
 * [SL.str: String](#SS-string)
 * [SL.io: Iostream](#SS-io)
@@ -3429,7 +3471,7 @@ Provide correct number of lines. Not end with a $
 Usage: ../../tools/extract_enforcements.bash GuidelineFile startline
 
 Provide correct number of lines. Not end with a $
-### T
+## T
 * [T.1: Use templates to raise the level of abstraction of code](#Rt-raise)
 * [T.2: Use templates to express algorithms that apply to many argument types](#Rt-algo)
 * [T.3: Use templates to express containers and ranges](#Rt-cont)
@@ -3805,7 +3847,7 @@ The compiler handles that.
 
 ???
 
-### Type
+## Type
 * [Type.1: Don't use `reinterpret_cast`](#Pro-type-reinterpretcast)
 * [Type.2: Don't use `static_cast` downcasts. Use `dynamic_cast` instead](#Pro-type-downcast)
 * [Type.3: Don't use `const_cast` to cast away `const` (i.e., at all)](#Pro-type-constcast)
