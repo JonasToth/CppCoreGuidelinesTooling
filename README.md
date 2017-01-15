@@ -10,16 +10,16 @@ This is not a clone of the Guidelines, but a helpfull enhancement.
 
 # How to use the information?
 
-* Step 1. Read the guideline
-* Step 2. Find something interesting which you want to introduce into your Codebase.
-* Step 3. Check **[Tool Overview](tool_overview.md)**, search for the rule (e.g. Type.4). There is the enforcement section of the Guideline and maybe hints for tools that enforce this rule.
-* Step 4. Use the tool
+__Step 1.__ Read the guideline  
+__Step 2.__ Find something interesting which you want to introduce into your Codebase.  
+__Step 3.__ Check **[Tool Overview](tool_overview.md)**, search for the rule (e.g. Type.4). There is the enforcement section of the Guideline and maybe hints for tools that enforce this rule.  
+__Step 4.__ Use the tool  
 
 # Tools
 
 So which tools am I talking about?
 
-## [Clangs Toolchain](http://clang.llvm.org/extra/clang-tidy/) 
+### Clangs Toolchain
 They aim to give a tool for all tasks, clang-tidy and clang-format are the most usefull right now.
 
 - [clang-format](http://clang.llvm.org/docs/ClangFormat.html)
