@@ -3708,6 +3708,9 @@ See the reference to more specific rules.
 
 * Flag uses of `typedef`. This will give a lot of "hits" :-(
 
+#### clang-tidy
+* [modernize-use-using](http://clang.llvm.org/extra/clang-tidy/checks/modernize-use-using.html)
+
 ### <a name="Rt-deduce"></a>T.44: Use function templates to deduce class template argument types (where feasible)
 
 
