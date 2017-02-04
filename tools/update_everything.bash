@@ -12,4 +12,6 @@
 ../tools/create_topic_summaries.bash 
 ../tools/create_topic_rules.bash CppCoreGuidelines.md
 
+../tools/merge_rule.bash
+
 

@@ -24,7 +24,7 @@ This tool is part of the clang Toolchain, for reference see
 * [C.hier: Class hierarchies (OOP)](#SS-hier)
 * [C.over: Overloading and overloaded operators](#SS-overload)
 * [C.union: Unions](#SS-union)
-* [C.10: Prefer a concrete type over more complicated classes](#Rc-concrete)
+* [C.10: Prefer concrete types over class hierarchies](#Rc-concrete)
 * [C.11: Make concrete types regular](#Rc-regular)
 * [C.20: If you can avoid defining any default operations, do](#Rc-zero)
 * [C.21: If you define or `=delete` any default operation, define or `=delete` them all](#Rc-five)
@@ -52,10 +52,10 @@ This tool is part of the clang Toolchain, for reference see
 * [C.52: Use inheriting constructors to import constructors into a derived class that does not need further explicit initialization](#Rc-inheriting)
 * [C.60: Make copy assignment non-`virtual`, take the parameter by `const&`, and return by non-`const&`](#Rc-copy-assignment)
 * [C.61: A copy operation should copy](#Rc-copy-semantic)
-* [C.62: Make copy assignment safe for self-assignment](#Rc-move-self)
+* [C.62: Make copy assignment safe for self-assignment](#Rc-copy-self)
 * [C.63: Make move assignment non-`virtual`, take the parameter by `&&`, and return by non-`const&`](#Rc-move-assignment)
 * [C.64: A move operation should move and leave its source in a valid state](#Rc-move-semantic)
-* [C.65: Make move assignment safe for self-assignment](#Rc-copy-self)
+* [C.65: Make move assignment safe for self-assignment](#Rc-move-self)
 * [C.66: Make move operations `noexcept`](#Rc-move-noexcept)
 * [C.67: A base class should suppress copying, and provide a virtual `clone` instead if "copying" is desired](#Rc-copy-virtual)
 * [C.80: Use `=default` if you have to be explicit about using the default semantics](#Rc-eqdefault)
@@ -243,7 +243,7 @@ This tool is part of the clang Toolchain, for reference see
 * [ES.49: If you must use a cast, use a named cast](#Res-casts-named)
 * [ES.50: Don't cast away `const`](#Res-casts-const)
 * [ES.55: Avoid the need for range checking](#Res-range-checking)
-* [ES.56: Avoid `std::move()` in application code](#Res-move)
+* [ES.56: Write `std::move()` only when you need to explicitly move an object to another scope](#Res-move)
 * [ES.60: Avoid `new` and `delete` outside resource management functions](#Res-new)
 * [ES.61: Delete arrays using `delete[]` and non-arrays using `delete`](#Res-del)
 * [ES.62: Don't compare pointers into different arrays](#Res-arr2)
@@ -451,8 +451,8 @@ This tool is part of the clang Toolchain, for reference see
 * [SF.3: Use `.h` files for all declarations used in multiple source files](#Rs-declaration-header)
 * [SF.4: Include `.h` files before other declarations in a file](#Rs-include-order)
 * [SF.5: A `.cpp` file must include the `.h` file(s) that defines its interface](#Rs-consistency)
-* [SF.6: Use `using`-directives for transition, for foundation libraries (such as `std`), or within a local scope](#Rs-using)
-* [SF.7: Don't put a `using`-directive in a header file](#Rs-using-directive)
+* [SF.6: Use `using namespace` directives for transition, for foundation libraries (such as `std`), or within a local scope](#Rs-using)
+* [SF.7: Don't write `using namespace` in a header file](#Rs-using-directive)
 * [SF.8: Use `#include` guards for all `.h` files](#Rs-guards)
 * [SF.9: Avoid cyclic dependencies among source files](#Rs-cycles)
 * [SF.20: Use `namespace`s to express logical structure](#Rs-namespace)
@@ -578,7 +578,7 @@ This tool is part of the clang Toolchain, for reference see
 * [C.hier: Class hierarchies (OOP)](#SS-hier)
 * [C.over: Overloading and overloaded operators](#SS-overload)
 * [C.union: Unions](#SS-union)
-* [C.10: Prefer a concrete type over more complicated classes](#Rc-concrete)
+* [C.10: Prefer concrete types over class hierarchies](#Rc-concrete)
 * [C.11: Make concrete types regular](#Rc-regular)
 * [C.20: If you can avoid defining any default operations, do](#Rc-zero)
 * [C.21: If you define or `=delete` any default operation, define or `=delete` them all](#Rc-five)
@@ -606,10 +606,10 @@ This tool is part of the clang Toolchain, for reference see
 * [C.52: Use inheriting constructors to import constructors into a derived class that does not need further explicit initialization](#Rc-inheriting)
 * [C.60: Make copy assignment non-`virtual`, take the parameter by `const&`, and return by non-`const&`](#Rc-copy-assignment)
 * [C.61: A copy operation should copy](#Rc-copy-semantic)
-* [C.62: Make copy assignment safe for self-assignment](#Rc-move-self)
+* [C.62: Make copy assignment safe for self-assignment](#Rc-copy-self)
 * [C.63: Make move assignment non-`virtual`, take the parameter by `&&`, and return by non-`const&`](#Rc-move-assignment)
 * [C.64: A move operation should move and leave its source in a valid state](#Rc-move-semantic)
-* [C.65: Make move assignment safe for self-assignment](#Rc-copy-self)
+* [C.65: Make move assignment safe for self-assignment](#Rc-move-self)
 * [C.66: Make move operations `noexcept`](#Rc-move-noexcept)
 * [C.67: A base class should suppress copying, and provide a virtual `clone` instead if "copying" is desired](#Rc-copy-virtual)
 * [C.80: Use `=default` if you have to be explicit about using the default semantics](#Rc-eqdefault)
@@ -1238,6 +1238,9 @@ Provide correct number of lines. Not end with a $
 
 * Flag non-const variables that are not modified (except for parameters to avoid many false positives)
 
+#### clang-tidy
+* [readability-non-const-parameter](http://clang.llvm.org/extra/clang-tidy/checks/readability-non-const-parameter.html)
+
 ### <a name="Rconst-fct"></a>Con.2: By default, make member functions `const`
 
 
@@ -1253,6 +1256,9 @@ Provide correct number of lines. Not end with a $
 
 
 * Flag unmodified non-`const` variables.
+
+#### clang-tidy
+* [readability-non-const-parameter](http://clang.llvm.org/extra/clang-tidy/checks/readability-non-const-parameter.html)
 
 ### <a name="Rconst-constexpr"></a>Con.5: Use `constexpr` for values that can be computed at compile time
 
@@ -1612,6 +1618,9 @@ Catch `throw` and `catch` of a built-in type. Maybe warn about `throw` and `catc
 
 Flag by-value exceptions if their types are part of a hierarchy (could require whole-program analysis to be perfect).
 
+#### clang-tidy
+* [misc-throw-by-value-catch-by-reference](http://clang.llvm.org/extra/clang-tidy/checks/misc-throw-by-value-catch-by-reference.html)
+
 ### <a name="Re-never-fail"></a>E.16: Destructors, deallocation, and `swap` must never fail
 
 
@@ -1793,7 +1802,7 @@ Flag unnamed enumerations.
 * [ES.49: If you must use a cast, use a named cast](#Res-casts-named)
 * [ES.50: Don't cast away `const`](#Res-casts-const)
 * [ES.55: Avoid the need for range checking](#Res-range-checking)
-* [ES.56: Avoid `std::move()` in application code](#Res-move)
+* [ES.56: Write `std::move()` only when you need to explicitly move an object to another scope](#Res-move)
 * [ES.60: Avoid `new` and `delete` outside resource management functions](#Res-new)
 * [ES.61: Delete arrays using `delete[]` and non-arrays using `delete`](#Res-del)
 * [ES.62: Don't compare pointers into different arrays](#Res-arr2)
@@ -2218,7 +2227,7 @@ Suggest using a reference to `const` instead.
 ### <a name="Rf-inout"></a>F.17: For "in-out" parameters, pass by reference to non-`const`
 
 
-* (Moderate) ((Foundation)) Warn about functions with reference to non-`const` parameters that do *not* write to them.
+* (Moderate) ((Foundation)) Warn about functions regarding reference to non-`const` parameters that do *not* write to them.
 * (Simple) ((Foundation)) Warn when a non-`const` parameter being passed by reference is `move`d.
 
 ### <a name="Rf-consume"></a>F.18: For "consume" parameters, pass by `X&&` and `std::move` the parameter
@@ -2476,7 +2485,7 @@ Provide correct number of lines. Not end with a $
 
 * (Simple) Warn on `delete` of a raw pointer that is not an `owner`.
 * (Simple) Warn on failure to either `reset` or explicitly `delete` an `owner` pointer on every code path.
-* (Simple) Warn if the return value of `new` or a function call with return value of pointer type is assigned to a raw pointer.
+* (Simple) Warn if the return value of `new` or a function call with an `owner` return value is assigned to a raw pointer or non-`owner` reference.
 
 #### clang-tidy
 * [modernize-make-shared](http://clang.llvm.org/extra/clang-tidy/checks/modernize-make-shared.html)
@@ -2531,7 +2540,7 @@ Provide correct number of lines. Not end with a $
 ### <a name="Ri-abstract"></a>I.25: Prefer abstract classes as interfaces to class hierarchies
 
 
-(Simple) Warn if a pointer to a class `C` is assigned to a pointer to a base of `C` and the base class contains data members.
+(Simple) Warn if a pointer/reference to a class `C` is assigned to a pointer/reference to a base of `C` and the base class contains data members.
 
 ### <a name="Ri-abi"></a>I.26: If you want a cross-compiler ABI, use a C-style subset
 
@@ -3312,8 +3321,8 @@ Suggest using a `T*` or `T&` instead.
 * [SF.3: Use `.h` files for all declarations used in multiple source files](#Rs-declaration-header)
 * [SF.4: Include `.h` files before other declarations in a file](#Rs-include-order)
 * [SF.5: A `.cpp` file must include the `.h` file(s) that defines its interface](#Rs-consistency)
-* [SF.6: Use `using`-directives for transition, for foundation libraries (such as `std`), or within a local scope](#Rs-using)
-* [SF.7: Don't put a `using`-directive in a header file](#Rs-using-directive)
+* [SF.6: Use `using namespace` directives for transition, for foundation libraries (such as `std`), or within a local scope](#Rs-using)
+* [SF.7: Don't write `using namespace` in a header file](#Rs-using-directive)
 * [SF.8: Use `#include` guards for all `.h` files](#Rs-guards)
 * [SF.9: Avoid cyclic dependencies among source files](#Rs-cycles)
 * [SF.20: Use `namespace`s to express logical structure](#Rs-namespace)
@@ -3361,15 +3370,15 @@ Easy.
 
 ???
 
-### <a name="Rs-using"></a>SF.6: Use `using`-directives for transition, for foundation libraries (such as `std`), or within a local scope
+### <a name="Rs-using"></a>SF.6: Use `using namespace` directives for transition, for foundation libraries (such as `std`), or within a local scope
 
 
 ???
 
-### <a name="Rs-using-directive"></a>SF.7: Don't put a `using`-directive in a header file
+### <a name="Rs-using-directive"></a>SF.7: Don't write `using namespace` in a header file
 
 
-???
+Flag `using namespace` at global scope in a header file.
 
 ### <a name="Rs-guards"></a>SF.8: Use `#include` guards for all `.h` files
 
