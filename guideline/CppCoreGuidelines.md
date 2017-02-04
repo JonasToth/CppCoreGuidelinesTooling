@@ -1,6 +1,6 @@
 # <a name="main"></a>C++ Core Guidelines
 
-December 12, 2016
+February 1, 2017
 
 Editors:
 
@@ -208,7 +208,7 @@ If you need a tutorial for some given level of experience, see [the references](
 This is not a guide on how to convert old C++ code to more modern code.
 It is meant to articulate ideas for new code in a concrete fashion.
 However, see [the modernization section](#S-modernizing) for some possible approaches to modernizing/rejuvenating/upgrading.
-Importantly, the rules support gradual adoption: It is typically infeasible to convert all of a large code base at once.
+Importantly, the rules support gradual adoption: It is typically infeasible to completely convert a large code base all at once.
 
 These guidelines are not meant to be complete or exact in every language-technical detail.
 For the final word on language definition issues, including every exception to general rules and every feature, see the ISO C++ standard.
@@ -363,7 +363,7 @@ Philosophy rules summary:
 
 Philosophical rules are generally not mechanically checkable.
 However, individual rules reflecting these philosophical themes are.
-Without a philosophical basis the more concrete/specific/checkable rules lack rationale.
+Without a philosophical basis, the more concrete/specific/checkable rules lack rationale.
 
 ### <a name="Rp-direct"></a>P.1: Express ideas directly in code
 
@@ -618,7 +618,7 @@ Leaving hard-to-detect errors in a program is asking for crashes and bad results
 
 ##### Note
 
-Ideally we catch all errors (that are not errors in the programmer's logic) at either compile-time or run-time. It is impossible to catch all errors at compile time and often not affordable to catch all remaining errors at run time. However, we should endeavor to write programs that in principle can be checked, given sufficient resources (analysis programs, run-time checks, machine resources, time).
+Ideally, we catch all errors (that are not errors in the programmer's logic) at either compile-time or run-time. It is impossible to catch all errors at compile time and often not affordable to catch all remaining errors at run-time. However, we should endeavor to write programs that in principle can be checked, given sufficient resources (analysis programs, run-time checks, machine resources, time).
 
 ##### Example, bad
 
@@ -743,7 +743,7 @@ Avoid errors leading to (possibly unrecognized) wrong results.
 
 Here we made a small error in `use1` that will lead to corrupted data or a crash.
 The (pointer, count)-style interface leaves `increment1()` with no realistic way of defending itself against out-of-range errors.
-Assuming that we could check subscripts for out of range access, the error would not be discovered until `p[10]` was accessed.
+If we could check subscripts for out of range access, then the error would not be discovered until `p[10]` was accessed.
 We could check earlier and improve the code:
 
     void increment2(span<int> p)
@@ -1180,7 +1180,7 @@ You can use the simplest "singleton" (so simple that it is often not considered 
     }
 
 This is one of the most effective solutions to problems related to initialization order.
-In a multi-threaded environment the initialization of the static object does not introduce a race condition
+In a multi-threaded environment, the initialization of the static object does not introduce a race condition
 (unless you carelessly access a shared object from within its constructor).
 
 Note that the initialization of a local `static` does not imply a race condition.
@@ -1193,7 +1193,7 @@ For example:
         return *p;  // potential leak
     }
 
-Now someone has to `delete` that object in some suitably thread-safe way.
+Now someone must `delete` that object in some suitably thread-safe way.
 That's error-prone, so we don't use that technique unless
 
 * `myX` is in multithreaded code,
@@ -1223,7 +1223,7 @@ Consider:
 
     void pass(void* data);    // void* is suspicious
 
-Now the callee has to cast the data pointer (back) to a correct type to use it. That is error-prone and often verbose.
+Now the callee must cast the data pointer (back) to a correct type to use it. That is error-prone and often verbose.
 Avoid `void*`, especially in interfaces.
 Consider using a `variant` or a pointer to base instead.
 
@@ -1560,7 +1560,7 @@ What is an error?
 An error means that the function cannot achieve its advertised purpose (including establishing postconditions).
 Calling code that ignores an error could lead to wrong results or undefined systems state.
 For example, not being able to connect to a remote server is not by itself an error:
-the server can refuse a connection for all kinds of reasons, so the natural thing is to return a result that the caller always has to check.
+the server can refuse a connection for all kinds of reasons, so the natural thing is to return a result that the caller should always check.
 However, if failing to make a connection is considered an error, then a failure should throw an exception.
 
 ##### Exception
@@ -1633,7 +1633,7 @@ Consider returning the result by value (use move semantics if the result is larg
     }
 
 **Alternative**: Pass ownership using a "smart pointer", such as `unique_ptr` (for exclusive ownership) and `shared_ptr` (for shared ownership).
-However that is less elegant and less efficient unless reference semantics are needed.
+However, that is less elegant and less efficient unless reference semantics are needed.
 
 **Alternative**: Sometimes older code can't be modified because of ABI compatibility requirements or lack of resources.
 In that case, mark owning pointers using `owner` from the [guideline support library](#S-gsl):
@@ -1663,7 +1663,7 @@ so the default is "no ownership transfer."
 
 * (Simple) Warn on `delete` of a raw pointer that is not an `owner`.
 * (Simple) Warn on failure to either `reset` or explicitly `delete` an `owner` pointer on every code path.
-* (Simple) Warn if the return value of `new` or a function call with return value of pointer type is assigned to a raw pointer.
+* (Simple) Warn if the return value of `new` or a function call with an `owner` return value is assigned to a raw pointer or non-`owner` reference.
 
 ### <a name="Ri-nullptr"></a>I.12: Declare a pointer that must not be null as `not_null`
 
@@ -1781,7 +1781,7 @@ Complex initialization can lead to undefined order of execution.
 
 Since `x` and `y` are in different translation units the order of calls to `f()` and `g()` is undefined;
 one will access an uninitialized `const`.
-This particular example shows that the order-of-initialization problem for global (namespace scope) objects is not limited to global *variables*.
+This shows that the order-of-initialization problem for global (namespace scope) objects is not limited to global *variables*.
 
 ##### Note
 
@@ -1831,7 +1831,7 @@ Alternatively, we could use concepts (as defined by the ISO TS) to define the no
 
 ##### Note
 
-How many arguments are too many? Four arguments is a lot.
+How many arguments are too many? Try to use less than Four arguments.
 There are functions that are best expressed with four individual arguments, but not many.
 
 **Alternative**: Group arguments into meaningful objects and pass the objects (by value or by reference).
@@ -1884,7 +1884,7 @@ Define a `struct` as the parameter type and name the fields for those parameters
     };
     void initialize(SystemParams p);
 
-This has a tendency to make invocations of this clear to future readers, as the parameters
+This tends to make invocations of this clear to future readers, as the parameters
 are often filled in by name at the call site.
 
 ##### Enforcement
@@ -1926,7 +1926,7 @@ This will force every derived class to compute a center -- even if that's non-tr
 
 ##### Enforcement
 
-(Simple) Warn if a pointer to a class `C` is assigned to a pointer to a base of `C` and the base class contains data members.
+(Simple) Warn if a pointer/reference to a class `C` is assigned to a pointer/reference to a base of `C` and the base class contains data members.
 
 ### <a name="Ri-abi"></a>I.26: If you want a cross-compiler ABI, use a C-style subset
 
@@ -2084,7 +2084,7 @@ Consider:
         cout << x << "\n";
     }
 
-This is a monolith that is tied to a specific input and will never find a another (different) use. Instead, break functions up into suitable logical parts and parameterize:
+This is a monolith that is tied to a specific input and will never find another (different) use. Instead, break functions up into suitable logical parts and parameterize:
 
     int read(istream& is)    // better
     {
@@ -2165,7 +2165,7 @@ Consider:
         return finalize(intermediate, 0.);
     }
 
-This is too complex (and also pretty long).
+This is too complex (and long).
 How would you know if all possible alternatives have been correctly handled?
 Yes, it breaks other rules also.
 
@@ -2275,8 +2275,8 @@ Most computation is best done at run time.
 
 Any API that may eventually depend on high-level runtime configuration or
 business logic should not be made `constexpr`. Such customization can not be
-evaluated by the compiler, and any `constexpr` functions that depend upon that
-API will have to be refactored or drop `constexpr`.
+evaluated by the compiler, and any `constexpr` functions that depended upon 
+that API would have to be refactored or drop `constexpr`.
 
 ##### Enforcement
 
@@ -2298,7 +2298,7 @@ Specifying `inline` encourages the compiler to do a better job.
 
 ##### Exception
 
-Do not put an `inline` function in what is meant to be a stable interface unless you are really sure that it will not change.
+Do not put an `inline` function in what is meant to be a stable interface unless you are certain that it will not change.
 An inline function is part of the ABI.
 
 ##### Note
@@ -2355,7 +2355,7 @@ deciding whether to tag a function `noexcept`, especially because of the issue
 of throwing and allocation.  Code that is intended to be perfectly general (like
 the standard library and other utility code of that sort) needs to support
 environments where a `bad_alloc` exception may be handled meaningfully.
-However, the majority of programs and execution environments cannot meaningfully
+However, most programs and execution environments cannot meaningfully
 handle a failure to allocate, and aborting the program is the cleanest and
 simplest response to an allocation failure in those cases.  If you know that
 your application code cannot respond to an allocation failure, it may be
@@ -2578,11 +2578,11 @@ Thus `T&` could be an in-out-parameter. That can in itself be a problem and a so
     }
 
 Here, the writer of `g()` is supplying a buffer for `f()` to fill, but `f()` simply replaces it (at a somewhat higher cost than a simple copy of the characters).
-If the writer of `g()` makes an assumption about the size of `buffer` a bad logic error can happen.
+A bad logic error can happen if the writer of `g()` incorrectly assumes the size of the `buffer`.
 
 ##### Enforcement
 
-* (Moderate) ((Foundation)) Warn about functions with reference to non-`const` parameters that do *not* write to them.
+* (Moderate) ((Foundation)) Warn about functions regarding reference to non-`const` parameters that do *not* write to them.
 * (Simple) ((Foundation)) Warn when a non-`const` parameter being passed by reference is `move`d.
 
 ### <a name="Rf-consume"></a>F.18: For "consume" parameters, pass by `X&&` and `std::move` the parameter
@@ -2780,15 +2780,15 @@ To compare, if we passed out all values as return values, we would something lik
         // do something with p.second
     }
 
-We consider that significantly less elegant and definitely significantly slower.
+We consider that significantly less elegant with significantly less performance.
 
-For a really strict reading this rule (F.21), the exceptions isn't really an exception because it relies on in-out parameters,
+For a truly strict reading of this rule (F.21), the exception isn't really an exception because it relies on in-out parameters,
 rather than the plain out parameters mentioned in the rule.
 However, we prefer to be explicit, rather than subtle.
 
 ##### Note
 
-In many cases it may be useful to return a specific, user-defined "Value or error" type.
+In many cases, it may be useful to return a specific, user-defined "Value or error" type.
 For example:
 
     struct
@@ -3449,8 +3449,8 @@ Pointers and references to locals shouldn't outlive their scope. Lambdas that ca
 
     int local = 42;
     // Want a copy of local.
-    // Since a copy of local is made, it will be
-    // available at all times for the call.
+    // Since a copy of local is made, it will
+    // always be available for the call.
     thread_pool.queue_work([=]{ process(local); });
 
 ##### Enforcement
@@ -3774,10 +3774,10 @@ Concrete types are also often referred to as value types to distinguish them fro
 
 Concrete type rule summary:
 
-* [C.10: Prefer a concrete type over more complicated classes](#Rc-concrete)
+* [C.10: Prefer concrete types over class hierarchies](#Rc-concrete)
 * [C.11: Make concrete types regular](#Rc-regular)
 
-### <a name="Rc-concrete"></a>C.10 Prefer a concrete type over more complicated classes
+### <a name="Rc-concrete"></a>C.10 Prefer concrete types over class hierarchies
 
 ##### Reason
 
@@ -3913,10 +3913,10 @@ Copy and move rules:
 
 * [C.60: Make copy assignment non-`virtual`, take the parameter by `const&`, and return by non-`const&`](#Rc-copy-assignment)
 * [C.61: A copy operation should copy](#Rc-copy-semantic)
-* [C.62: Make copy assignment safe for self-assignment](#Rc-move-self)
+* [C.62: Make copy assignment safe for self-assignment](#Rc-copy-self)
 * [C.63: Make move assignment non-`virtual`, take the parameter by `&&`, and return by non-`const&`](#Rc-move-assignment)
 * [C.64: A move operation should move and leave its source in a valid state](#Rc-move-semantic)
-* [C.65: Make move assignment safe for self-assignment](#Rc-copy-self)
+* [C.65: Make move assignment safe for self-assignment](#Rc-move-self)
 * [C.66: Make move operations `noexcept`](#Rc-move-noexcept)
 * [C.67: A base class should suppress copying, and provide a virtual `clone` instead if "copying" is desired](#Rc-copy-virtual)
 
@@ -6077,16 +6077,16 @@ A class with a virtual function is usually (and in general) used via a pointer t
         // ... no user-written destructor, defaults to public nonvirtual ...
     };
 
-    // bad: class with a resource derived from a class without a virtual destructor
+    // bad: derived from a class without a virtual destructor
     struct D : B {
         string s {"default"};
     };
 
     void use()
     {
-        auto p = make_unique<D>();
+        unique_ptr<B> p = make_unique<D>();
         // ...
-    } // calls B::~B only, leaks the string
+    } // undefined behavior. May call B::~B only and leak the string
 
 ##### Note
 
@@ -6388,14 +6388,14 @@ A trivial getter or setter adds no semantic value; the data item could just as w
 
 ##### Example
 
-    class Point {
+    class Point {   // Bad: verbose
         int x;
         int y;
     public:
         Point(int xx, int yy) : x{xx}, y{yy} { }
-        int get_x() { return x; }
+        int get_x() const { return x; }
         void set_x(int xx) { x = xx; }
-        int get_y() { return y; }
+        int get_y() const { return y; }
         void set_y(int yy) { y = yy; }
         // no behavioral member functions
     };
@@ -6403,9 +6403,11 @@ A trivial getter or setter adds no semantic value; the data item could just as w
 Consider making such a class a `struct` -- that is, a behaviorless bunch of variables, all public data and no member functions.
 
     struct Point {
-        int x = 0;
-        int y = 0;
+        int x {0};
+        int y {0};
     };
+
+Note that we can put default initializers on member variables: [C.49: Prefer initialization to assignment in constructors](#Rc-initialize).
 
 ##### Note
 
@@ -8736,7 +8738,7 @@ Expression rules:
 * [ES.49: If you must use a cast, use a named cast](#Res-casts-named)
 * [ES.50: Don't cast away `const`](#Res-casts-const)
 * [ES.55: Avoid the need for range checking](#Res-range-checking)
-* [ES.56: Avoid `std::move()` in application code](#Res-move)
+* [ES.56: Write `std::move()` only when you need to explicitly move an object to another scope](#Res-move)
 * [ES.60: Avoid `new` and `delete` outside resource management functions](#Res-new)
 * [ES.61: Delete arrays using `delete[]` and non-arrays using `delete`](#Res-del)
 * [ES.62: Don't compare pointers into different arrays](#Res-arr2)
@@ -9316,7 +9318,7 @@ Assuming that there is a logical connection between `i` and `j`, that connection
 
 Obviously, what we really would like is a construct that initialized n variables from a `tuple`. For example:
 
-    auto {i, j} = make_related_widgets(cond);    // Not C++14
+    auto [i,j] = make_related_widgets(cond);    // C++17, not C++14
 
 Today, we might approximate that using `tie()`:
 
@@ -9613,7 +9615,7 @@ not. Unfortunately, it may be impossible to detect when a non-`const` was not
 
 ##### Reason
 
-Readability.
+Readability and safety.
 
 ##### Example, bad
 
@@ -9622,6 +9624,26 @@ Readability.
         int i;
         for (i = 0; i < 20; ++i) { /* ... */ }
         for (i = 0; i < 200; ++i) { /* ... */ } // bad: i recycled
+    }
+
+##### Note
+
+As an optimization, you may want to reuse a buffer as a scratchpad, but even then prefer to limit the variables's scope as much as possible and be careful not to cause bugs from data left in a recycled buffer as this is a common source of security bugs.
+
+    {
+        std::string buffer;             // to avoid reallocations on every loop iteration
+        for (auto& o : objects)
+        {
+            // First part of the work.
+            generateFirstString(buffer, o);
+            writeToFile(buffer);
+
+            // Second part of the work.
+            generateSecondString(buffer, o);
+            writeToFile(buffer);
+
+            // etc...
+        }
     }
 
 ##### Enforcement
@@ -13762,7 +13784,28 @@ This gives a more precise statement of design intent, better readability, more e
 
 ##### Note
 
-[Do not cast away `const`](#Res-casts-const).
+It is not inherently bad to pass a pointer or reference to non-const,
+but that should be done only when the called function is supposed to modify the object.
+A reader of code must assume that a funtion that takes a "plain" `T*` or `T&` will modify the object referred to.
+If it doesn't now, it might do so later without forcing recompilation.
+
+##### Note
+
+There are code/libraries that are offer functions that declare a`T*` even though
+those function do not modify that `T`.
+This is a problem for people modernizing code.
+You can
+
+* update the library to be `const`-correct; preferred long-term solution
+* "cast away `const`"; [best avoided](#Res-casts-const).
+* provide a wrapper function; for example
+
+    void f(int* p);   // old code: f() does not mpdify `*p`
+    void f(const int* p) { f(const_cast<int*>(p); } // wrapper
+
+Note that this wrapper solution is a patch that should be used only when the declaration of `f()` cannot be be modified,
+e.g. because it is in a library that you cannot modify.
+
 
 ##### Enforcement
 
@@ -16068,8 +16111,8 @@ Source file rule summary:
 * [SF.3: Use `.h` files for all declarations used in multiple source files](#Rs-declaration-header)
 * [SF.4: Include `.h` files before other declarations in a file](#Rs-include-order)
 * [SF.5: A `.cpp` file must include the `.h` file(s) that defines its interface](#Rs-consistency)
-* [SF.6: Use `using`-directives for transition, for foundation libraries (such as `std`), or within a local scope](#Rs-using)
-* [SF.7: Don't put a `using`-directive in a header file](#Rs-using-directive)
+* [SF.6: Use `using namespace` directives for transition, for foundation libraries (such as `std`), or within a local scope](#Rs-using)
+* [SF.7: Don't write `using namespace` in a header file](#Rs-using-directive)
 * [SF.8: Use `#include` guards for all `.h` files](#Rs-guards)
 * [SF.9: Avoid cyclic dependencies among source files](#Rs-cycles)
 
@@ -16271,7 +16314,7 @@ The argument-type error for `bar` cannot be caught until link time because of th
 
 ???
 
-### <a name="Rs-using"></a>SF.6: Use `using`-directives for transition, for foundation libraries (such as `std`), or within a local scope
+### <a name="Rs-using"></a>SF.6: Use `using namespace` directives for transition, for foundation libraries (such as `std`), or within a local scope
 
 ##### Reason
 
@@ -16285,7 +16328,7 @@ The argument-type error for `bar` cannot be caught until link time because of th
 
 ???
 
-### <a name="Rs-using-directive"></a>SF.7: Don't put a `using`-directive in a header file
+### <a name="Rs-using-directive"></a>SF.7: Don't write `using namespace` in a header file
 
 ##### Reason
 
@@ -16293,11 +16336,22 @@ Doing so takes away an `#include`r's ability to effectively disambiguate and to 
 
 ##### Example
 
-    ???
+    // bad.h
+    #include <iostream>
+    using namespace std; // bad
+
+    // user.cpp
+    #include "bad.h"
+    
+    bool copy( /*... some parameters ...*/);    // some function that happens to be named copy
+
+    int main() {
+        copy( /*...*/ );    // now overloads local ::copy and std::copy, could be ambiguous
+    }
 
 ##### Enforcement
 
-???
+Flag `using namespace` at global scope in a header file.
 
 ### <a name="Rs-guards"></a>SF.8: Use `#include` guards for all `.h` files
 
@@ -19121,10 +19175,11 @@ A relatively informal definition of terms used in the guidelines
 This is our to-do list.
 Eventually, the entries will become rules or parts of rules.
 Alternatively, we will decide that no change is needed and delete the entry.
-
 * No long-distance friendship
 * Should physical design (what's in a file) and large-scale design (libraries, groups of libraries) be addressed?
 * Namespaces
+* Don't place using directives in headers
+* Avoid using directives in the global scope (except for std, and other "fundamental" namespaces (e.g. experimental))
 * How granular should namespaces be? All classes/functions designed to work together and released together (as defined in Sutter/Alexandrescu) or something narrower or wider?
 * Should there be inline namespaces (à la `std::literals::*_literals`)?
 * Avoid implicit conversions
