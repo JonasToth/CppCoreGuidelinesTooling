@@ -8,6 +8,7 @@
 # [I.2: Avoid global variables](https://github.com/isocpp/CppCoreGuidelines/blob/master/CppCoreGuidelines.md#i2-avoid-global-variables)
 
 - (Simple) Report all non-const variables declared at namespace scope.
+
 **no enforcement**
 
 # [I.4: Make interfaces precisely and strongly typed](https://github.com/isocpp/CppCoreGuidelines/blob/master/CppCoreGuidelines.md#i4-make-interfaces-precisely-and-strongly-typed)
@@ -26,6 +27,10 @@ Concepts are on the way to be standardized, clang are implementing them, soon.
 **no enforcement**
 
 # [I.11: Never transfer ownership by a raw pointer (`T\*`)](https://github.com/isocpp/CppCoreGuidelines/blob/master/CppCoreGuidelines.md#i11-never-transfer-ownership-by-a-raw-pointer-t)
+
+- (Simple) Warn on delete of a raw pointer that is not an owner<T>. Suggest use of standard-library resource handle or use of owner<T>.
+- (Simple) Warn on failure to either reset or explicitly delete an owner pointer on every code path.
+- (Simple) Warn if the return value of new or a function call with an owner return value is assigned to a raw pointer or non-owner reference.
 
 **clang-tidy: cppcoreguidelines-owning-memory**
 
@@ -56,7 +61,7 @@ cppcoreguidelines-pro-bounds-pointer-arithmetic**
 - Warn when a function declares two iterators (including pointers) of the same type instead of a range or a view.
 - (Not enforceable) This is a philosophical guideline that is infeasible to check directly.
 
-TODO: alias into cppcoreguidelines?
+TODO: alias into cppcoreguidelines?  
 **clang-tidy: readability-function-size**
 
 # [I.24: Avoid adjacent unrelated parameters of the same type](https://github.com/isocpp/CppCoreGuidelines/blob/master/CppCoreGuidelines.md#i24-avoid-adjacent-unrelated-parameters-of-the-same-type)
