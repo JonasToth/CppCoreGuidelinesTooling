@@ -11,7 +11,7 @@ some rules will not be mentioned here, to reduce the noise.
 ## Main Sections
 
 [I: Interfaces](interfaces.md)  
-[F: Functions]()  
+[F: Functions](functions.md)  
 [C: Classes and class hierarchies]()  
 [Enum: Enumerations](enumerations.md)  
 [R: Resource Management]()  
