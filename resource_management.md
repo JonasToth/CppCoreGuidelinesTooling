@@ -3,7 +3,7 @@
 - Flag pointer arithmetic (including ++) on a pointer that is not part of a container, view, or iterator. This rule would generate a huge number of false positives if applied to an older code base.
 - Flag array names passed as simple pointers
 
-**clang-tidy: cppcoreguidelines-pro-bounds-* **
+**clang-tidy: cppcoreguidelines-pro-bounds-\* **
 
 # [R.3: A raw pointer (a T*) is non-owning](https://github.com/isocpp/CppCoreGuidelines/blob/master/CppCoreGuidelines.md#r3-a-raw-pointer-a-t-is-non-owning)
 # [R.4: A raw reference (a T&) is non-owning](https://github.com/isocpp/CppCoreGuidelines/blob/master/CppCoreGuidelines.md#r4-a-raw-reference-a-t-is-non-owning)
