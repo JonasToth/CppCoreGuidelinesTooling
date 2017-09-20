@@ -14,7 +14,7 @@ some rules will not be mentioned here, to reduce the noise.
 [F: Functions](functions.md)  
 [C: Classes and class hierarchies]()  
 [Enum: Enumerations](enumerations.md)  
-[R: Resource Management]()  
+[R: Resource Management](resource_management.md)  
 [ES: Expressions and statements]()  
 [Per: Performance]()  
 [CP: Concurrency]()  
