@@ -169,6 +169,8 @@ Already done with C++ in clang
 - (Simple) Warn when capture-list contains a reference to a locally declared variable
 - (Complex) Flag when capture-list contains a reference to a locally declared variable and the lambda is passed to a non-const and non-local context
 
+**no enforcement**
+
 # [F.54: If you capture this, capture all variables explicitly (no default capture)](https://github.com/isocpp/CppCoreGuidelines/blob/master/CppCoreGuidelines.md#f54-if-you-capture-this-capture-all-variables-explicitly-no-default-capture)
 
 - Flag any lambda capture-list that specifies a default capture and also captures this (whether explicitly or via default capture)
