@@ -19,7 +19,7 @@ some rules will not be mentioned here, to reduce the noise.
 [Per: Performance]()  
 [CP: Concurrency]()  
 [E: Error handling]()  
-[Con: Constants and immutability]()  
+[Con: Constants and immutability](constants.md)  
 [T: Templates and generic programming]()  
 [CPL: C-style programming]()  
 [SF: Source Files]()  
