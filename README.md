@@ -18,7 +18,7 @@ some rules will not be mentioned here, to reduce the noise.
 [ES: Expressions and statements]()  
 [Per: Performance]()  
 [CP: Concurrency]()  
-[E: Error handling]()  
+[E: Error handling](error_handling.md)  
 [Con: Constants and immutability](constants.md)  
 [T: Templates and generic programming]()  
 [CPL: C-style programming]()  
