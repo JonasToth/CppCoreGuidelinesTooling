@@ -16,18 +16,18 @@ some rules will not be mentioned here, to reduce the noise.
 [Enum: Enumerations](enumerations.md)  
 [R: Resource Management](resource_management.md)  
 [ES: Expressions and statements]()  
-[Per: Performance]()  
+[Per: Performance](performance.md)  
 [CP: Concurrency]()  
 [E: Error handling](error_handling.md)  
 [Con: Constants and immutability](constants.md)  
 [T: Templates and generic programming]()  
-[CPL: C-style programming]()  
+[CPL: C-style programming]() just use C++ Compiler  
 [SF: Source Files]()  
 [SL: The standard library]()  
 
 ## Supporting Sections
 
-[Pro: Profiles]()  
+[Pro: Profiles]() good implementation, but not for lifetime?  
 [NL: Naming and layout]()  
 
 # Tools
