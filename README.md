@@ -17,7 +17,7 @@ some rules will not be mentioned here, to reduce the noise.
 [R: Resource Management](resource_management.md)  
 [ES: Expressions and statements]()  
 [Per: Performance](performance.md)  
-[CP: Concurrency]()  
+[CP: Concurrency](concurrency.md)  
 [E: Error handling](error_handling.md)  
 [Con: Constants and immutability](constants.md)  
 [T: Templates and generic programming]()  
