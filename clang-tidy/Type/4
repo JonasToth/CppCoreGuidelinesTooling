@@ -1,2 +1,0 @@
-* only warning
-[cppcoreguidelines-pro-type-cstyle-cast](http://clang.llvm.org/extra/clang-tidy/checks/cppcoreguidelines-pro-type-cstyle-cast.html)

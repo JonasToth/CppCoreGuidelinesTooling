@@ -1,1 +1,0 @@
-* [readability-non-const-parameter](http://clang.llvm.org/extra/clang-tidy/checks/readability-non-const-parameter.html) for const-ness

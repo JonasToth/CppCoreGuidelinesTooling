@@ -1,4 +1,0 @@
-* [cppcoreguidelines-pro-type-union-access](http://clang.llvm.org/extra/clang-tidy/checks/cppcoreguidelines-pro-type-union-access.html)
-* [cppcoreguidelines-pro-type-const-cast](http://clang.llvm.org/extra/clang-tidy/checks/cppcoreguidelines-pro-type-const-cast.html)
-* [cppcoreguidelines-pro-type-reinterpret-cast](http://clang.llvm.org/extra/clang-tidy/checks/cppcoreguidelines-pro-type-reinterpret-cast.html)
-* [cppcoreguidelines-pro-type-static-cast-downcast](http://clang.llvm.org/extra/clang-tidy/checks/cppcoreguidelines-pro-type-static-cast-downcast.html)

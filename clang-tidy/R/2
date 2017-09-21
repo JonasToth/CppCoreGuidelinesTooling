@@ -1,2 +1,0 @@
-* [cppcoreguidelines-pro-bounds-pointer-arithmetic](http://clang.llvm.org/extra/clang-tidy/checks/cppcoreguidelines-pro-bounds-pointer-arithmetic.html)
-* [cppcoreguidelines-pro-bounds-array-to-pointer-decay](http://clang.llvm.org/extra/clang-tidy/checks/cppcoreguidelines-pro-bounds-array-to-pointer-decay.html)

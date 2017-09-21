@@ -1,1 +1,0 @@
-* [readability-function-size](http://clang.llvm.org/extra/clang-tidy/checks/readability-function-size.html) will check for function size, but many arguments usually means a lot to do, so this could point to interesting places as well
