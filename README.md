@@ -12,7 +12,7 @@ some rules will not be mentioned here, to reduce the noise.
 
 [I: Interfaces](interfaces.md)  
 [F: Functions](functions.md)  
-[C: Classes and class hierarchies]()  
+[C: Classes and class hierarchies](classes_hierarchy.md)  
 [Enum: Enumerations](enumerations.md)  
 [R: Resource Management](resource_management.md)  
 [ES: Expressions and statements]()  
