@@ -22,12 +22,12 @@ some rules will not be mentioned here, to reduce the noise.
 [Con: Constants and immutability](constants.md)  
 [T: Templates and generic programming](templates.md)  
 [CPL: C-style programming]() just use C++ Compiler  
-[SF: Source Files]()  
-[SL: The standard library]()  
+[SF: Source Files]() currently a bit messy?  
+[SL: The standard library]() currently a bit messy?  
 
 ## Supporting Sections
 
-[Pro: Profiles]() good implementation, but not for lifetime?  
+[Pro: Profiles](profiles.md)  
 [NL: Naming and layout]()  
 
 # Tools
