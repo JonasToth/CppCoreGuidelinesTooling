@@ -165,4 +165,258 @@ TODO: Rule of 5 is not enforced
 
 # [C.60: Make copy assignment non-virtual, take the parameter by const&, and return by non-const&](https://github.com/isocpp/CppCoreGuidelines/blob/master/CppCoreGuidelines.md#c60-make-copy-assignment-non-virtual-take-the-parameter-by-const-and-return-by-non-const)
 
+- (Simple) An assignment operator should not be virtual. Here be dragons!
+- (Simple) An assignment operator should return T& to enable chaining, not alternatives like const T& which interfere with composability and putting objects in containers.
+- (Moderate) An assignment operator should (implicitly or explicitly) invoke all base and member assignment operators. Look at the destructor to determine if the type has pointer semantics or value semantics.
 
+# [C.62: Make copy assignment safe for self-assignment](https://github.com/isocpp/CppCoreGuidelines/blob/master/CppCoreGuidelines.md#c62-make-copy-assignment-safe-for-self-assignment)
+
+- (Simple) Assignment operators should not contain the pattern if (this == &a) return *this; ???
+
+**no enforcement**
+
+# [C.63: Make move assignment non-virtual, take the parameter by &&, and return by non-const &](https://github.com/isocpp/CppCoreGuidelines/blob/master/CppCoreGuidelines.md#c63-make-move-assignment-non-virtual-take-the-parameter-by--and-return-by-non-const-)
+
+- (Simple) An assignment operator should not be virtual. Here be dragons!
+- (Simple) An assignment operator should return T& to enable chaining, not alternatives like const T& which interfere with composability and putting objects in containers.
+- (Moderate) A move assignment operator should (implicitly or explicitly) invoke all base and member move assignment operators.
+
+**no enforcement**
+
+# [C.66: Make move operations noexcept](https://github.com/isocpp/CppCoreGuidelines/blob/master/CppCoreGuidelines.md#c66-make-move-operations-noexcept)
+
+- (Simple) A move operation should be marked noexcept.
+
+**clang-tidy: misc-noexcept-move-constructor**
+
+# [C.67: A base class should suppress copying, and provide a virtual clone instead if "copying" is desired](https://github.com/isocpp/CppCoreGuidelines/blob/master/CppCoreGuidelines.md#c67-a-base-class-should-suppress-copying-and-provide-a-virtual-clone-instead-if-copying-is-desired)
+
+- A class with any virtual function should not have a copy constructor or copy assignment operator (compiler-generated or handwritten).
+
+**no enforcement**
+
+# [C.80: Use =default if you have to be explicit about using the default semantics](https://github.com/isocpp/CppCoreGuidelines/blob/master/CppCoreGuidelines.md#c80-use-default-if-you-have-to-be-explicit-about-using-the-default-semantics)
+
+- (Moderate) The body of a special operation should not have the same accessibility and semantics as the compiler-generated version, because that would be redundant
+
+**clang-tidy: modernize-use-default**
+
+# [C.81: Use =delete when you want to disable default behavior (without wanting an alternative)](https://github.com/isocpp/CppCoreGuidelines/blob/master/CppCoreGuidelines.md#c81-use-delete-when-you-want-to-disable-default-behavior-without-wanting-an-alternative)
+
+- The elimination of a default operation is (should be) based on the desired semantics of the class. Consider such classes suspect, but maintain a "positive list" of classes where a human has asserted that the semantics is correct.
+
+**clang-tidy: modernize-use-delete**
+
+# [C.82: Don't call virtual functions in constructors and destructors](https://github.com/isocpp/CppCoreGuidelines/blob/master/CppCoreGuidelines.md#c82-dont-call-virtual-functions-in-constructors-and-destructors)
+
+- Flag calls of virtual functions from constructors and destructors.
+
+**no enforcement**
+
+# [C.83: For value-like types, consider providing a noexcept swap function](https://github.com/isocpp/CppCoreGuidelines/blob/master/CppCoreGuidelines.md#c83-for-value-like-types-consider-providing-a-noexcept-swap-function) 
+
+- (Simple) A class without virtual functions should have a swap member function declared.
+- (Simple) When a class has a swap member function, it should be declared noexcept.
+
+**no enforcement**
+
+# [C.84: A swap function may not fail](https://github.com/isocpp/CppCoreGuidelines/blob/master/CppCoreGuidelines.md#c84-a-swap-function-may-not-fail)
+
+- (Simple) When a class has a swap member function, it should be declared noexcept.
+
+**no enforcement**
+
+# [C.85: Make swap noexcept](https://github.com/isocpp/CppCoreGuidelines/blob/master/CppCoreGuidelines.md#c85-make-swap-noexcept)
+
+- (Simple) When a class has a swap member function, it should be declared noexcept.
+
+**no enforcement, same as C.84**
+
+# [C.86: Make == symmetric with respect to operand types and noexcept](https://github.com/isocpp/CppCoreGuidelines/blob/master/CppCoreGuidelines.md#c86-make--symmetric-with-respect-to-operand-types-and-noexcept)
+
+- Flag an operator==() for which the argument types differ; same for other comparison operators: !=, <, <=, >, and >=.
+- Flag member operator==()s; same for other comparison operators: !=, <, <=, >, and >=.
+
+**no enforcement**
+
+# [C.87: Beware of == on base classes](https://github.com/isocpp/CppCoreGuidelines/blob/master/CppCoreGuidelines.md#c87-beware-of--on-base-classes)
+
+- Flag a virtual operator==(); same for other comparison operators: !=, <, <=, >, and >=.
+
+**no enforcement**
+
+# [C.89: Make a hash noexcept](https://github.com/isocpp/CppCoreGuidelines/blob/master/CppCoreGuidelines.md#c89-make-a-hash-noexcept)
+
+- Flag throwing hashes.
+
+**no enforcement**
+
+
+
+
+# [C.120: Use class hierarchies to represent concepts with inherent hierarchical structure (only)](https://github.com/isocpp/CppCoreGuidelines/blob/master/CppCoreGuidelines.md#c120-use-class-hierarchies-to-represent-concepts-with-inherent-hierarchical-structure-only)
+
+- Look for classes with lots of members that do nothing but throw.
+- Flag every use of a nonpublic base class B where the derived class D does not override a virtual function or access a protected member in B, and B is not one of the following: empty, a template parameter or parameter pack of D, a class template specialized with D.
+
+**no enforcement**
+
+# [C.121: If a base class is used as an interface, make it a pure abstract class](https://github.com/isocpp/CppCoreGuidelines/blob/master/CppCoreGuidelines.md#c121-if-a-base-class-is-used-as-an-interface-make-it-a-pure-abstract-class)
+
+- Warn on any class that contains data members and also has an overridable (non-final) virtual function.
+
+**no enforcement**
+
+# [C.126: An abstract class typically doesn't need a constructor](https://github.com/isocpp/CppCoreGuidelines/blob/master/CppCoreGuidelines.md#c126-an-abstract-class-typically-doesnt-need-a-constructor)
+
+- Flag abstract classes with constructors.
+
+**no enforcement**
+
+# [C.127: A class with a virtual function should have a virtual or protected destructor](https://github.com/isocpp/CppCoreGuidelines/blob/master/CppCoreGuidelines.md#c127-a-class-with-a-virtual-function-should-have-a-virtual-or-protected-destructor)
+
+- A class with any virtual functions should have a destructor that is either public and virtual or else protected and nonvirtual.
+- Flag delete of a class with a virtual function but no virtual destructor.
+
+**no enforcement**
+
+# [C.128: Virtual functions should specify exactly one of virtual, override, or final](https://github.com/isocpp/CppCoreGuidelines/blob/master/CppCoreGuidelines.md#c128-virtual-functions-should-specify-exactly-one-of-virtual-override-or-final)
+
+- Compare names in base and derived classes and flag uses of the same name that does not override.
+- Flag overrides with neither override nor final.
+- Flag function declarations that use more than one of virtual, override, and final.
+
+**no enforcement**
+
+# [C.129: When designing a class hierarchy, distinguish between implementation inheritance and interface inheritance](https://github.com/isocpp/CppCoreGuidelines/blob/master/CppCoreGuidelines.md#c129-when-designing-a-class-hierarchy-distinguish-between-implementation-inheritance-and-interface-inheritance)
+
+- Flag a derived to base conversion to a base with both data and virtual functions (except for calls from a derived class member to a base class member)
+
+**no enforcement**
+
+# [C.130: Redefine or prohibit copying for a base class; prefer a virtual clone function instead](https://github.com/isocpp/CppCoreGuidelines/blob/master/CppCoreGuidelines.md#c130-redefine-or-prohibit-copying-for-a-base-class-prefer-a-virtual-clone-function-instead)
+
+- Flag a class with a virtual function and a non-user-defined copy operation.
+- Flag an assignment of base class objects (objects of a class from which another has been derived).
+
+# [C.131: Avoid trivial getters and setters](https://github.com/isocpp/CppCoreGuidelines/blob/master/CppCoreGuidelines.md#c131-avoid-trivial-getters-and-setters)
+
+- Flag multiple get and set member functions that simply access a member without additional semantics.
+
+# [C.132: Don't make a function virtual without reason](https://github.com/isocpp/CppCoreGuidelines/blob/master/CppCoreGuidelines.md#c132-dont-make-a-function-virtual-without-reason)
+
+- Flag a class with virtual functions but no derived classes.
+- Flag a class where all member functions are virtual and have implementations.
+
+# [C.133: Avoid protected data](https://github.com/isocpp/CppCoreGuidelines/blob/master/CppCoreGuidelines.md#c133-avoid-protected-data)
+
+- Flag classes with protected data.
+
+**no enforcement**
+
+# [C.134: Ensure all non-const data members have the same access level](https://github.com/isocpp/CppCoreGuidelines/blob/master/CppCoreGuidelines.md#c134-ensure-all-non-const-data-members-have-the-same-access-level)
+
+- Flag any class that has non-const data members with different access levels.
+
+**no enforcement**
+
+# [C.137: Use virtual bases to avoid overly general base classes](https://github.com/isocpp/CppCoreGuidelines/blob/master/CppCoreGuidelines.md#c137-use-virtual-bases-to-avoid-overly-general-base-classes)
+
+- Flag mixed interface and implementation hierarchies.
+
+**no enforcement**
+
+# [C.138: Create an overload set for a derived class and its bases with using](https://github.com/isocpp/CppCoreGuidelines/blob/master/CppCoreGuidelines.md#c138-create-an-overload-set-for-a-derived-class-and-its-bases-with-using)
+
+- Diagnose name hiding
+
+**no enforcement**
+
+# [C.139: Use final sparingly](https://github.com/isocpp/CppCoreGuidelines/blob/master/CppCoreGuidelines.md#c139-use-final-sparingly)
+
+- Flag uses of final.
+
+**no enforcement**
+
+# [C.140: Do not provide different default arguments for a virtual function and an overrider](https://github.com/isocpp/CppCoreGuidelines/blob/master/CppCoreGuidelines.md#c140-do-not-provide-different-default-arguments-for-a-virtual-function-and-an-overrider)
+
+- Flag default arguments on virtual functions if they differ between base and derived declarations
+
+**no enforcement**
+
+# [C.145: Access polymorphic objects through pointers and references](https://github.com/isocpp/CppCoreGuidelines/blob/master/CppCoreGuidelines.md#c145-access-polymorphic-objects-through-pointers-and-references)
+
+- Flag all slicing.
+
+**clang-tidy: cppcoreguidelines-slicing**
+
+# [C.146: Use dynamic_cast where class hierarchy navigation is unavoidable](https://github.com/isocpp/CppCoreGuidelines/blob/master/CppCoreGuidelines.md#c146-use-dynamic_cast-where-class-hierarchy-navigation-is-unavoidable)
+
+- Flag all uses of static_cast for downcasts, including C-style casts that perform a static_cast.
+
+**clang-tidy: cppcoreguidelines-pro-type-static-cast-downcast**
+
+# [C.148: Use dynamic_cast to a pointer type when failure to find the required class is considered a valid alternative](https://github.com/isocpp/CppCoreGuidelines/blob/master/CppCoreGuidelines.md#c148-use-dynamic_cast-to-a-pointer-type-when-failure-to-find-the-required-class-is-considered-a-valid-alternative)
+
+- (Complex) Unless there is a null test on the result of a dynamic_cast of a pointer type, warn upon dereference of the pointer.
+
+**no enforcement**
+
+# [C.149: Use unique_ptr or shared_ptr to avoid forgetting to delete objects created using new](https://github.com/isocpp/CppCoreGuidelines/blob/master/CppCoreGuidelines.md#c149-use-unique_ptr-or-shared_ptr-to-avoid-forgetting-to-delete-objects-created-using-new)
+
+- Flag initialization of a naked pointer with the result of a new
+- Flag delete of local variable
+
+**clang-tidy: cppcoreguidelines-owning-memory**
+
+# [C.150: Use make_unique() to construct objects owned by unique_ptrs](https://github.com/isocpp/CppCoreGuidelines/blob/master/CppCoreGuidelines.md#c150-use-make_unique-to-construct-objects-owned-by-unique_ptrs)
+
+- Flag the repetitive usage of template specialization list <Foo>
+- Flag variables declared to be unique_ptr<Foo>
+
+**clang-tidy: modernize-make-unique**
+
+# [C.151: Use make_shared() to construct objects owned by shared_ptrs](https://github.com/isocpp/CppCoreGuidelines/blob/master/CppCoreGuidelines.md#c151-use-make_shared-to-construct-objects-owned-by-shared_ptrs)
+
+- Flag the repetitive usage of template specialization list<Bar>
+- Flag variables declared to be shared_ptr<Bar>
+
+**clang-tidy: modernize-make-shared**
+
+# [C.152: Never assign a pointer to an array of derived class objects to a pointer to its base](https://github.com/isocpp/CppCoreGuidelines/blob/master/CppCoreGuidelines.md#c152-never-assign-a-pointer-to-an-array-of-derived-class-objects-to-a-pointer-to-its-base)
+
+- Flag all combinations of array decay and base to derived conversions.
+- Pass an array as a span rather than as a pointer, and don't let the array name suffer a derived-to-base conversion before getting into the span
+
+**no enforcement**
+
+# [C.161: Use nonmember functions for symmetric operators](https://github.com/isocpp/CppCoreGuidelines/blob/master/CppCoreGuidelines.md#c161-use-nonmember-functions-for-symmetric-operators)
+
+- Flag member operator functions.
+
+**no enforcement**
+
+# [C.164: Avoid conversion operators](https://github.com/isocpp/CppCoreGuidelines/blob/master/CppCoreGuidelines.md#c164-avoid-conversion-operators)
+
+- Flag all conversion operators.
+
+**no enforcement**
+
+# [C.166: Overload unary & only as part of a system of smart pointers and references](https://github.com/isocpp/CppCoreGuidelines/blob/master/CppCoreGuidelines.md#c166-overload-unary--only-as-part-of-a-system-of-smart-pointers-and-references)
+
+- Tricky. Warn if & is user-defined without also defining -> for the result type.
+
+**no enforcement**
+
+# [C.168: Define overloaded operators in the namespace of their operands](https://github.com/isocpp/CppCoreGuidelines/blob/master/CppCoreGuidelines.md#c168-define-overloaded-operators-in-the-namespace-of-their-operands)
+
+- Flag operator definitions that are not it the namespace of their operands
+
+**no enforcement**
+
+# [C.167: Use an operator for an operation with its conventional meaning](https://github.com/isocpp/CppCoreGuidelines/blob/master/CppCoreGuidelines.md#c167-use-an-operator-for-an-operation-with-its-conventional-meaning)
+
+- Tricky. Requires semantic insight.
+- Comment by Jonas: Return type must be equivalent to the builtin version (see HIC++)
+
+**no enforcement**
