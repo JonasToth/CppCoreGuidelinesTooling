@@ -28,7 +28,7 @@ some rules will not be mentioned here, to reduce the noise.
 ## Supporting Sections
 
 [Pro: Profiles](profiles.md)  
-[NL: Naming and layout]()  
+[NL: Naming and layout](naming_layout.md)  
 
 # Tools
 
