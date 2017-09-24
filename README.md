@@ -21,8 +21,8 @@ some rules will not be mentioned here, to reduce the noise.
 [E: Error handling](error_handling.md)  
 [Con: Constants and immutability](constants.md)  
 [T: Templates and generic programming](templates.md)  
-[CPL: C-style programming]() just use C++ Compiler  
-[SF: Source Files]() currently a bit messy?  
+`CPL: C-style programming` just use C++ Compiler  
+[SF: Source Files](source_files.md) currently a bit messy?  
 [SL: The standard library]() currently a bit messy?  
 
 ## Supporting Sections
