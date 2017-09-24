@@ -1,4 +1,4 @@
-# [SF.1: Use a .cpp suffix for code files and .h for interface files if your project doesn't already follow another convention(https://github.com/isocpp/CppCoreGuidelines/blob/master/CppCoreGuidelines.md#sf1-use-a-cpp-suffix-for-code-files-and-h-for-interface-files-if-your-project-doesnt-already-follow-another-convention)
+# [SF.1: Use a .cpp suffix for code files and .h for interface files if your project doesn't already follow another convention](https://github.com/isocpp/CppCoreGuidelines/blob/master/CppCoreGuidelines.md#sf1-use-a-cpp-suffix-for-code-files-and-h-for-interface-files-if-your-project-doesnt-already-follow-another-convention)
 
 - Flag non-conventional file names.
 - Check that .h and .cpp (and equivalents) follow the rules below.
