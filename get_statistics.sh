@@ -2,14 +2,14 @@
 
 enforcement_statistics() {
     # count the number of big headings, these are enforceable rules
-    RULES=$(cat "$1" | grep '#' | wc -l)
+    RULES=$(grep '# ' "$1" | wc -l)
     # count the number of 'no enforcement' comments in the document
-    NO_ENFORCEMENT=$(cat "$1" | grep 'no enforcement' | wc -l)
+    NO_ENFORCEMENT=$(grep 'no enforcement' "$1" | wc -l)
     # calculate the difference between enforced and not enforced
     ENFORCED=$(($RULES-$NO_ENFORCEMENT))
 
     PERCENTAGE=$(echo "scale=2; 100. * $ENFORCED / $RULES" | bc)
-    echo "enforceable/done/todo ($RULES/$ENFORCED/$NO_ENFORCEMENT) $PERCENTAGE% done"
+    echo "/done/todo/enforceable/ (/$ENFORCED/$NO_ENFORCEMENT/$RULES/) $PERCENTAGE% done"
     echo
 }
 

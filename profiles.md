@@ -13,6 +13,8 @@ almost complete implementation in
 no direct implementation yet. But there are many tools to catch the mistakes,
 that result from lifetime violations.
 
+**no enforcement**
+
 - Sanitizers
 - Valgrind
 - CSA in general finds some bad accesses as well
