@@ -199,19 +199,19 @@ TODO: Rule of 5 is not enforced
 
 - (Moderate) The body of a special operation should not have the same accessibility and semantics as the compiler-generated version, because that would be redundant
 
-**clang-tidy: modernize-use-default**
+**clang-tidy: modernize-use-equals-default**
 
 # [C.81: Use =delete when you want to disable default behavior (without wanting an alternative)](https://github.com/isocpp/CppCoreGuidelines/blob/master/CppCoreGuidelines.md#c81-use-delete-when-you-want-to-disable-default-behavior-without-wanting-an-alternative)
 
 - The elimination of a default operation is (should be) based on the desired semantics of the class. Consider such classes suspect, but maintain a "positive list" of classes where a human has asserted that the semantics is correct.
 
-**clang-tidy: modernize-use-delete**
+**clang-tidy: modernize-use-equals-delete**
 
 # [C.82: Don't call virtual functions in constructors and destructors](https://github.com/isocpp/CppCoreGuidelines/blob/master/CppCoreGuidelines.md#c82-dont-call-virtual-functions-in-constructors-and-destructors)
 
 - Flag calls of virtual functions from constructors and destructors.
 
-**no enforcement**
+**clang-static-analyzer: alpha.cplusplus.VirtualCall **
 
 # [C.83: For value-like types, consider providing a noexcept swap function](https://github.com/isocpp/CppCoreGuidelines/blob/master/CppCoreGuidelines.md#c83-for-value-like-types-consider-providing-a-noexcept-swap-function) 
 
