@@ -2,10 +2,10 @@
 
 This repository will contain an overview of tooling support to enforce and check against the [CppCoreGuidelines](https://github.com/isocpp/CppCoreGuidelines).
 
-This is not a clone of the Guidelines, but a helpfull enhancement.
+This is not a clone of the Guidelines, but a helpful enhancement.
 
-The document is structured similar to the Guidelines, with each
-subsection beeing seperate. Since not every rule is enforceable by tools,
+The document is structured similarly to the Guidelines, with each
+subsection being seperate. Since not every rule is enforceable by tools,
 some rules will not be mentioned here, to reduce the noise.
 
 ## Main Sections
@@ -35,7 +35,7 @@ some rules will not be mentioned here, to reduce the noise.
 So which tools am I talking about?
 
 ## Clangs Toolchain
-They aim to give a tool for all tasks, clang-tidy and clang-format are the most usefull right now.
+They aim to give a tool for all tasks, clang-tidy and clang-format are the most useful right now.
 
 - [clang-format](http://clang.llvm.org/docs/ClangFormat.html)
 - [clang-tidy](http://clang.llvm.org/extra/clang-tidy/index.html)
@@ -47,11 +47,11 @@ The detail pages will contain more information, like the ability to automaticall
 
 ## CppCheck
 
-`cppcheck` is a static analyzer that implements a lot of usefull checks.
+`cppcheck` is a static analyzer that implements a lot of useful checks.
 
 ## CppCoreCheck
 
 It's provided by Microsoft in Visual Studio and partially enforces the
 Guidelines as well.
-Since I don't use Visual Studio nor Windows, I can't say alot about *CoreCheck*, maybe someone else could do this? :)
+Since I don't use Visual Studio nor Windows, I can't say a lot about *CoreCheck*, maybe someone else could do this? :)
 
