@@ -10,6 +10,7 @@ some rules will not be mentioned here, to reduce the noise.
 
 ## Main Sections
 
+[P: Philosophy](philosophy.md)  
 [I: Interfaces](interfaces.md)  
 [F: Functions](functions.md)  
 [C: Classes and class hierarchies](classes_hierarchy.md)  
