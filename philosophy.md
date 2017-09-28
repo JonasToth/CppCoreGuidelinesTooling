@@ -19,7 +19,7 @@
 
 **no enforcement**
 
-- @pepsimen is working on that, See #2
+- @pepsiman is working on that, See #2
 
 # [P.3: Express intent](https://github.com/isocpp/CppCoreGuidelines/blob/master/CppCoreGuidelines.md#p3-express-intent)
 
@@ -34,6 +34,7 @@
 - There is a huge scope for cleverness and semi-automated program transformation.
 
 **clang-tidy: modernize-loop-convert,cppcoreguidelines-owning-memory,readability-function-size**
+**cppcheck: variableScope**
 
 # [P.4: Ideally, a program should be statically type safe](https://github.com/isocpp/CppCoreGuidelines/blob/master/CppCoreGuidelines.md#p4-ideally-a-program-should-be-statically-type-safe)
 
