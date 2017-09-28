@@ -145,78 +145,6 @@ C++17 enforcement (if using a C++17 compiler)
 
 **clang-tidy: cppcoreguidelines-pro-type-vararg**
 
-# [ES.70: Prefer a switch-statement to an if-statement when there is a choice](https://github.com/isocpp/CppCoreGuidelines/blob/master/CppCoreGuidelines.md#es70-prefer-a-switch-statement-to-an-if-statement-when-there-is-a-choice)
-
-- Flag if-then-else chains that check against constants (only).
-
-**no enforcement**
-
-# [ES.71: Prefer a range-for-statement to a for-statement when there is a choice](https://github.com/isocpp/CppCoreGuidelines/blob/master/CppCoreGuidelines.md#es71-prefer-a-range-for-statement-to-a-for-statement-when-there-is-a-choice)
-
-- Look at loops, if a traditional loop just looks at each element of a sequence, and there are no side effects on what it does with the elements, rewrite the loop to a ranged-for loop.
-
-**clang-tidy: modernize-loop-convert**
-
-# [ES.73: Prefer a while-statement to a for-statement when there is no obvious loop variable](https://github.com/isocpp/CppCoreGuidelines/blob/master/CppCoreGuidelines.md#es73-prefer-a-while-statement-to-a-for-statement-when-there-is-no-obvious-loop-variable)
-
-- Flag actions in for-initializers and for-increments that do not relate to the for-condition.
-
-**no enforcement**
-
-# [ES.74: Prefer to declare a loop variable in the initializer part of a for-statement](https://github.com/isocpp/CppCoreGuidelines/blob/master/CppCoreGuidelines.md#es74-prefer-to-declare-a-loop-variable-in-the-initializer-part-of-a-for-statement)
-
-- Warn when a variable modified inside the for-statement is declared outside the loop and not being used outside the loop.
-
-**no enforcement**
-
-# [ES.75: Avoid do-statements](https://github.com/isocpp/CppCoreGuidelines/blob/master/CppCoreGuidelines.md#es75-avoid-do-statements)
-
-- Flag do-statements.
-
-**no enforcement**
-
-# [ES.76: Avoid goto](https://github.com/isocpp/CppCoreGuidelines/blob/master/CppCoreGuidelines.md#es76-avoid-goto)
-
-- Flag goto. Better still flag all gotos that do not jump from a nested loop to the statement immediately after a nest of loops.
-
-**no enforcement**
-
-# [ES.78: Always end a non-empty case with a break](https://github.com/isocpp/CppCoreGuidelines/blob/master/CppCoreGuidelines.md#es78-always-end-a-non-empty-case-with-a-break)
-
-- Flag all fallthroughs from non-empty cases.
-
-**no enforcement**
-
-# [ES.79: Use default to handle common cases (only)](https://github.com/isocpp/CppCoreGuidelines/blob/master/CppCoreGuidelines.md#es79-use-default-to-handle-common-cases-only)
-
-- Flag switch-statements over an enumeration that don't handle all enumerators and do not have a default. This may yield too many false positives in some code bases; if so, flag only switches that handle most but not all cases (that was the strategy of the very first C++ compiler).
-
-**clang-diagnostics: -Wswitch**
-
-# [ES.84: Don't (try to) declare a local variable with no name](https://github.com/isocpp/CppCoreGuidelines/blob/master/CppCoreGuidelines.md#es84-dont-try-to-declare-a-local-variable-with-no-name)
-
-- Flag statements that are just a temporary
-
-**no enforcement**
-
-# [ES.85: Make empty statements visible](https://github.com/isocpp/CppCoreGuidelines/blob/master/CppCoreGuidelines.md#es85-make-empty-statements-visible)
-
-- Flag empty statements that are not blocks and don't contain comments.
-
-**no enforcement**
-
-# [ES.86: Avoid modifying loop control variables inside the body of raw for-loops](https://github.com/isocpp/CppCoreGuidelines/blob/master/CppCoreGuidelines.md#es86-avoid-modifying-loop-control-variables-inside-the-body-of-raw-for-loops)
-
-- Flag variables that are potentially updated (have a non-const use) in both the loop control iteration-expression and the loop body.
-
-**no enforcement**
-
-# [ES.87: Don't add redundant == or != to conditions](https://github.com/isocpp/CppCoreGuidelines/blob/master/CppCoreGuidelines.md#es87-dont-add-redundant--or--to-conditions)
-
-- Easy, just check for redundant use of != and == in conditions.
-
-**clang-tidy: misc-redundant-expression, readability-simplify-boolean-expr**
-
 # [ES.40: Avoid complicated expressions](https://github.com/isocpp/CppCoreGuidelines/blob/master/CppCoreGuidelines.md#es40-avoid-complicated-expressions)
 
 - side effects: side effects on multiple non-local variables (for some definition of non-local) can be suspect, especially if the side effects are in separate subexpressions
@@ -357,6 +285,79 @@ clang-tidy: clang-analyzer-cplusplus.NewDelete**
 **clang-tidy: misc-use-after-move, clang-analyzer-core.NullDereference  
 Adress Sanitizer, Memory Sanitizer, Thread Sanitizer, Undefined Behaviour
 Sanitizer**
+
+
+# [ES.70: Prefer a switch-statement to an if-statement when there is a choice](https://github.com/isocpp/CppCoreGuidelines/blob/master/CppCoreGuidelines.md#es70-prefer-a-switch-statement-to-an-if-statement-when-there-is-a-choice)
+
+- Flag if-then-else chains that check against constants (only).
+
+**no enforcement**
+
+# [ES.71: Prefer a range-for-statement to a for-statement when there is a choice](https://github.com/isocpp/CppCoreGuidelines/blob/master/CppCoreGuidelines.md#es71-prefer-a-range-for-statement-to-a-for-statement-when-there-is-a-choice)
+
+- Look at loops, if a traditional loop just looks at each element of a sequence, and there are no side effects on what it does with the elements, rewrite the loop to a ranged-for loop.
+
+**clang-tidy: modernize-loop-convert**
+
+# [ES.73: Prefer a while-statement to a for-statement when there is no obvious loop variable](https://github.com/isocpp/CppCoreGuidelines/blob/master/CppCoreGuidelines.md#es73-prefer-a-while-statement-to-a-for-statement-when-there-is-no-obvious-loop-variable)
+
+- Flag actions in for-initializers and for-increments that do not relate to the for-condition.
+
+**no enforcement**
+
+# [ES.74: Prefer to declare a loop variable in the initializer part of a for-statement](https://github.com/isocpp/CppCoreGuidelines/blob/master/CppCoreGuidelines.md#es74-prefer-to-declare-a-loop-variable-in-the-initializer-part-of-a-for-statement)
+
+- Warn when a variable modified inside the for-statement is declared outside the loop and not being used outside the loop.
+
+**no enforcement**
+
+# [ES.75: Avoid do-statements](https://github.com/isocpp/CppCoreGuidelines/blob/master/CppCoreGuidelines.md#es75-avoid-do-statements)
+
+- Flag do-statements.
+
+**no enforcement**
+
+# [ES.76: Avoid goto](https://github.com/isocpp/CppCoreGuidelines/blob/master/CppCoreGuidelines.md#es76-avoid-goto)
+
+- Flag goto. Better still flag all gotos that do not jump from a nested loop to the statement immediately after a nest of loops.
+
+**no enforcement**
+
+# [ES.78: Always end a non-empty case with a break](https://github.com/isocpp/CppCoreGuidelines/blob/master/CppCoreGuidelines.md#es78-always-end-a-non-empty-case-with-a-break)
+
+- Flag all fallthroughs from non-empty cases.
+
+**no enforcement**
+
+# [ES.79: Use default to handle common cases (only)](https://github.com/isocpp/CppCoreGuidelines/blob/master/CppCoreGuidelines.md#es79-use-default-to-handle-common-cases-only)
+
+- Flag switch-statements over an enumeration that don't handle all enumerators and do not have a default. This may yield too many false positives in some code bases; if so, flag only switches that handle most but not all cases (that was the strategy of the very first C++ compiler).
+
+**clang-diagnostics: -Wswitch**
+
+# [ES.84: Don't (try to) declare a local variable with no name](https://github.com/isocpp/CppCoreGuidelines/blob/master/CppCoreGuidelines.md#es84-dont-try-to-declare-a-local-variable-with-no-name)
+
+- Flag statements that are just a temporary
+
+**no enforcement**
+
+# [ES.85: Make empty statements visible](https://github.com/isocpp/CppCoreGuidelines/blob/master/CppCoreGuidelines.md#es85-make-empty-statements-visible)
+
+- Flag empty statements that are not blocks and don't contain comments.
+
+**no enforcement**
+
+# [ES.86: Avoid modifying loop control variables inside the body of raw for-loops](https://github.com/isocpp/CppCoreGuidelines/blob/master/CppCoreGuidelines.md#es86-avoid-modifying-loop-control-variables-inside-the-body-of-raw-for-loops)
+
+- Flag variables that are potentially updated (have a non-const use) in both the loop control iteration-expression and the loop body.
+
+**no enforcement**
+
+# [ES.87: Don't add redundant == or != to conditions](https://github.com/isocpp/CppCoreGuidelines/blob/master/CppCoreGuidelines.md#es87-dont-add-redundant--or--to-conditions)
+
+- Easy, just check for redundant use of != and == in conditions.
+
+**clang-tidy: misc-redundant-expression, readability-simplify-boolean-expr**
 
 # [ES.100: Don't mix signed and unsigned arithmetic](https://github.com/isocpp/CppCoreGuidelines/blob/master/CppCoreGuidelines.md#es100-dont-mix-signed-and-unsigned-arithmetic)
 
