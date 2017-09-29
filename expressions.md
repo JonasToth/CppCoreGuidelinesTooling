@@ -365,7 +365,8 @@ Sanitizer**
 
 - Compilers already know and sometimes warn.
 
-**true ;) no special enforcement in clang-tidy**
+**no enforcement**  
+in essence the same rule as ES.102
 
 # [ES.101: Use unsigned types for bit manipulation](https://github.com/isocpp/CppCoreGuidelines/blob/master/CppCoreGuidelines.md#es101-use-unsigned-types-for-bit-manipulation)
 
