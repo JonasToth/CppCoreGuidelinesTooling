@@ -42,11 +42,13 @@ TODO alias into CppCoreGuidelines
 - copyable but never copied/moved from or movable but never moved
 - and that is never modified or passed along to another function that could do so.
 
+**no enforcement**
+
 # [F.9: Unused parameters should be unnamed](https://github.com/isocpp/CppCoreGuidelines/blob/master/CppCoreGuidelines.md#f9-unused-parameters-should-be-unnamed)
 
 - Flag named unused parameters
 
-**clang: Warning on unused parameters**
+**clang: -Wunused-parameter**
 
 # [F.16: For "in" parameters, pass cheaply-copied types by value and others by reference to const](https://github.com/isocpp/CppCoreGuidelines/blob/master/CppCoreGuidelines.md#f16-for-in-parameters-pass-cheaply-copied-types-by-value-and-others-by-reference-to-const)
 
@@ -75,6 +77,7 @@ TODO alias into CppCoreGuidelines
 
 - Flag a function that takes a TP&& parameter (where TP is a template type parameter name) and does anything with it other than std::forwarding it exactly once on every static path.
 
+**no enforcement**
 Similar and related: **clang-tidy: misc-move-forwarding-reference**
 
 # [F.20: For "out" output values, prefer return values to output parameters](https://github.com/isocpp/CppCoreGuidelines/blob/master/CppCoreGuidelines.md#f20-for-out-output-values-prefer-return-values-to-output-parameters)
@@ -94,7 +97,7 @@ Similar and related: **clang-tidy: misc-move-forwarding-reference**
 
 - (Simple) ((Bounds)) Warn for any arithmetic operation on an expression of pointer type that results in a value of pointer type.
 
-**clang-tidy: cppgoreguidelines-owning-memory, cppgoreguidelines-pro-bounds-* **
+**clang-tidy: cppgoreguidelines-owning-memory, cppgoreguidelines-pro-bounds-**
 
 # [F.23: Use a not_null<T> to indicate that "null" is not a valid value](https://github.com/isocpp/CppCoreGuidelines/blob/master/CppCoreGuidelines.md#f23-use-a-not_nullt-to-indicate-that-null-is-not-a-valid-value)
 
@@ -144,7 +147,7 @@ Similar and related: **clang-tidy: misc-move-forwarding-reference**
 
 # [F.46: int is the return type for main()](https://github.com/isocpp/CppCoreGuidelines/blob/master/CppCoreGuidelines.md#f46-int-is-the-return-type-for-main)
 
-Already done with C++ in clang
+**clang++ required `int` as return value, otherwise compile error**
 
 # [F.47: Return T& from assignment operators](https://github.com/isocpp/CppCoreGuidelines/blob/master/CppCoreGuidelines.md#f47-return-t-from-assignment-operators)
 
