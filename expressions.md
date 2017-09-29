@@ -15,6 +15,8 @@ C++17 enforcement (if using a C++17 compiler)
 - Flag selection/loop variables declared before the body and not used after the body
 - (hard) Flag selection/loop variables declared before the body and used after the body for an unrelated purpose.
 
+**no enforcement**
+
 # [ES.7: Keep common and local names short, and keep uncommon and nonlocal names longer](https://github.com/isocpp/CppCoreGuidelines/blob/master/CppCoreGuidelines.md#es7-keep-common-and-local-names-short-and-keep-uncommon-and-nonlocal-names-longer)
 
 - Check length of local and non-local names. Also take function length into account.
