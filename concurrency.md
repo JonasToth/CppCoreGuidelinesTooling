@@ -16,9 +16,13 @@ There are other ways you can mitigate the chance of data races:
 - More use of value types on the stack (and don't pass pointers around too much)
 - More use of immutable data (literals, constexpr, and const)
 
+**no enforcement**
+
 # [CP.20: Use RAII, never plain lock()/unlock()](https://github.com/isocpp/CppCoreGuidelines/blob/master/CppCoreGuidelines.md#cp20-use-raii-never-plain-lockunlock)
 
 - Flag calls of member lock() and unlock(). ???
+
+**no enforcement**
 
 # [CP.21: Use std::lock() or std::scoped_lock to acquire multiple mutexes](https://github.com/isocpp/CppCoreGuidelines/blob/master/CppCoreGuidelines.md#cp21-use-stdlock-or-stdscoped_lock-to-acquire-multiple-mutexes)
 
@@ -59,6 +63,8 @@ Flag uses of std::thread:
 
 - Flag detach()
 
+**no enforcement**
+
 # [CP.42: Don't wait without a condition](https://github.com/isocpp/CppCoreGuidelines/blob/master/CppCoreGuidelines.md#cp42-dont-wait-without-a-condition)
 
 - Flag all waits without conditions.
@@ -75,7 +81,7 @@ Flag uses of std::thread:
 
 - Have strong rules for re-testing in place that covers any change in hardware, operating system, compiler, and libraries.
 
-**use buildbot, jenkins**
+**use unittesting, buildbot/jenkins for all your platforms**
 
 # [CP.200: Use volatile only to talk to non-C++ memory](https://github.com/isocpp/CppCoreGuidelines/blob/master/CppCoreGuidelines.md#cp200-use-volatile-only-to-talk-to-non-c-memory)
 
