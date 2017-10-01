@@ -5,11 +5,13 @@ enforcement_statistics() {
     RULES=$(grep '# ' "$1" | wc -l)
     # count the number of 'no enforcement' comments in the document
     NO_ENFORCEMENT=$(grep 'no enforcement' "$1" | wc -l)
+    # count the number of 'no enforcement' comments in the document
+    PARTIAL_ENFORCED=$(grep 'partial enforcement' "$1" | wc -l)
     # calculate the difference between enforced and not enforced
-    ENFORCED=$(($RULES-$NO_ENFORCEMENT))
+    ENFORCED=$(($RULES-$NO_ENFORCEMENT-$PARTIAL_ENFORCED))
 
     PERCENTAGE=$(echo "scale=2; 100. * $ENFORCED / $RULES" | bc)
-    echo "/done/todo/enforceable/ (/$ENFORCED/$NO_ENFORCEMENT/$RULES/) $PERCENTAGE% done"
+    echo "/partial/done/todo/enforceable/ (/$PARTIAL_ENFORCED/$ENFORCED/$NO_ENFORCEMENT/$RULES/) $PERCENTAGE% done"
     echo
 }
 

@@ -20,6 +20,8 @@
     - const definitions
     - using alias definitions
 
+**no enforcement**
+
 # [SF.3: Use .h files for all declarations used in multiple source files](https://github.com/isocpp/CppCoreGuidelines/blob/master/CppCoreGuidelines.md#sf3-use-h-files-for-all-declarations-used-in-multiple-source-files)
 
 - Flag declarations of entities in other source files not placed in a .h.
@@ -37,9 +39,13 @@ modularize area, since these header files are likely to be bad headers**
 
 - Flag multiple using namespace directives for different namespaces in a single source file.
 
+**no enforcement**
+
 # [SF.7: Don't write using namespace in a header file](https://github.com/isocpp/CppCoreGuidelines/blob/master/CppCoreGuidelines.md#sf7-dont-write-using-namespace-in-a-header-file)
 
 - Flag using namespace at global scope in a header file.
+
+**no enforcement**
 
 # [SF.8: Use #include guards for all .h files](https://github.com/isocpp/CppCoreGuidelines/blob/master/CppCoreGuidelines.md#sf8-use-include-guards-for-all-h-files)
 
@@ -51,13 +57,15 @@ modularize area, since these header files are likely to be bad headers**
 
 - Flag all cycles.
 
-**no enforcement**
+**no enforcement**  
+Maybe [IncludeWhatYouUse](https://include-what-you-use.org/) has something on
+it
 
 # [SF.10: Avoid dependencies on implicitly #included names](https://github.com/isocpp/CppCoreGuidelines/blob/master/CppCoreGuidelines.md#sf10-avoid-dependencies-on-implicitly-included-names)
 
 - Enforcement would require some knowledge about what in a header is meant to be "exported" to users and what is there to enable implementation. No really good solution is possible until we have modules.
 
-**modularize, include-what-you-use**
+**modularize, [IncludeWhatYouUse](https://include-what-you-use.org/)**
 
 # [SF.21: Don't use an unnamed (anonymous) namespace in a header](https://github.com/isocpp/CppCoreGuidelines/blob/master/CppCoreGuidelines.md#sf21-dont-use-an-unnamed-anonymous-namespace-in-a-header)
 
