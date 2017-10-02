@@ -2,6 +2,7 @@
 
 - Flag non-const variables that are not modified (except for parameters to avoid many false positives)
 
+**partial enforcement**  
 **clang-tidy: readability-non-const-parameter**  
 TODO: Implement same check for local variables
 
