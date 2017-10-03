@@ -24,6 +24,7 @@ protected, or private).
 
 - Catch destructors, deallocation operations, and swaps that throw. Catch such operations that are not noexcept
 
+**partial enforcement**  
 **clang-tidy: misc-noexcept-move-constructor**  
 TODO: extend to swap operation
 
