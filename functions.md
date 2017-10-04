@@ -12,6 +12,7 @@
 - Consider "large" functions that don't fit on one editor screen suspicious. Consider factoring such a function into smaller well-named suboperations.
 - Consider functions with 7 or more parameters suspicious.
 
+**partial enforcement**  
 **clang-tidy: readability-function-size**  
 TODO warn for multiple out parameters
 
@@ -33,9 +34,11 @@ TODO warn for multiple out parameters
 - Flag functions that are not noexcept, yet cannot throw.
 - Flag throwing swap, move, destructors, and default constructors.
 
+**partial enforcement**  
 **clang-tidy: misc-noexcept-move-constructor, there is frontend diagnostic on
 noexcept dtors**  
-TODO alias into CppCoreGuidelines
+TODO alias into CppCoreGuidelines  
+TODO throwing `swap` and default constructors are not enforced
 
 # [F.7: For general use, take T* or T& arguments rather than smart pointers](https://github.com/isocpp/CppCoreGuidelines/blob/master/CppCoreGuidelines.md#f7-for-general-use-take-t-or-t-arguments-rather-than-smart-pointers)
 
@@ -71,13 +74,14 @@ TODO alias into CppCoreGuidelines
 - Flag access to moved-from objects.
 - Don't conditionally move from objects
 
+**partial enforcement**  
 **clang-tidy: misc-use-after-move**
 
 # [F.19: For "forward" parameters, pass by TP&& and only std::forward the parameter](https://github.com/isocpp/CppCoreGuidelines/blob/master/CppCoreGuidelines.md#f19-for-forward-parameters-pass-by-tp-and-only-stdforward-the-parameter)
 
 - Flag a function that takes a TP&& parameter (where TP is a template type parameter name) and does anything with it other than std::forwarding it exactly once on every static path.
 
-**no enforcement**
+**no enforcement**  
 Similar and related: **clang-tidy: misc-move-forwarding-reference**
 
 # [F.20: For "out" output values, prefer return values to output parameters](https://github.com/isocpp/CppCoreGuidelines/blob/master/CppCoreGuidelines.md#f20-for-out-output-values-prefer-return-values-to-output-parameters)
@@ -124,7 +128,7 @@ Similar and related: **clang-tidy: misc-move-forwarding-reference**
 - Flag delete, std::free(), etc. applied to a plain T*. Only owners should be deleted.
 - Flag new, malloc(), etc. assigned to a plain T*. Only owners should be responsible for deletion.
 
-**clang-tidy: cppcoreguidelines-owning-memory**
+**clang-tidy: cppcoreguidelines-owning-memory, cppcoreguidelines-no-malloc**
 
 # [F.43: Never (directly or indirectly) return a pointer or a reference to a local object](https://github.com/isocpp/CppCoreGuidelines/blob/master/CppCoreGuidelines.md#f43-never-directly-or-indirectly-return-a-pointer-or-a-reference-to-a-local-object)
 
