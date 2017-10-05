@@ -32,6 +32,7 @@ Concepts are on the way to be standardized, clang are implementing them, soon.
 - (Simple) Warn on failure to either reset or explicitly delete an owner pointer on every code path.
 - (Simple) Warn if the return value of new or a function call with an owner return value is assigned to a raw pointer or non-owner reference.
 
+**partial enforcement**  
 **clang-tidy: cppcoreguidelines-owning-memory**
 
 # [I.12: Declare a pointer that must not be null as not_null](https://github.com/isocpp/CppCoreGuidelines/blob/master/CppCoreGuidelines.md#i12-declare-a-pointer-that-must-not-be-null-as-not_null)
@@ -75,5 +76,3 @@ TODO: alias into cppcoreguidelines?
 - (Simple) Warn if a pointer/reference to a class C is assigned to a pointer/reference to a base of C and the base class contains data members.
 
 **no enforcement**
-
-# 
