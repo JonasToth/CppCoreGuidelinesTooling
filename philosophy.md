@@ -7,7 +7,7 @@
 - flag uses of casts (casts neuter the type system)
 - detect code that mimics the standard library (hard)
 
-**no enforcement**  
+**partial enforcement**  
 **clang-tidy: cppcoreguidelines-pro-type-const-cast,cppcoreguidelines-pro-type-cstyle-cast,cppcoreguidelines-pro-type-reinterpret-cast, cppcoreguidelines-pro-type-static-cast-downcast**
 
 - maybe `CodeChecker` could do the 'mimics' part with its similarity check
@@ -33,6 +33,7 @@
 
 - There is a huge scope for cleverness and semi-automated program transformation.
 
+**partial enforcement**  
 **clang-tidy: modernize-loop-convert,cppcoreguidelines-owning-memory,readability-function-size**
 **cppcheck: variableScope**
 
@@ -47,14 +48,14 @@ We can ban, restrain, or detect the individual problem categories separately, as
 - narrowing conversions -- minimize their use and use
 - narrow or narrow_cast (from the GSL) where they are necessary
 
-**no enforcement**
+**partial enforcement**  
 
 # [P.5: Prefer compile-time checking to run-time checking](https://github.com/isocpp/CppCoreGuidelines/blob/master/CppCoreGuidelines.md#p5-prefer-compile-time-checking-to-run-time-checking)
 
 - Look for pointer arguments.
 - Look for run-time checks for range violations.
 
-**no enforcement**
+**partial enforcement**  
 
 # [P.6: What cannot be checked at compile time should be checkable at run time](https://github.com/isocpp/CppCoreGuidelines/blob/master/CppCoreGuidelines.md#p6-what-cannot-be-checked-at-compile-time-should-be-checkable-at-run-time)
 
@@ -69,7 +70,7 @@ We can ban, restrain, or detect the individual problem categories separately, as
 - Look for unchecked values coming from input
 - Look for structured data (objects of classes with invariants) being converted into strings
 
-**no enforcement**
+**partial enforcement**  
 
 # [P.8: Don't leak any resources](https://github.com/isocpp/CppCoreGuidelines/blob/master/CppCoreGuidelines.md#p8-dont-leak-any-resources)
 
@@ -77,12 +78,13 @@ We can ban, restrain, or detect the individual problem categories separately, as
 - Look for naked new and delete
 - Look for known resource allocating functions returning raw pointers (such as fopen, malloc, and strdup)
 
+**partial enforcement**  
 **clang-tidy: cppcoreguidelines-no-malloc,cppcoreguidelines-owning-memory**
+**clang-static-analyzer: leak checker**  
 
 # [P.11: Encapsulate messy constructs, rather than spreading through the code](https://github.com/isocpp/CppCoreGuidelines/blob/master/CppCoreGuidelines.md#p11-encapsulate-messy-constructs-rather-than-spreading-through-the-code)
 
 - Look for "messy code" such as complex pointer manipulation and casting outside the implementation of abstractions.
+- limit the amount of indirection (max 1 Pointer/Reference indirection, banning int **)
 
 **no enforcement**
-
-- limit the amount of indirection (max 1 Pointer/Reference indirection, banning int **)
