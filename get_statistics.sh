@@ -11,14 +11,14 @@ enforcement_statistics() {
     ENFORCED=$(($RULES-$NO_ENFORCEMENT-$PARTIAL_ENFORCED))
 
     PERCENTAGE=$(echo "scale=2; 100. * $ENFORCED / $RULES" | bc)
-    echo "/partial/done/todo/enforceable/ (/$PARTIAL_ENFORCED/$ENFORCED/$NO_ENFORCEMENT/$RULES/) $PERCENTAGE% done"
+    echo "/partial/done/todo/enforceable/ (/$PARTIAL_ENFORCED/$ENFORCED/$NO_ENFORCEMENT/$RULES/) *$PERCENTAGE%* done"
     #echo
 }
 
 # create a temporary md file, with all sections contained. Used for the total statistics.
 cat *.md > temp_all.md
 
-echo "=== Total statistics"
+echo "### Total statistics"
 enforcement_statistics "temp_all.md"
 echo
 
@@ -27,6 +27,7 @@ rm temp_all.md
 
 for file in [a-z_]*.md
 do
-    echo "--== $file statistics"
+    echo "#### $file statistics"
     enforcement_statistics $file
+    echo
 done
