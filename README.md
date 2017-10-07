@@ -56,3 +56,42 @@ It's provided by Microsoft in Visual Studio and partially enforces the
 Guidelines as well.
 Since I don't use Visual Studio nor Windows, I can't say a lot about *CoreCheck*, maybe someone else could do this? :)
 
+## Implementation status
+
+This section gives an overview of the Implementation status for the
+CppCoreGuidelines in several analysis tools. Most of them are `clang` based and
+`clang-tidy` has most of the checks implemented.
+
+=== Total statistics
+/partial/done/todo/enforceable/ (/12/102/176/290/) 35.17% done
+
+--== classes_hierarchy.md statistics
+/partial/done/todo/enforceable/ (/0/27/40/67/) 40.29% done
+--== concurrency.md statistics
+/partial/done/todo/enforceable/ (/0/1/11/12/) 8.33% done
+--== constants.md statistics
+/partial/done/todo/enforceable/ (/1/0/4/5/) 0% done
+--== enumerations.md statistics
+/partial/done/todo/enforceable/ (/0/1/6/7/) 14.28% done
+--== error_handling.md statistics
+/partial/done/todo/enforceable/ (/1/3/3/7/) 42.85% done
+--== expressions.md statistics
+/partial/done/todo/enforceable/ (/0/23/37/60/) 38.33% done
+--== functions.md statistics
+/partial/done/todo/enforceable/ (/3/10/15/28/) 35.71% done
+--== interfaces.md statistics
+/partial/done/todo/enforceable/ (/1/2/8/11/) 18.18% done
+--== naming_layout.md statistics
+/partial/done/todo/enforceable/ (/0/8/5/13/) 61.53% done
+--== performance.md statistics
+/partial/done/todo/enforceable/ (/0/1/0/1/) 100.00% done
+--== philosophy.md statistics
+/partial/done/todo/enforceable/ (/6/0/3/9/) 0% done
+--== profiles.md statistics
+/partial/done/todo/enforceable/ (/0/2/1/3/) 66.66% done
+--== resource_management.md statistics
+/partial/done/todo/enforceable/ (/0/10/11/21/) 47.61% done
+--== source_files.md statistics
+/partial/done/todo/enforceable/ (/0/2/8/10/) 20.00% done
+--== templates.md statistics
+/partial/done/todo/enforceable/ (/0/4/24/28/) 14.28% done
