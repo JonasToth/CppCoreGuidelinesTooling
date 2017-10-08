@@ -11,7 +11,7 @@ enforcement_statistics() {
     ENFORCED=$(($RULES-$NO_ENFORCEMENT-$PARTIAL_ENFORCED))
 
     PERCENTAGE=$(echo "scale=2; 100. * $ENFORCED / $RULES" | bc)
-    echo "/partial/done/todo/enforceable/ (/$PARTIAL_ENFORCED/$ENFORCED/$NO_ENFORCEMENT/$RULES/) *$PERCENTAGE%* done"
+    echo "/partial/done/todo/enforceable/ (/$PARTIAL_ENFORCED/$ENFORCED/$NO_ENFORCEMENT/$RULES/) **$PERCENTAGE%** done"
     #echo
 }
 
