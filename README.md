@@ -44,7 +44,11 @@ They aim to give a tool for all tasks, clang-tidy and clang-format are the most 
 - [list of clangs sanitizer](http://clang.llvm.org/docs/index.html) - this is compiler related, note that gcc implements some sanitizers as well!
 
 Each of these tools gets it own overview page, and a general overview what is possible to check with any tool.
-The detail pages will contain more information, like the ability to automatically fix issues, like *clang-tidy* does.
+The detail pages will contain more information, like the ability to automatically fix issues, like `clang-tidy` does.
+
+To use `clang-tidy` copy one of the `clang-tidy-<version>` to your repository
+and name it as `.clang-tidy`. It will enable all checks that enforce the
+guidelines. You can further modify the checks as well.
 
 ## CppCheck
 
@@ -54,7 +58,7 @@ The detail pages will contain more information, like the ability to automaticall
 
 It's provided by Microsoft in Visual Studio and partially enforces the
 Guidelines as well.
-Since I don't use Visual Studio nor Windows, I can't say a lot about *CoreCheck*, maybe someone else could do this? :)
+Since I don't use Visual Studio nor Windows, I can't say a lot about `CoreCheck`, maybe someone else could do this? :)
 
 ## Implementation status
 
