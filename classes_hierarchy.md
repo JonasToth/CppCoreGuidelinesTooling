@@ -110,7 +110,8 @@ TODO: Rule of 5 is not enforced
 - (Simple) Every constructor should initialize every member variable (either explicitly, via a delegating ctor call or via default construction).
 - (Unknown) If a constructor has an Ensures contract, try to see if it holds as a postcondition.
 
-**warnings for uninitialized members?!**
+**clang-tidy: bugprone-copy-constructor-init**
+**clang: -Wuninitialized**
 
 # [C.43: Ensure that a value type class has a default constructor](https://github.com/isocpp/CppCoreGuidelines/blob/master/CppCoreGuidelines.md#c43-ensure-that-a-value-type-class-has-a-default-constructor)
 
