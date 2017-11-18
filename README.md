@@ -67,10 +67,12 @@ CppCoreGuidelines in several analysis tools. Most of them are `clang` based and
 `clang-tidy` has most of the checks implemented.
 
 ### Total statistics
-/partial/done/todo/enforceable/ (/12/102/176/290/) **35.17%** done
+
+### Total statistics
+/partial/done/todo/enforceable/ (/12/97/182/291/) **33.33%** done
 
 #### classes_hierarchy.md statistics
-/partial/done/todo/enforceable/ (/0/27/40/67/) **40.29%** done
+/partial/done/todo/enforceable/ (/0/21/46/67/) **31.34%** done
 
 #### concurrency.md statistics
 /partial/done/todo/enforceable/ (/0/1/11/12/) **8.33%** done
