@@ -78,8 +78,7 @@ TODO: the check only ensures the existence of a destructor, but not if the membe
 - A class with a pointer data member is suspect.
 - A class with an owner<T> should define its default operations.
 
-**clang-tidy: cppcoreguidelines-owning-memory**  
-TODO: Rule of 5 is not enforced
+**clang-tidy: cppcoreguidelines-owning-memory,cppcoreguidelines-special-member-functions**
 
 # [C.35: A base class destructor should be either public and virtual, or protected and nonvirtual](https://github.com/isocpp/CppCoreGuidelines/blob/master/CppCoreGuidelines.md#c35-a-base-class-destructor-should-be-either-public-and-virtual-or-protected-and-nonvirtual)
 
@@ -103,23 +102,27 @@ TODO: Rule of 5 is not enforced
 
 - Flag classes with user-defined copy operations but no constructor (a user-defined copy is a good indicator that the class has an invariant)
 
-**Rule of 5?, clang-tidy: cppcoreguidelines-special-member-functions**
+**clang-tidy: cppcoreguidelines-special-member-functions**
 
 # [C.41: A constructor should create a fully initialized object](https://github.com/isocpp/CppCoreGuidelines/blob/master/CppCoreGuidelines.md#c41-a-constructor-should-create-a-fully-initialized-object)
 
 - (Simple) Every constructor should initialize every member variable (either explicitly, via a delegating ctor call or via default construction).
 - (Unknown) If a constructor has an Ensures contract, try to see if it holds as a postcondition.
 
-**clang-tidy: bugprone-copy-constructor-init**
+**clang-tidy: bugprone-copy-constructor-init**  
 **clang: -Wuninitialized**
 
 # [C.43: Ensure that a value type class has a default constructor](https://github.com/isocpp/CppCoreGuidelines/blob/master/CppCoreGuidelines.md#c43-ensure-that-a-value-type-class-has-a-default-constructor)
 
 - Flag classes that are copyable by = or comparable with == without a default constructor
 
+**no enforcement**
+
 # [C.44: Prefer default constructors to be simple and non-throwing](https://github.com/isocpp/CppCoreGuidelines/blob/master/CppCoreGuidelines.md#c44-prefer-default-constructors-to-be-simple-and-non-throwing)
 
 - Flag throwing default constructors
+
+**no enforcement**
 
 # [C.45: Don't define a default constructor that only initializes data members; use in-class member initializers instead](https://github.com/isocpp/CppCoreGuidelines/blob/master/CppCoreGuidelines.md#c45-dont-define-a-default-constructor-that-only-initializes-data-members-use-in-class-member-initializers-instead)
 
@@ -169,6 +172,8 @@ TODO: Rule of 5 is not enforced
 - (Simple) An assignment operator should not be virtual. Here be dragons!
 - (Simple) An assignment operator should return T& to enable chaining, not alternatives like const T& which interfere with composability and putting objects in containers.
 - (Moderate) An assignment operator should (implicitly or explicitly) invoke all base and member assignment operators. Look at the destructor to determine if the type has pointer semantics or value semantics.
+
+**no enforcement**
 
 # [C.62: Make copy assignment safe for self-assignment](https://github.com/isocpp/CppCoreGuidelines/blob/master/CppCoreGuidelines.md#c62-make-copy-assignment-safe-for-self-assignment)
 
@@ -252,9 +257,6 @@ TODO: Rule of 5 is not enforced
 
 **no enforcement**
 
-
-
-
 # [C.120: Use class hierarchies to represent concepts with inherent hierarchical structure (only)](https://github.com/isocpp/CppCoreGuidelines/blob/master/CppCoreGuidelines.md#c120-use-class-hierarchies-to-represent-concepts-with-inherent-hierarchical-structure-only)
 
 - Look for classes with lots of members that do nothing but throw.
@@ -300,14 +302,20 @@ TODO: Rule of 5 is not enforced
 - Flag a class with a virtual function and a non-user-defined copy operation.
 - Flag an assignment of base class objects (objects of a class from which another has been derived).
 
+**no enforcement**
+
 # [C.131: Avoid trivial getters and setters](https://github.com/isocpp/CppCoreGuidelines/blob/master/CppCoreGuidelines.md#c131-avoid-trivial-getters-and-setters)
 
 - Flag multiple get and set member functions that simply access a member without additional semantics.
+
+**no enforcement**
 
 # [C.132: Don't make a function virtual without reason](https://github.com/isocpp/CppCoreGuidelines/blob/master/CppCoreGuidelines.md#c132-dont-make-a-function-virtual-without-reason)
 
 - Flag a class with virtual functions but no derived classes.
 - Flag a class where all member functions are virtual and have implementations.
+
+**no enforcement**
 
 # [C.133: Avoid protected data](https://github.com/isocpp/CppCoreGuidelines/blob/master/CppCoreGuidelines.md#c133-avoid-protected-data)
 
