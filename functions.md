@@ -35,7 +35,7 @@ TODO warn for multiple out parameters
 - Flag throwing swap, move, destructors, and default constructors.
 
 **partial enforcement**  
-**clang-tidy: misc-noexcept-move-constructor, there is frontend diagnostic on
+**clang-tidy: performance-noexcept-move-constructor, there is frontend diagnostic on
 noexcept dtors**  
 TODO alias into CppCoreGuidelines  
 TODO throwing `swap` and default constructors are not enforced
@@ -75,14 +75,14 @@ TODO throwing `swap` and default constructors are not enforced
 - Don't conditionally move from objects
 
 **partial enforcement**  
-**clang-tidy: misc-use-after-move**
+**clang-tidy: bugprone-use-after-move**
 
 # [F.19: For "forward" parameters, pass by TP&& and only std::forward the parameter](https://github.com/isocpp/CppCoreGuidelines/blob/master/CppCoreGuidelines.md#f19-for-forward-parameters-pass-by-tp-and-only-stdforward-the-parameter)
 
 - Flag a function that takes a TP&& parameter (where TP is a template type parameter name) and does anything with it other than std::forwarding it exactly once on every static path.
 
 **no enforcement**  
-Similar and related: **clang-tidy: misc-move-forwarding-reference**
+Similar and related: **clang-tidy: bugprone-move-forwarding-reference**
 
 # [F.20: For "out" output values, prefer return values to output parameters](https://github.com/isocpp/CppCoreGuidelines/blob/master/CppCoreGuidelines.md#f20-for-out-output-values-prefer-return-values-to-output-parameters)
 

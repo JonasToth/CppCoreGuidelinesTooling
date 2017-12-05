@@ -193,7 +193,7 @@ TODO: the check only ensures the existence of a destructor, but not if the membe
 
 - (Simple) A move operation should be marked noexcept.
 
-**clang-tidy: misc-noexcept-move-constructor**
+**clang-tidy: performance-noexcept-move-constructor**
 
 # [C.67: A base class should suppress copying, and provide a virtual clone instead if "copying" is desired](https://github.com/isocpp/CppCoreGuidelines/blob/master/CppCoreGuidelines.md#c67-a-base-class-should-suppress-copying-and-provide-a-virtual-clone-instead-if-copying-is-desired)
 

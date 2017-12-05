@@ -284,7 +284,7 @@ clang-tidy: clang-analyzer-cplusplus.NewDelete**
 - Flag a dereference of a pointer that may have been invalidated by a delete
 - Flag a dereference to a pointer to a container element that may have been invalidated by dereference
 
-**clang-tidy: misc-use-after-move, clang-analyzer-core.NullDereference  
+**clang-tidy: bugprone-use-after-move, clang-analyzer-core.NullDereference  
 Adress Sanitizer, Memory Sanitizer, Thread Sanitizer, Undefined Behaviour
 Sanitizer**
 

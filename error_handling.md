@@ -25,7 +25,7 @@ protected, or private).
 - Catch destructors, deallocation operations, and swaps that throw. Catch such operations that are not noexcept
 
 **partial enforcement**  
-**clang-tidy: misc-noexcept-move-constructor**  
+**clang-tidy: performance-noexcept-move-constructor**  
 TODO: extend to swap operation
 
 # [E.17: Don't try to catch every exception in every function](https://github.com/isocpp/CppCoreGuidelines/blob/master/CppCoreGuidelines.md#e17-dont-try-to-catch-every-exception-in-every-function)
