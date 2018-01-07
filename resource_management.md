@@ -13,16 +13,20 @@
 - (Simple) Warn if the return value of new is assigned to a raw pointer.
 - (Simple) Warn if a function returns an object that was allocated within the function but has a move constructor.  Suggest considering returning it by value instead.  
 
-**clang-tidy: cppcoreguidelines-owning-memory**
-
+**clang-tidy: cppcoreguidelines-owning-memory**  
 TODO: owning reference are not handled right now
+
+**core-check: C26402 DONT_HEAP_ALLOCATE_MOVABLE_RESULT,C26403
+RESET_OR_DELETE_OWNER,C26404 DONT_DELETE_INVALID,C26405
+DONT_ASSIGN_TO_VALID,C26406 DONT_ASSIGN_RAW_TO_OWNER**
+
 
 # [R.5: Prefer scoped objects, don't heap-allocate unnecessarily](https://github.com/isocpp/CppCoreGuidelines/blob/master/CppCoreGuidelines.md#r5-prefer-scoped-objects-dont-heap-allocate-unnecessarily)
 
 - (Moderate) Warn if an object is allocated and then deallocated on all paths within a function. Suggest it should be a local auto stack object instead.
 - (Simple) Warn if a local Unique_ptr or Shared_ptr is not moved, copied, reassigned or reset before its lifetime ends.
 
-**no enforcement**
+**core-check: C26407 DONT_HEAP_ALLOCATE_UNNECESSARILY**
 
 # [R.6: Avoid non-const global variables](https://github.com/isocpp/CppCoreGuidelines/blob/master/CppCoreGuidelines.md#r6-avoid-non-const-global-variables)
 

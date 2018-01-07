@@ -109,7 +109,8 @@ Similar and related: **clang-tidy: bugprone-move-forwarding-reference**
 - (Simple) Error if a raw pointer is sometimes dereferenced after first being tested against nullptr (or equivalent) within the function and sometimes is not.
 - (Simple) Warn if a not_null pointer is tested against nullptr within a function.
 
-**no enforcement**
+**core-check: C26429 USE_NOTNULL,C26430 TEST_ON_ALL_PATHS,C26431
+DONT_TEST_NOTNULL**
 
 # [F.24: Use a span<T> or a span_p<T> to designate a half-open sequence](https://github.com/isocpp/CppCoreGuidelines/blob/master/CppCoreGuidelines.md#f24-use-a-spant-or-a-span_pt-to-designate-a-half-open-sequence)
 
