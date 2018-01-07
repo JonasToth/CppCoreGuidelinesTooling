@@ -56,17 +56,20 @@ guidelines. You can further modify the checks as well.
 
 ## CppCoreCheck
 
-It's provided by Microsoft in Visual Studio and partially enforces the
-Guidelines as well.
-Since I don't use Visual Studio nor Windows, I can't say a lot about `CoreCheck`, maybe someone else could do this? :)
+`CppCoreCheck` is a static analysis tool provided by Microsoft and useable in
+Visual Studio. It partially implements the `CppCoreGuidelines` but is Microsoft
+specific.
+
+An introduction is provided in the [officical
+docs](https://docs.microsoft.com/en-us/visualstudio/code-quality/using-the-cpp-core-guidelines-checkers)
+as well as a [list of
+checks](https://docs.microsoft.com/en-us/visualstudio/code-quality/code-analysis-for-cpp-corecheck).
 
 ## Implementation status
 
 This section gives an overview of the Implementation status for the
 CppCoreGuidelines in several analysis tools. Most of them are `clang` based and
 `clang-tidy` has most of the checks implemented.
-
-### Total statistics
 
 ### Total statistics
 /partial/done/todo/enforceable/ (/12/97/182/291/) **33.33%** done
