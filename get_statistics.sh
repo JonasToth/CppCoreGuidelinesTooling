@@ -12,7 +12,7 @@ enforcement_statistics() {
     ADDRESSED=$(($RULES-$NO_ENFORCEMENT))
 
     PERCENTAGE_ENF=$(echo "scale=2; 100. * $ENFORCED / $RULES" | bc)
-    PERCENTAGE_ENF=$(echo "scale=2; 100. * $ADDRESSED / $RULES" | bc)
+    PERCENTAGE_ADDR=$(echo "scale=2; 100. * $ADDRESSED / $RULES" | bc)
     echo "/partial/done/todo/enforceable/ (/$PARTIAL_ENFORCED/$ENFORCED/$NO_ENFORCEMENT/$RULES/) **$PERCENTAGE_ENF%** enforced, **$PERCENTAGE_ADDR%** addressed"
     #echo
 }
