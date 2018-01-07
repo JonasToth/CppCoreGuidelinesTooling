@@ -72,16 +72,16 @@ CppCoreGuidelines in several analysis tools. Most of them are `clang` based and
 `clang-tidy` has most of the checks implemented.
 
 ### Total statistics
-/partial/done/todo/enforceable/ (/12/97/182/291/) **33.33%** done
+/partial/done/todo/enforceable/ (/12/128/167/307/) **41.69%** done
 
 #### classes_hierarchy.md statistics
-/partial/done/todo/enforceable/ (/0/21/46/67/) **31.34%** done
+/partial/done/todo/enforceable/ (/0/23/44/67/) **34.32%** done
 
 #### concurrency.md statistics
-/partial/done/todo/enforceable/ (/0/1/11/12/) **8.33%** done
+/partial/done/todo/enforceable/ (/0/2/10/12/) **16.66%** done
 
 #### constants.md statistics
-/partial/done/todo/enforceable/ (/1/0/4/5/) **0%** done
+/partial/done/todo/enforceable/ (/1/2/2/5/) **40.00%** done
 
 #### enumerations.md statistics
 /partial/done/todo/enforceable/ (/0/1/6/7/) **14.28%** done
@@ -90,13 +90,13 @@ CppCoreGuidelines in several analysis tools. Most of them are `clang` based and
 /partial/done/todo/enforceable/ (/1/3/3/7/) **42.85%** done
 
 #### expressions.md statistics
-/partial/done/todo/enforceable/ (/0/23/37/60/) **38.33%** done
+/partial/done/todo/enforceable/ (/0/24/36/60/) **40.00%** done
 
 #### functions.md statistics
-/partial/done/todo/enforceable/ (/3/10/15/28/) **35.71%** done
+/partial/done/todo/enforceable/ (/3/12/14/29/) **41.37%** done
 
 #### interfaces.md statistics
-/partial/done/todo/enforceable/ (/1/2/8/11/) **18.18%** done
+/partial/done/todo/enforceable/ (/1/3/7/11/) **27.27%** done
 
 #### naming_layout.md statistics
 /partial/done/todo/enforceable/ (/0/8/5/13/) **61.53%** done
@@ -111,7 +111,7 @@ CppCoreGuidelines in several analysis tools. Most of them are `clang` based and
 /partial/done/todo/enforceable/ (/0/2/1/3/) **66.66%** done
 
 #### resource_management.md statistics
-/partial/done/todo/enforceable/ (/0/10/11/21/) **47.61%** done
+/partial/done/todo/enforceable/ (/0/17/4/21/) **80.95%** done
 
 #### source_files.md statistics
 /partial/done/todo/enforceable/ (/0/2/8/10/) **20.00%** done
