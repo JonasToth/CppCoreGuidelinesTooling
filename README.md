@@ -71,51 +71,52 @@ This section gives an overview of the Implementation status for the
 CppCoreGuidelines in several analysis tools. Most of them are `clang` based and
 `clang-tidy` has most of the checks implemented.
 
+
 ### Total statistics
-/partial/done/todo/enforceable/ (/12/128/167/307/) **41.69%** done
+/partial/done/todo/enforceable/ (/12/112/167/291/) **42.61%** enforced, **%** addressed
 
 #### classes_hierarchy.md statistics
-/partial/done/todo/enforceable/ (/0/23/44/67/) **34.32%** done
+/partial/done/todo/enforceable/ (/0/23/44/67/) **34.32%** enforced, **%** addressed
 
 #### concurrency.md statistics
-/partial/done/todo/enforceable/ (/0/2/10/12/) **16.66%** done
+/partial/done/todo/enforceable/ (/0/2/10/12/) **16.66%** enforced, **%** addressed
 
 #### constants.md statistics
-/partial/done/todo/enforceable/ (/1/2/2/5/) **40.00%** done
+/partial/done/todo/enforceable/ (/1/2/2/5/) **60.00%** enforced, **%** addressed
 
 #### enumerations.md statistics
-/partial/done/todo/enforceable/ (/0/1/6/7/) **14.28%** done
+/partial/done/todo/enforceable/ (/0/1/6/7/) **14.28%** enforced, **%** addressed
 
 #### error_handling.md statistics
-/partial/done/todo/enforceable/ (/1/3/3/7/) **42.85%** done
+/partial/done/todo/enforceable/ (/1/3/3/7/) **57.14%** enforced, **%** addressed
 
 #### expressions.md statistics
-/partial/done/todo/enforceable/ (/0/24/36/60/) **40.00%** done
+/partial/done/todo/enforceable/ (/0/24/36/60/) **40.00%** enforced, **%** addressed
 
 #### functions.md statistics
-/partial/done/todo/enforceable/ (/3/12/14/29/) **41.37%** done
+/partial/done/todo/enforceable/ (/3/12/14/29/) **51.72%** enforced, **%** addressed
 
 #### interfaces.md statistics
-/partial/done/todo/enforceable/ (/1/3/7/11/) **27.27%** done
+/partial/done/todo/enforceable/ (/1/3/7/11/) **36.36%** enforced, **%** addressed
 
 #### naming_layout.md statistics
-/partial/done/todo/enforceable/ (/0/8/5/13/) **61.53%** done
+/partial/done/todo/enforceable/ (/0/8/5/13/) **61.53%** enforced, **%** addressed
 
 #### performance.md statistics
-/partial/done/todo/enforceable/ (/0/1/0/1/) **100.00%** done
+/partial/done/todo/enforceable/ (/0/1/0/1/) **100.00%** enforced, **%** addressed
 
 #### philosophy.md statistics
-/partial/done/todo/enforceable/ (/6/0/3/9/) **0%** done
+/partial/done/todo/enforceable/ (/6/0/3/9/) **66.66%** enforced, **%** addressed
 
 #### profiles.md statistics
-/partial/done/todo/enforceable/ (/0/2/1/3/) **66.66%** done
+/partial/done/todo/enforceable/ (/0/2/1/3/) **66.66%** enforced, **%** addressed
 
 #### resource_management.md statistics
-/partial/done/todo/enforceable/ (/0/17/4/21/) **80.95%** done
+/partial/done/todo/enforceable/ (/0/17/4/21/) **80.95%** enforced, **%** addressed
 
 #### source_files.md statistics
-/partial/done/todo/enforceable/ (/0/2/8/10/) **20.00%** done
+/partial/done/todo/enforceable/ (/0/2/8/10/) **20.00%** enforced, **%** addressed
 
 #### templates.md statistics
-/partial/done/todo/enforceable/ (/0/4/24/28/) **14.28%** done
+/partial/done/todo/enforceable/ (/0/4/24/28/) **14.28%** enforced, **%** addressed
 
