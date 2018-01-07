@@ -75,13 +75,13 @@ Flag uses of std::thread:
 
 - Flag all unnamed lock_guards and unique_locks.
 
-**no enforcement**
+**core-check: C26441 NO_UNNAMED_GUARDS**
 
 # [CP.101: Distrust your hardware/compiler combination](https://github.com/isocpp/CppCoreGuidelines/blob/master/CppCoreGuidelines.md#cp101-distrust-your-hardwarecompiler-combination)
 
 - Have strong rules for re-testing in place that covers any change in hardware, operating system, compiler, and libraries.
 
-**use unittesting, buildbot/jenkins for all your platforms**
+**use unittesting, buildbot/jenkins/travis/... for all your platforms**
 
 # [CP.200: Use volatile only to talk to non-C++ memory](https://github.com/isocpp/CppCoreGuidelines/blob/master/CppCoreGuidelines.md#cp200-use-volatile-only-to-talk-to-non-c-memory)
 

@@ -223,7 +223,9 @@ C++17 enforcement (if using a C++17 compiler)
 - The type profile bans reinterpret_cast.
 - The type profile warns when using static_cast between arithmetic types.
 
-**same as in ES.48**
+**clang-tidy: same as in ES.48**
+
+**core-check: C26475 NO_FUNCTION_STYLE_CASTS**
 
 # [ES.50: Don't cast away const](https://github.com/isocpp/CppCoreGuidelines/blob/master/CppCoreGuidelines.md#es50-dont-cast-away-const)
 
@@ -270,6 +272,8 @@ clang-tidy: clang-analyzer-cplusplus.NewDelete**
 - Warn against slicing.
 
 **clang-tidy: cppcoreguidelines-slicing**
+
+**core-check: C26437 DONT_SLICE**
 
 # [ES.64: Use the T{e}notation for construction](https://github.com/isocpp/CppCoreGuidelines/blob/master/CppCoreGuidelines.md#es64-use-the-tenotation-for-construction)
 
@@ -323,7 +327,7 @@ Sanitizer**
 
 - Flag goto. Better still flag all gotos that do not jump from a nested loop to the statement immediately after a nest of loops.
 
-**no enforcement**
+**core-check: C26438 NO_GOTO**
 
 # [ES.78: Always end a non-empty case with a break](https://github.com/isocpp/CppCoreGuidelines/blob/master/CppCoreGuidelines.md#es78-always-end-a-non-empty-case-with-a-break)
 
