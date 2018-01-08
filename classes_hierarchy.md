@@ -293,7 +293,7 @@ C26436 NEED_VIRTUAL_DTOR**
 - Flag overrides with neither override nor final.
 - Flag function declarations that use more than one of virtual, override, and final.
 
-**clang-tidy: modernize-use-override**
+**clang-tidy: modernize-use-override,bugprone-virtual-near-miss**
 
 **core-check:
 C26434 DONT_HIDE_METHODS**
