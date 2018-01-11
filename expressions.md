@@ -329,6 +329,8 @@ Sanitizer**
 
 **core-check: C26438 NO_GOTO**
 
+**clang-tidy: cppcoreguidelines-avoid-goto**
+
 # [ES.78: Always end a non-empty case with a break](https://github.com/isocpp/CppCoreGuidelines/blob/master/CppCoreGuidelines.md#es78-always-end-a-non-empty-case-with-a-break)
 
 - Flag all fallthroughs from non-empty cases.
