@@ -9,9 +9,11 @@ enforcement_statistics() {
     PARTIAL_ENFORCED=$(grep 'partial enforcement' "$1" | wc -l)
     # calculate the difference between enforced and not enforced
     ENFORCED=$(($RULES-$NO_ENFORCEMENT-$PARTIAL_ENFORCED))
+    ADDRESSED=$(($RULES-$NO_ENFORCEMENT))
 
-    PERCENTAGE=$(echo "scale=2; 100. * $ENFORCED / $RULES" | bc)
-    echo "/partial/done/todo/enforceable/ (/$PARTIAL_ENFORCED/$ENFORCED/$NO_ENFORCEMENT/$RULES/) **$PERCENTAGE%** done"
+    PERCENTAGE_ENF=$(echo "scale=2; 100. * $ENFORCED / $RULES" | bc)
+    PERCENTAGE_ADDR=$(echo "scale=2; 100. * $ADDRESSED / $RULES" | bc)
+    echo "/partial/done/todo/enforceable/ (/$PARTIAL_ENFORCED/$ENFORCED/$NO_ENFORCEMENT/$RULES/) **$PERCENTAGE_ENF%** enforced, **$PERCENTAGE_ADDR%** addressed"
     #echo
 }
 

@@ -17,13 +17,21 @@ TODO: Implement same check for local variables
 - Flag function that does not modify an object passed by pointer or reference to non-const
 - Flag a function that (using a cast) modifies an object passed by pointer or reference to const
 
-**no enforcement**
+**core-check:
+C26460 USE_CONST_REFERENCE_ARGUMENTS,
+C26461 USE_CONST_POINTER_ARGUMENTS**
 
 # [Con.4: Use const to define objects with values that do not change after construction](https://github.com/isocpp/CppCoreGuidelines/blob/master/CppCoreGuidelines.md#con4-use-const-to-define-objects-with-values-that-do-not-change-after-construction)
 
 - Flag unmodified non-const variables
+*duplication to Con.1*
 
-**no enforcement, duplication to Con.1**
+**core-check:
+C26462 USE_CONST_POINTER_FOR_VARIABLE,
+C26463 USE_CONST_FOR_ELEMENTS,
+C26464 USE_CONST_POINTER_FOR_ELEMENTS,
+C26496 USE_CONST_FOR_VARIABLE,
+C26498 USE_CONSTEXPR_FOR_FUNCTIONCALL**
 
 # [Con.5: Use constexpr for values that can be computed at compile time](https://github.com/isocpp/CppCoreGuidelines/blob/master/CppCoreGuidelines.md#con5-use-constexpr-for-values-that-can-be-computed-at-compile-time)
 

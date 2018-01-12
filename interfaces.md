@@ -35,6 +35,9 @@ Concepts are on the way to be standardized, clang are implementing them, soon.
 **partial enforcement**  
 **clang-tidy: cppcoreguidelines-owning-memory**
 
+**core-check: C26400  NO_RAW_POINTER_ASSIGNMENT,C26400 
+NO_RAW_POINTER_ASSIGNMENT**
+
 # [I.12: Declare a pointer that must not be null as not_null](https://github.com/isocpp/CppCoreGuidelines/blob/master/CppCoreGuidelines.md#i12-declare-a-pointer-that-must-not-be-null-as-not_null)
 
 - (Simple) ((Foundation)) If a function checks a pointer parameter against nullptr before access, on all control-flow paths, then warn it should be declared not_null.
@@ -55,7 +58,9 @@ cppcoreguidelines-pro-bounds-pointer-arithmetic**
 - Flag initializers of globals that call non-constexpr functions
 - Flag initializers of globals that access extern objects
 
-**no enforcement**
+**core-check:
+C26426 NO_GLOBAL_INIT_CALLS,
+C26427 NO_GLOBAL_INIT_EXTERNS**
 
 # [I.23: Keep the number of function arguments low](https://github.com/isocpp/CppCoreGuidelines/blob/master/CppCoreGuidelines.md#i23-keep-the-number-of-function-arguments-low)
 

@@ -13,16 +13,25 @@
 - (Simple) Warn if the return value of new is assigned to a raw pointer.
 - (Simple) Warn if a function returns an object that was allocated within the function but has a move constructor.  Suggest considering returning it by value instead.  
 
-**clang-tidy: cppcoreguidelines-owning-memory**
-
+**clang-tidy: cppcoreguidelines-owning-memory**  
 TODO: owning reference are not handled right now
+
+**core-check: 
+C26402 DONT_HEAP_ALLOCATE_MOVABLE_RESULT,
+C26403 RESET_OR_DELETE_OWNER,
+C26404 DONT_DELETE_INVALID,
+C26405 DONT_ASSIGN_TO_VALID,
+C26406 DONT_ASSIGN_RAW_TO_OWNER**
+
 
 # [R.5: Prefer scoped objects, don't heap-allocate unnecessarily](https://github.com/isocpp/CppCoreGuidelines/blob/master/CppCoreGuidelines.md#r5-prefer-scoped-objects-dont-heap-allocate-unnecessarily)
 
 - (Moderate) Warn if an object is allocated and then deallocated on all paths within a function. Suggest it should be a local auto stack object instead.
 - (Simple) Warn if a local Unique_ptr or Shared_ptr is not moved, copied, reassigned or reset before its lifetime ends.
 
-**no enforcement**
+**core-check: 
+C26407 DONT_HEAP_ALLOCATE_UNNECESSARILY,
+C26414 RESET_LOCAL_SMART_PTR**
 
 # [R.6: Avoid non-const global variables](https://github.com/isocpp/CppCoreGuidelines/blob/master/CppCoreGuidelines.md#r6-avoid-non-const-global-variables)
 
@@ -36,11 +45,17 @@ TODO: owning reference are not handled right now
 
 **clang-tidy: cppcoreguidelines-no-malloc**
 
+**core-check: 
+C26408 NO_MALLOC_FREE**
+
 # [R.11: Avoid calling new and delete explicitly](https://github.com/isocpp/CppCoreGuidelines/blob/master/CppCoreGuidelines.md#r11-avoid-calling-new-and-delete-explicitly)
 
 - (Simple) Warn on any explicit use of new and delete. Suggest using make_unique instead.
 
 **clang-tidy: cppcoreguidelines-owning-memory**
+
+**core-check: 
+C26409 NO_NEW_DELETE**
 
 # [R.12: Immediately give the result of an explicit resource allocation to a manager object](https://github.com/isocpp/CppCoreGuidelines/blob/master/CppCoreGuidelines.md#r12-immediately-give-the-result-of-an-explicit-resource-allocation-to-a-manager-object)
 
@@ -90,21 +105,24 @@ modernize-make-shared**
 - (Simple) Warn if a function takes a parameter of a smart pointer type (that overloads operator-> or operator*) that is copyable but the function only calls any of: operator*, operator-> or get(). Suggest using a T* or T& instead.
 - Flag a parameter of a smart pointer type (a type that overloads operator-> or operator*) that is copyable/movable but never copied/moved from in the function body, and that is never modified, and that is not passed along to another function that could do so. That means the ownership semantics are not used. Suggest using a T* or T& instead.
 
-**no enforcement**
+**core-check:
+C26415 SMART_PTR_NOT_NEEDED**
 
 # [R.32: Take a unique_ptr<widget> parameter to express that a function assumes ownership of a widget](https://github.com/isocpp/CppCoreGuidelines/blob/master/CppCoreGuidelines.md#r32-take-a-unique_ptrwidget-parameter-to-express-that-a-function-assumes-ownership-of-a-widget)
 
 - (Simple) Warn if a function takes a Unique_ptr<T> parameter by lvalue reference and does not either assign to it or call reset() on it on at least one code path. Suggest taking a T* or T& instead.
 - (Simple) ((Foundation)) Warn if a function takes a Unique_ptr<T> parameter by reference to const. Suggest taking a const T* or const T& instead.
 
-**no enforcement**
+**core-check: 
+C26410 NO_REF_TO_CONST_UNIQUE_PTR**
 
 # [R.33: Take a unique_ptr<widget>& parameter to express that a function reseats the widget](https://github.com/isocpp/CppCoreGuidelines/blob/master/CppCoreGuidelines.md#r33-take-a-unique_ptrwidget-parameter-to-express-that-a-function-reseats-thewidget)
 
 - (Simple) Warn if a function takes a Unique_ptr<T> parameter by lvalue reference and does not either assign to it or call reset() on it on at least one code path. Suggest taking a T* or T& instead.
 - (Simple) ((Foundation)) Warn if a function takes a Unique_ptr<T> parameter by reference to const. Suggest taking a const T* or const T& instead.
 
-**no enforcement**
+**core-check: 
+C26411 NO_REF_TO_UNIQUE_PTR**
 
 # [R.34: Take a shared_ptr<widget> parameter to express that a function is part owner](https://github.com/isocpp/CppCoreGuidelines/blob/master/CppCoreGuidelines.md#r34-take-a-shared_ptrwidget-parameter-to-express-that-a-function-is-part-owner)
 
@@ -112,7 +130,8 @@ modernize-make-shared**
 - (Simple) ((Foundation)) Warn if a function takes a Shared_ptr<T> by value or by reference to const and does not copy or move it to another Shared_ptr on at least one code path. Suggest taking a T* or T& instead.
 - (Simple) ((Foundation)) Warn if a function takes a Shared_ptr<T> by rvalue reference. Suggesting taking it by value instead.
 
-**no enforcement**
+**core-check:
+C26416 NO_RVALUE_REF_SHARED_PTR**
 
 # [R.35: Take a shared_ptr<widget>& parameter to express that a function might reseat the shared pointer](https://github.com/isocpp/CppCoreGuidelines/blob/master/CppCoreGuidelines.md#r35-take-a-shared_ptrwidget-parameter-to-express-that-a-function-might-reseat-the-shared-pointer)
 
@@ -120,7 +139,8 @@ modernize-make-shared**
 - (Simple) ((Foundation)) Warn if a function takes a Shared_ptr<T> by value or by reference to const and does not copy or move it to another Shared_ptr on at least one code path. Suggest taking a T* or T& instead.
 - (Simple) ((Foundation)) Warn if a function takes a Shared_ptr<T> by rvalue reference. Suggesting taking it by value instead.
 
-**no enforcement**
+**core-check:
+C26417 NO_LVALUE_REF_SHARED_PTR**
 
 # [R.36: Take a const shared_ptr<widget>& parameter to express that it might retain a reference count to the object ???](https://github.com/isocpp/CppCoreGuidelines/blob/master/CppCoreGuidelines.md#r36-take-a-const-shared_ptrwidget-parameter-to-express-that-it-might-retain-a-reference-count-to-the-object-)
 
@@ -128,7 +148,8 @@ modernize-make-shared**
 - (Simple) ((Foundation)) Warn if a function takes a Shared_ptr<T> by value or by reference to const and does not copy or move it to another Shared_ptr on at least one code path. Suggest taking a T* or T& instead.
 - (Simple) ((Foundation)) Warn if a function takes a Shared_ptr<T> by rvalue reference. Suggesting taking it by value instead.
 
-**no enforcement**
+**core-check:
+C26418 NO_VALUE_OR_CONST_REF_SHARED_PTR**
 
 # [R.37: Do not pass a pointer or reference obtained from an aliased smart pointer](https://github.com/isocpp/CppCoreGuidelines/blob/master/CppCoreGuidelines.md#r37-do-not-pass-a-pointer-or-reference-obtained-from-an-aliased-smart-pointer)
 

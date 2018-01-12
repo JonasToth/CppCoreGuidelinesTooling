@@ -23,6 +23,10 @@ TODO warn for multiple out parameters
 
 **clang-tidy: readability-function-size, readability-cognitive-complexity**  
 
+# [F.4: If a function may have to evaluated at compile time, declare it noexcept](https://github.com/isocpp/CppCoreGuidelines/blob/master/CppCoreGuidelines.md#f4-if-a-function-may-have-to-be-evaluated-at-compile-time-declare-it-constexpr)
+
+**core-check: C26498 USE_CONSTEXPR_FOR_FUNCTIONCALL**
+
 # [F.5: If a function is very small and time-critical, declare it inline](https://github.com/isocpp/CppCoreGuidelines/blob/master/CppCoreGuidelines.md#f5-if-a-function-is-very-small-and-time-critical-declare-it-inline)
 
 - Flag inline functions that are more than three statements and could have been declared out of line (such as class member functions).
@@ -39,6 +43,10 @@ TODO warn for multiple out parameters
 noexcept dtors**  
 TODO alias into CppCoreGuidelines  
 TODO throwing `swap` and default constructors are not enforced
+
+**core-check:
+C26439 SPECIAL_NOEXCEPT,
+C26440 DECLARE_NOEXCEPT**
 
 # [F.7: For general use, take T* or T& arguments rather than smart pointers](https://github.com/isocpp/CppCoreGuidelines/blob/master/CppCoreGuidelines.md#f7-for-general-use-take-t-or-t-arguments-rather-than-smart-pointers)
 
@@ -109,7 +117,10 @@ Similar and related: **clang-tidy: bugprone-move-forwarding-reference**
 - (Simple) Error if a raw pointer is sometimes dereferenced after first being tested against nullptr (or equivalent) within the function and sometimes is not.
 - (Simple) Warn if a not_null pointer is tested against nullptr within a function.
 
-**no enforcement**
+**core-check: 
+C26429 USE_NOTNULL,
+C26430 TEST_ON_ALL_PATHS,
+C26431 DONT_TEST_NOTNULL**
 
 # [F.24: Use a span<T> or a span_p<T> to designate a half-open sequence](https://github.com/isocpp/CppCoreGuidelines/blob/master/CppCoreGuidelines.md#f24-use-a-spant-or-a-span_pt-to-designate-a-half-open-sequence)
 

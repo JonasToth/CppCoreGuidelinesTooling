@@ -44,6 +44,9 @@
 
 **clang-tidy: cppcoreguidelines-cppcoreguidelines-special-member-functions**
 
+**core-check:
+C26432 DEFINE_OR_DELETE_SPECIAL_OPS**
+
 # [C.22: Make default operations consistent](https://github.com/isocpp/CppCoreGuidelines/blob/master/CppCoreGuidelines.md#c22-make-default-operations-consistent)
 
 - (Complex) A copy/move constructor and the corresponding copy/move assignment operator should write to the same member variables at the same level of dereference.
@@ -84,7 +87,8 @@ TODO: the check only ensures the existence of a destructor, but not if the membe
 
 - A class with any virtual functions should have a destructor that is either public and virtual or else protected and nonvirtual.
 
-**no enforcement**
+**core-check:
+C26436 NEED_VIRTUAL_DTOR**
 
 # [C.36: A destructor may not fail](https://github.com/isocpp/CppCoreGuidelines/blob/master/CppCoreGuidelines.md#c36-a-destructor-may-not-fail)
 
@@ -289,7 +293,10 @@ TODO: the check only ensures the existence of a destructor, but not if the membe
 - Flag overrides with neither override nor final.
 - Flag function declarations that use more than one of virtual, override, and final.
 
-**no enforcement**
+**clang-tidy: modernize-use-override,bugprone-virtual-near-miss**
+
+**core-check:
+C26434 DONT_HIDE_METHODS**
 
 # [C.129: When designing a class hierarchy, distinguish between implementation inheritance and interface inheritance](https://github.com/isocpp/CppCoreGuidelines/blob/master/CppCoreGuidelines.md#c129-when-designing-a-class-hierarchy-distinguish-between-implementation-inheritance-and-interface-inheritance)
 

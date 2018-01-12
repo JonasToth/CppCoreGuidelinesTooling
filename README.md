@@ -56,9 +56,14 @@ guidelines. You can further modify the checks as well.
 
 ## CppCoreCheck
 
-It's provided by Microsoft in Visual Studio and partially enforces the
-Guidelines as well.
-Since I don't use Visual Studio nor Windows, I can't say a lot about `CoreCheck`, maybe someone else could do this? :)
+`CppCoreCheck` is a static analysis tool provided by Microsoft and useable in
+Visual Studio. It partially implements the `CppCoreGuidelines` but is Microsoft
+specific.
+
+An introduction is provided in the [officical
+docs](https://docs.microsoft.com/en-us/visualstudio/code-quality/using-the-cpp-core-guidelines-checkers)
+as well as a [list of
+checks](https://docs.microsoft.com/en-us/visualstudio/code-quality/code-analysis-for-cpp-corecheck).
 
 ## Implementation status
 
@@ -68,49 +73,50 @@ CppCoreGuidelines in several analysis tools. Most of them are `clang` based and
 
 
 ### Total statistics
-/partial/done/todo/enforceable/ (/12/96/182/290/) **33.10%** done
+/partial/done/todo/enforceable/ (/12/112/167/291/) **38.48%** enforced, **42.61%** addressed
 
 #### classes_hierarchy.md statistics
-/partial/done/todo/enforceable/ (/0/21/46/67/) **31.34%** done
+/partial/done/todo/enforceable/ (/0/23/44/67/) **34.32%** enforced, **34.32%** addressed
 
 #### concurrency.md statistics
-/partial/done/todo/enforceable/ (/0/1/11/12/) **8.33%** done
+/partial/done/todo/enforceable/ (/0/2/10/12/) **16.66%** enforced, **16.66%** addressed
 
 #### constants.md statistics
-/partial/done/todo/enforceable/ (/1/0/4/5/) **0%** done
+/partial/done/todo/enforceable/ (/1/2/2/5/) **40.00%** enforced, **60.00%** addressed
 
 #### enumerations.md statistics
-/partial/done/todo/enforceable/ (/0/1/6/7/) **14.28%** done
+/partial/done/todo/enforceable/ (/0/1/6/7/) **14.28%** enforced, **14.28%** addressed
 
 #### error_handling.md statistics
-/partial/done/todo/enforceable/ (/1/3/3/7/) **42.85%** done
+/partial/done/todo/enforceable/ (/1/3/3/7/) **42.85%** enforced, **57.14%** addressed
 
 #### expressions.md statistics
-/partial/done/todo/enforceable/ (/0/23/37/60/) **38.33%** done
+/partial/done/todo/enforceable/ (/0/24/36/60/) **40.00%** enforced, **40.00%** addressed
 
 #### functions.md statistics
-/partial/done/todo/enforceable/ (/3/10/15/28/) **35.71%** done
+/partial/done/todo/enforceable/ (/3/12/14/29/) **41.37%** enforced, **51.72%** addressed
 
 #### interfaces.md statistics
-/partial/done/todo/enforceable/ (/1/2/8/11/) **18.18%** done
+/partial/done/todo/enforceable/ (/1/3/7/11/) **27.27%** enforced, **36.36%** addressed
 
 #### naming_layout.md statistics
-/partial/done/todo/enforceable/ (/0/8/5/13/) **61.53%** done
+/partial/done/todo/enforceable/ (/0/8/5/13/) **61.53%** enforced, **61.53%** addressed
 
 #### performance.md statistics
-/partial/done/todo/enforceable/ (/0/1/0/1/) **100.00%** done
+/partial/done/todo/enforceable/ (/0/1/0/1/) **100.00%** enforced, **100.00%** addressed
 
 #### philosophy.md statistics
-/partial/done/todo/enforceable/ (/6/0/3/9/) **0%** done
+/partial/done/todo/enforceable/ (/6/0/3/9/) **0%** enforced, **66.66%** addressed
 
 #### profiles.md statistics
-/partial/done/todo/enforceable/ (/0/2/1/3/) **66.66%** done
+/partial/done/todo/enforceable/ (/0/2/1/3/) **66.66%** enforced, **66.66%** addressed
 
 #### resource_management.md statistics
-/partial/done/todo/enforceable/ (/0/10/11/21/) **47.61%** done
+/partial/done/todo/enforceable/ (/0/17/4/21/) **80.95%** enforced, **80.95%** addressed
 
 #### source_files.md statistics
-/partial/done/todo/enforceable/ (/0/2/8/10/) **20.00%** done
+/partial/done/todo/enforceable/ (/0/2/8/10/) **20.00%** enforced, **20.00%** addressed
 
 #### templates.md statistics
-/partial/done/todo/enforceable/ (/0/4/24/28/) **14.28%** done
+/partial/done/todo/enforceable/ (/0/4/24/28/) **14.28%** enforced, **14.28%** addressed
+
