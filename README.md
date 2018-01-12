@@ -66,10 +66,9 @@ This section gives an overview of the Implementation status for the
 CppCoreGuidelines in several analysis tools. Most of them are `clang` based and
 `clang-tidy` has most of the checks implemented.
 
-### Total statistics
 
 ### Total statistics
-/partial/done/todo/enforceable/ (/12/97/182/291/) **33.33%** done
+/partial/done/todo/enforceable/ (/12/96/182/290/) **33.10%** done
 
 #### classes_hierarchy.md statistics
 /partial/done/todo/enforceable/ (/0/21/46/67/) **31.34%** done
@@ -115,4 +114,3 @@ CppCoreGuidelines in several analysis tools. Most of them are `clang` based and
 
 #### templates.md statistics
 /partial/done/todo/enforceable/ (/0/4/24/28/) **14.28%** done
-
