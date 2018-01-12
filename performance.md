@@ -3,3 +3,5 @@
 - Look for simple functions that might be constexpr (but are not).
 - Look for functions called with all constant-expression arguments.
 - Look for macros that could be constexpr.
+
+**no enforcement**
