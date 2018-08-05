@@ -199,7 +199,7 @@ C++17 enforcement (if using a C++17 compiler)
 - flag all long->char (I suspect int->char is very common. Here be dragons! we need data)
 - consider narrowing conversions for function arguments especially suspect
 
-**no enforcement**
+**clang-sanitizers: -fsanitize=implicit-integer-truncation**
 
 # [ES.47: Use nullptr rather than 0 or NULL](https://github.com/isocpp/CppCoreGuidelines/blob/master/CppCoreGuidelines.md#es47-use-nullptr-rather-than-0-or-null)
 
