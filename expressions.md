@@ -371,7 +371,8 @@ Sanitizer**
 
 - Compilers already know and sometimes warn.
 
-**no enforcement**  
+**clang-sanitizers: -fsanitize=integer**
+
 in essence the same rule as ES.102
 
 # [ES.101: Use unsigned types for bit manipulation](https://github.com/isocpp/CppCoreGuidelines/blob/master/CppCoreGuidelines.md#es101-use-unsigned-types-for-bit-manipulation)
@@ -386,7 +387,7 @@ in essence the same rule as ES.102
 - Flag results of unsigned arithmetic assigned to or printed as signed.
 - Flag unsigned literals (e.g. -2) used as container subscripts.
 
-**no enforcement**
+**clang-sanitizers: -fsanitize=integer**
 
 # [ES.103: Don't overflow](https://github.com/isocpp/CppCoreGuidelines/blob/master/CppCoreGuidelines.md#es103-dont-overflow)
 
