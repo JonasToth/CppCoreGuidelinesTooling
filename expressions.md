@@ -371,7 +371,7 @@ Sanitizer**
 
 - Compilers already know and sometimes warn.
 
-**clang-sanitizers: -fsanitize=integer**
+**clang-sanitizers: -fsanitize=implicit-integer-sign-change**
 
 in essence the same rule as ES.102
 
